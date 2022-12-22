@@ -8,6 +8,7 @@
 #import "TFY_AssetManager.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "TFYCategory.h"
+#import "TFYItools.h"
 #import "TFY_VideoUtils.h"
 #import "TFY_FileUtility.h"
 #import "TFY_PickerToGIF.h"

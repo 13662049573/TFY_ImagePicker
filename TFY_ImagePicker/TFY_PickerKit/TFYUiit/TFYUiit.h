@@ -14,7 +14,6 @@
 #import "TFYCategory.h"
 #import "TFYColor.h"
 #import "TFYPhotoUit.h"
-#import "TFYTipsGuideView.h"
 #import "TFYPickerUit.h"
 #import "TFYFilterSuite.h"
 #import "TFYDrawView.h"
