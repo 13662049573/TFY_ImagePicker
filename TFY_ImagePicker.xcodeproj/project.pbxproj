@@ -390,7 +390,6 @@
 		366615562952E31E00BC333A /* TFY_StickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_StickerView.m; sourceTree = "<group>"; };
 		366615572952E31E00BC333A /* TFY_BaseEditingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_BaseEditingController.h; sourceTree = "<group>"; };
 		366615582952E31E00BC333A /* TFY_ImageCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_ImageCoder.h; sourceTree = "<group>"; };
-		3666155A2952E31E00BC333A /* TFYTipsGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFYTipsGuideView.h; sourceTree = "<group>"; };
 		3666155B2952E31E00BC333A /* TFY_TipsGuideManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_TipsGuideManager.h; sourceTree = "<group>"; };
 		3666155C2952E31E00BC333A /* TFY_TipsGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_TipsGuideView.h; sourceTree = "<group>"; };
 		3666155D2952E31E00BC333A /* TFY_TipsGuideManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_TipsGuideManager.m; sourceTree = "<group>"; };
@@ -715,7 +714,6 @@
 				366614D62952E31D00BC333A /* TFYCategory */,
 				366614F62952E31D00BC333A /* TFYColor */,
 				366614FF2952E31D00BC333A /* TFYPhotoUit */,
-				366615592952E31E00BC333A /* TFYTipsGuideView */,
 				3666155F2952E31E00BC333A /* TFYPickerUit */,
 				366615A22952E31E00BC333A /* TFYFilterSuite */,
 				366615C12952E31E00BC333A /* TFYDrawView */,
@@ -728,6 +726,10 @@
 			isa = PBXGroup;
 			children = (
 				366614E42952E31D00BC333A /* TFYCategory.h */,
+				3666155C2952E31E00BC333A /* TFY_TipsGuideView.h */,
+				3666155E2952E31E00BC333A /* TFY_TipsGuideView.m */,
+				3666155B2952E31E00BC333A /* TFY_TipsGuideManager.h */,
+				3666155D2952E31E00BC333A /* TFY_TipsGuideManager.m */,
 				366614EB2952E31D00BC333A /* NSObject+picker.h */,
 				366614D72952E31D00BC333A /* NSObject+picker.m */,
 				366614D92952E31D00BC333A /* UIImage+picker.h */,
@@ -876,18 +878,6 @@
 				366615312952E31E00BC333A /* TFY_PhotoEditDelegate.h */,
 			);
 			path = TFYPhotoUit;
-			sourceTree = "<group>";
-		};
-		366615592952E31E00BC333A /* TFYTipsGuideView */ = {
-			isa = PBXGroup;
-			children = (
-				3666155A2952E31E00BC333A /* TFYTipsGuideView.h */,
-				3666155C2952E31E00BC333A /* TFY_TipsGuideView.h */,
-				3666155E2952E31E00BC333A /* TFY_TipsGuideView.m */,
-				3666155B2952E31E00BC333A /* TFY_TipsGuideManager.h */,
-				3666155D2952E31E00BC333A /* TFY_TipsGuideManager.m */,
-			);
-			path = TFYTipsGuideView;
 			sourceTree = "<group>";
 		};
 		3666155F2952E31E00BC333A /* TFYPickerUit */ = {

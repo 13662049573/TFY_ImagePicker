@@ -16,9 +16,11 @@
 #import "NSAttributedString+picker.h"
 #import "AVAsset+picker.h"
 #import "CALayer+picker.h"
-#import "TFY_MEGIFImageSerialization.h"
 #import "UIScrollView+picker.h"
 #import "NSString+picker.h"
 #import "UIAlertView+picker.h"
+
+#import "TFY_TipsGuideManager.h"
+#import "TFY_TipsGuideView.h"
 
 #endif /* TFYCategory_h */

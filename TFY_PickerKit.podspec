@@ -52,7 +52,6 @@ Pod::Spec.new do |spec|
 
     ss.subspec 'TFYCategory' do |sss|
       sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYCategory/**/*.{h,m}"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYTipsGuideView"
       sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
     end
 
@@ -108,13 +107,7 @@ Pod::Spec.new do |spec|
       sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
       sss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
     end
-
-    ss.subspec 'TFYTipsGuideView' do |sss|
-      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYTipsGuideView/**/*.{h,m}"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
-    end
-
+    
   end
 
   spec.frameworks    = "Foundation","UIKit"
