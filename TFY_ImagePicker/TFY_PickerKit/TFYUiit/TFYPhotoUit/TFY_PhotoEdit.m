@@ -8,6 +8,7 @@
 #import "TFY_PhotoEdit.h"
 #import "TFYCategory.h"
 #import <UIKit/UIKit.h>
+#import "TFYItools.h"
 
 @implementation TFY_PhotoEdit
 
