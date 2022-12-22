@@ -41,23 +41,23 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) EAGLContext *__nullable EAGLContext;
 
 /**
- Will be non null if the type is LFContextTypeMetal
+ Will be non null if the type is TFY_ContextTypeMetal
  */
 @property (readonly, nonatomic) id<MTLDevice> __nullable MTLDevice NS_ENUM_AVAILABLE_IOS(9_0);
 
 /**
- Will be non null if the type is LFContextTypeCoreGraphics
+ Will be non null if the type is TFYContextTypeCoreGraphics
  */
 @property (readonly, nonatomic) CGContextRef __nullable CGContext;
 
 /**
  Create and returns a new context with the given type. You must check
- whether the contextType is supported by calling +[LFContext supportsType:] before.
+ whether the contextType is supported by calling +[TFYContext supportsType:] before.
  */
 + (TFY_Context *__nonnull)contextWithType:(TFYContextType)type options:(NSDictionary *__nullable)options;
 
 /**
- Returns whether the contextType can be safely created and used using +[LFContext contextWithType:]
+ Returns whether the contextType can be safely created and used using +[TFY_Context contextWithType:]
  */
 + (BOOL)supportsType:(TFYContextType)contextType;
 

@@ -174,7 +174,7 @@ const CGFloat kControlWidth = 30.f;
 {
     [self setGridRect:gridRect maskLayer:isMaskLayer animated:animated completion:nil];
 }
-- (void)setGridRect:(CGRect)gridRect maskLayer:(BOOL)isMaskLayer animated:(BOOL)animated completion:(void (^)(BOOL finished))completion
+- (void)setGridRect:(CGRect)gridRect maskLayer:(BOOL)isMaskLayer animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion
 {
     CGSize size = self.aspectRatioSize;
     if (!CGSizeEqualToSize(size, CGSizeZero)) {

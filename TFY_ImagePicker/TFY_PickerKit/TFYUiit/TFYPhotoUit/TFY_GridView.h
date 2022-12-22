@@ -41,7 +41,7 @@ typedef NS_ENUM(NSUInteger, TFYGridViewAspectRatioType) {
 @property (nonatomic, assign) CGRect gridRect;
 - (void)setGridRect:(CGRect)gridRect animated:(BOOL)animated;
 - (void)setGridRect:(CGRect)gridRect maskLayer:(BOOL)isMaskLayer animated:(BOOL)animated;
-- (void)setGridRect:(CGRect)gridRect maskLayer:(BOOL)isMaskLayer animated:(BOOL)animated completion:(void (^)(BOOL finished))completion;
+- (void)setGridRect:(CGRect)gridRect maskLayer:(BOOL)isMaskLayer animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion;
 /** 最小尺寸 CGSizeMake(80, 80); */
 @property (nonatomic, assign) CGSize controlMinSize;
 /** 最大尺寸 CGRectInset(self.bounds, 20, 20) */

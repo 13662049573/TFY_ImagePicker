@@ -95,7 +95,6 @@ static NSDictionary *TFYContextCreateCIContextOptions() {
     if ([self supportsType:TFYContextTypeEAGL]) {
         return TFYContextTypeEAGL;
     } else
-    
 #ifdef NSFoundationVersionNumber_iOS_9_0
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunguarded-availability"
