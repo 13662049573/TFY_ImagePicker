@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
   spec.name         = "TFY_PickerKit"
 
-  spec.version      = "2.0.0"
+  spec.version      = "2.0.1"
 
   spec.summary      = "相册编辑功能"
 
@@ -30,20 +30,18 @@ Pod::Spec.new do |spec|
     ss.dependency "TFY_PickerKit/TFYUiit/TFYFilterBar"
   end
 
-  spec.subspec 'TFYPicker' do |ss|
-    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYPicker/**/*.{h,m}"
+  spec.subspec 'TFYPickerEditing' do |ss|
+    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYPickerEditing/**/*.{h,m}"
     ss.dependency "TFY_PickerKit/TFYPhotoEditing"
     ss.dependency "TFY_PickerKit/TFYVideoEditing"
     ss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
     ss.dependency "TFY_PickerKit/TFYUiit/TFYPickerUit"
     ss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
     ss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
-    ss.dependency "TFY_PickerKit/TFYUiit/TFYVideoUit"
   end
 
   spec.subspec 'TFYVideoEditing' do |ss|
     ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYVideoEditing/**/*.{h,m}"
-    ss.dependency "TFY_PickerKit/TFYUiit/TFYVideoUit"
     ss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
     ss.dependency "TFY_PickerKit/TFYUiit/TFYFilterBar"
   end
@@ -79,15 +77,7 @@ Pod::Spec.new do |spec|
       sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
     end
 
-    ss.subspec 'TFYEditingProtocol' do |sss|
-      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYEditingProtocol/**/*.{h,m}"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYDrawView"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYFilterSuite"
-    end
-
+  
     ss.subspec 'TFYFilterBar' do |sss|
       sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYFilterBar/**/*.{h,m}"
     end
@@ -105,7 +95,6 @@ Pod::Spec.new do |spec|
       sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYPhotoUit/**/*.{h,m}"
       sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
       sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYEditingProtocol"
       sss.dependency "TFY_PickerKit/TFYUiit/TFYColor"
       sss.dependency "TFY_PickerKit/TFYUiit/TFYDropMenu"
       sss.dependency "TFY_PickerKit/TFYUiit/TFYDrawView"
@@ -118,23 +107,12 @@ Pod::Spec.new do |spec|
       sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
       sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
       sss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYVideoUit"
     end
 
     ss.subspec 'TFYTipsGuideView' do |sss|
       sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYTipsGuideView/**/*.{h,m}"
       sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
       sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
-    end
-
-    ss.subspec 'TFYVideoUit' do |sss|
-      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYVideoUit/**/*.{h,m}"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYEditingProtocol"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYFilterSuite"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYDrawView"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
     end
 
   end

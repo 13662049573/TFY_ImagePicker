@@ -33,5 +33,14 @@
 #import "TFY_PhotoEdit.h"
 #import "TFY_SafeAreaMaskView.h"
 #import "TFY_PhotoEditDelegate.h"
+#import "TFY_PickerVideoPlayer.h"
+#import "TFY_VideoClipToolbar.h"
+#import "TFY_VideoEditingView.h"
+#import "TFY_VideoEdit.h"
+#import "TFY_VideoClippingView.h"
+#import "TFY_VideoTrimmerGridView.h"
+#import "TFY_VideoTrimmerView.h"
+#import "TFY_DataFilterVideoView.h"
+#import "TFY_VideoTrimmerGridLayer.h"
 
 #endif /* TFYPhotoUit_h */

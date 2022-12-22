@@ -531,7 +531,6 @@
 		3666167C29530CFD00BC333A /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
 		3666167D29530CFD00BC333A /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
 		3666167E29530CFD00BC333A /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
-		366616832954005A00BC333A /* TFYVideoUit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYVideoUit.h; sourceTree = "<group>"; };
 		366616842954024800BC333A /* TFYPickerEditing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYPickerEditing.h; sourceTree = "<group>"; };
 		36661686295402C900BC333A /* TFYItools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYItools.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -709,12 +708,10 @@
 			isa = PBXGroup;
 			children = (
 				3666159F2952E31E00BC333A /* TFYUiit.h */,
-				366616872954052A00BC333A /* TFYEditingProtocol */,
 				36661685295402B500BC333A /* TFYItools */,
 				366614AB2952E31D00BC333A /* Resources */,
 				366614A22952E31D00BC333A /* TFYDropMenu */,
 				366614B12952E31D00BC333A /* TFYDownload */,
-				366616822953FFE600BC333A /* TFYVideoUit */,
 				366614D62952E31D00BC333A /* TFYCategory */,
 				366614F62952E31D00BC333A /* TFYColor */,
 				366614FF2952E31D00BC333A /* TFYPhotoUit */,
@@ -776,6 +773,30 @@
 			isa = PBXGroup;
 			children = (
 				3666152B2952E31E00BC333A /* TFYPhotoUit.h */,
+				366614B82952E31D00BC333A /* TFY_PickerVideoPlayer.h */,
+				366614BA2952E31D00BC333A /* TFY_ResizeControl.h */,
+				366614C52952E31D00BC333A /* TFY_ResizeControl.m */,
+				366615132952E31E00BC333A /* TFY_EditingProtocol.h */,
+				366615412952E31E00BC333A /* TFY_EditingProtocol.m */,
+				366614C82952E31D00BC333A /* TFY_PickerVideoPlayer.m */,
+				366614B92952E31D00BC333A /* TFY_VideoClipToolbar.h */,
+				366614C62952E31D00BC333A /* TFY_VideoClipToolbar.m */,
+				366614BB2952E31D00BC333A /* TFY_VideoEditingView.h */,
+				366614CC2952E31D00BC333A /* TFY_VideoEditingView.m */,
+				366614CA2952E31D00BC333A /* TFY_VideoEdit.h */,
+				366614BC2952E31D00BC333A /* TFY_VideoEdit.m */,
+				366614CB2952E31D00BC333A /* TFY_VideoClippingView.h */,
+				366614BD2952E31D00BC333A /* TFY_VideoClippingView.m */,
+				366614C92952E31D00BC333A /* TFY_VideoTrimmerGridView.h */,
+				366614BE2952E31D00BC333A /* TFY_VideoTrimmerGridView.m */,
+				366614BF2952E31D00BC333A /* TFY_VideoTrimmerView.h */,
+				366614D12952E31D00BC333A /* TFY_VideoTrimmerView.m */,
+				366614D02952E31D00BC333A /* TFY_DataFilterVideoView.h */,
+				366614C12952E31D00BC333A /* TFY_DataFilterVideoView.m */,
+				366614CF2952E31D00BC333A /* TFY_AudioTrackBar.h */,
+				366614C22952E31D00BC333A /* TFY_AudioTrackBar.m */,
+				366614D32952E31D00BC333A /* TFY_VideoTrimmerGridLayer.h */,
+				366614C42952E31D00BC333A /* TFY_VideoTrimmerGridLayer.m */,
 				3666152F2952E31E00BC333A /* TFY_TitleCollectionModel.h */,
 				366615002952E31E00BC333A /* TFY_TitleCollectionModel.m */,
 				366615012952E31E00BC333A /* TFY_PhotoEdit.h */,
@@ -1034,34 +1055,6 @@
 			path = phone;
 			sourceTree = "<group>";
 		};
-		366616822953FFE600BC333A /* TFYVideoUit */ = {
-			isa = PBXGroup;
-			children = (
-				366616832954005A00BC333A /* TFYVideoUit.h */,
-				366614B82952E31D00BC333A /* TFY_PickerVideoPlayer.h */,
-				366614C82952E31D00BC333A /* TFY_PickerVideoPlayer.m */,
-				366614B92952E31D00BC333A /* TFY_VideoClipToolbar.h */,
-				366614C62952E31D00BC333A /* TFY_VideoClipToolbar.m */,
-				366614BB2952E31D00BC333A /* TFY_VideoEditingView.h */,
-				366614CC2952E31D00BC333A /* TFY_VideoEditingView.m */,
-				366614CA2952E31D00BC333A /* TFY_VideoEdit.h */,
-				366614BC2952E31D00BC333A /* TFY_VideoEdit.m */,
-				366614CB2952E31D00BC333A /* TFY_VideoClippingView.h */,
-				366614BD2952E31D00BC333A /* TFY_VideoClippingView.m */,
-				366614C92952E31D00BC333A /* TFY_VideoTrimmerGridView.h */,
-				366614BE2952E31D00BC333A /* TFY_VideoTrimmerGridView.m */,
-				366614BF2952E31D00BC333A /* TFY_VideoTrimmerView.h */,
-				366614D12952E31D00BC333A /* TFY_VideoTrimmerView.m */,
-				366614D02952E31D00BC333A /* TFY_DataFilterVideoView.h */,
-				366614C12952E31D00BC333A /* TFY_DataFilterVideoView.m */,
-				366614CF2952E31D00BC333A /* TFY_AudioTrackBar.h */,
-				366614C22952E31D00BC333A /* TFY_AudioTrackBar.m */,
-				366614D32952E31D00BC333A /* TFY_VideoTrimmerGridLayer.h */,
-				366614C42952E31D00BC333A /* TFY_VideoTrimmerGridLayer.m */,
-			);
-			path = TFYVideoUit;
-			sourceTree = "<group>";
-		};
 		36661685295402B500BC333A /* TFYItools */ = {
 			isa = PBXGroup;
 			children = (
@@ -1093,17 +1086,6 @@
 				366615DF2952E31E00BC333A /* TFY_EasyNoticeBar.m */,
 			);
 			path = TFYItools;
-			sourceTree = "<group>";
-		};
-		366616872954052A00BC333A /* TFYEditingProtocol */ = {
-			isa = PBXGroup;
-			children = (
-				366614BA2952E31D00BC333A /* TFY_ResizeControl.h */,
-				366614C52952E31D00BC333A /* TFY_ResizeControl.m */,
-				366615132952E31E00BC333A /* TFY_EditingProtocol.h */,
-				366615412952E31E00BC333A /* TFY_EditingProtocol.m */,
-			);
-			path = TFYEditingProtocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

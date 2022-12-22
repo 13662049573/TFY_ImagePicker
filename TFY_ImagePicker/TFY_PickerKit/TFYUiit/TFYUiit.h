@@ -11,7 +11,6 @@
 #import "TFYItools.h"
 #import "TFYDropMenu.h"
 #import "TFYDownload.h"
-#import "TFYVideoUit.h"
 #import "TFYCategory.h"
 #import "TFYColor.h"
 #import "TFYPhotoUit.h"
@@ -20,6 +19,5 @@
 #import "TFYFilterSuite.h"
 #import "TFYDrawView.h"
 #import "TFYFilterBar.h"
-#import "TFY_EditingProtocol.h"
 
 #endif /* TFYUiit_h */
