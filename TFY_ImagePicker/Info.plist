@@ -2,6 +2,63 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <!-- 位置 -->
+    <key>NSLocationUsageDescription</key>
+    <string>淘宝：“手机淘宝”想访问您的位置,为了提供附近的商品、店铺及优惠资讯</string>
+    <!-- 始终访问位置 -->
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>支付宝：若不允许,你将无法在支付宝中使用商家服务、本都生活、发送地理位置等定位相关功能</string>
+    <!-- 在使用期间访问位置 -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>高德地图：获取定位权限: 高德地图会在搜索、路线查询和导航等服务中使用您的位置信息.</string>
+    <!-- 相机 -->
+    <key>NSCameraUsageDescription</key>
+    <string>QQ：请点击”好”以允许访问.若不允许,你将无法使用拍照、录制视频、扫一扫等功能.</string>
+    <!-- 相册 -->
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>微信：如果不允许,你将无法发送系统相册里的照片给朋友.</string>
+    <!-- 媒体资料库 -->
+    <key>NSAppleMusicUsageDescription</key>
+    <string>支付宝：若不允许,你将无法在支付宝中发送及保存照片</string>
+    <!-- 通讯录 -->
+    <key>NSContactsUsageDescription</key>
+    <string>微信：如果不允许,微信将无法推荐通讯录中的朋友给你.微信仅使用特征码用于匹配识别,不会保存你的通讯录内容</string>
+    <!-- 麦克风 -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>QQ：请点击”好”以允许访问.若不允许,你将无法使用视频通话、发送语音消息或录制视频等功能.</string>
+    <!-- 健康分享 -->
+    <key>NSHealthShareUsageDescription</key>
+    <string>微信：如果不允许,你将无法参与微信运动排行榜.</string>
+    <!-- 健康更新 -->
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>QQ：请点击”好”以允许访问.若不允许,你将无法同步运动健康数据至QQ运动.</string>
+    <!-- 运动与健身 -->
+    <key>NSMotionUsageDescription</key>
+    <string>同步健康数据到App</string>
+    <!-- 蓝牙 -->
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>如果不允许，你将无法连接手环/体脂称等等这些</string>
+    <!-- 语音转文字 -->
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>如果不允许，语音消息无法转换为文字</string>
+    <!-- 日历 -->
+    <key>NSCalendarsUsageDescription</key>
+    <string>请允许访问，你可以查看您每日的浏览记录</string>
+    <!-- Siri -->
+    <key>NSSiriUsageDescription</key>
+    <string>QQ：您的部分”QQ”数据将发给Apple以处理您的请求.如果不允许,你将无法使用Siri唤起QQ</string>
+    <!-- 音乐权限 -->
+    <key>kTCCServiceMediaLibrary</key>
+    <string>如果不允许，这个我真的不知道，没看到过。。。</string>
+    <!-- 提醒事项 -->
+    <key>NSRemindersUsageDescription</key>
+    <string>同上</string>
+    <!-- 视频用户账号使用权限/电视供应商使用权限 -->
+    <key>NSVideoSubscriberAccountUsageDescription</key>
+    <string>同上！！！！！！</string>
+    <!-- 访问使用Face ID -->
+    <key>NSFaceIDUsageDescription</key>
+    <string>请允许访问，我们可以快捷登录</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

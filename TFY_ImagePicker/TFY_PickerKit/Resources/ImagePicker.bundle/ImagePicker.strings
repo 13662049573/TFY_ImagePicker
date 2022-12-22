@@ -1,0 +1,102 @@
+
+/* -------- TFY_LayoutPickerController -------*/
+"_doneBtnTitleStr" = "完成";
+"_cancelBtnTitleStr" = "取消";
+"_previewBtnTitleStr" = "预览";
+"_editBtnTitleStr" = "编辑";
+"_fullImageBtnTitleStr" = "原图";
+"_settingBtnTitleStr" = "设置";
+"_processHintStr" = "正在处理...";
+"_discardTitleStr" = "放弃操作";
+
+
+"_alertViewCancelTitle" = "确定";
+"_noDefaultAlbumName" = "指定的相册\"%@\"不存在";
+"_maxSelectVideoTipText_minute" = "不能选择超过%d分钟的视频";
+"_maxSelectVideoTipText_second" = "不能选择超过%d秒的视频";
+"_maxSelectPhotoTipText" = "你最多只能选择%zd张照片";
+"_maxSelectVideoTipText" = "你最多只能选择%zd个视频";
+"_minSelectPhotoTipText" = "请至少选择%zd张照片";
+"_minSelectVideoTipText" = "请至少选择%zd个视频";
+"_selectPhotoSizeLimitTipText" = "图片过大，无法发送原图";
+"_mixedSelectionTipText_photo" = "选择视频时不能选择图片";
+"_mixedSelectionTipText_video" = "选择图片时不能选择视频";
+"_navigationBarBackTitle" = "返回";
+
+
+"_photoLibraryAuthorityTipText" = "请在\"设置-隐私-照片\"选项中\r允许%@访问相册";
+"_cameraLibraryAuthorityTipText" = "请在\"设置-隐私-相机\"中允许%@访问相机";
+"_audioLibraryAuthorityTipText" = "请在\"设置-隐私-麦克风\"中允许%@访问麦克风";
+"_cameraLibraryAuthorityCancelTitle" = "设置";
+"_PrivacyAuthorityJumpTipText" = "无法跳转到隐私设置页面，请手动前往设置页面，谢谢";
+"_PrivacyAuthorityJumpCancelTitle" = "抱歉";
+"_cameraTakePhotoError" = "拍照错误";
+"_cameraTakeVideoError" = "拍摄错误";
+
+/* -------- TFY_PhotoPickerController -------*/
+"_LFPhotoPickerController_noMediaTipText" = "没有图片或视频";
+"_LFPhotoPickerController_noPhotoTipText" = "没有图片";
+"_LFPhotoPickerController_noVideoTipText" = "没有视频";
+"_LFPhotoPickerController_buttonTipTitle" = "添加更多照片...";
+"_LFPhotoPickerController_photoAlbunDeletedError" = "相册已被删除!";
+
+/* -------- TFY_PhotoPreviewController -------*/
+"_LFPhotoPreviewController_EditPhotoTipText" = "未加载图片，请重试。";
+"_LFPhotoPreviewController_EditVideoTipText" = "未加载视频，请重试。";
+
+/* -------- TFY_AssetManager+SaveAlbum -------*/
+"_LFAssetManager_SaveAlbum_notpermissionError" = "没有权限访问相册";
+"_LFAssetManager_SaveAlbum_saveVideoError" = "保存视频失败";
+
+/* -------- TFY_BaseEditingController -------*/
+"_LFME_oKButtonTitle" = "完成";
+"_LFME_cancelButtonTitle" = "取消";
+"_LFME_processHintStr" = "正在处理...";
+
+"_LFME_alertViewCancelTitle" = "确定";
+
+"_LFME_reachMaximumLimitTitle" = "已达到输入上限";
+
+/* -------- TFY_AudioItem  -------*/
+"_LFME_defaultAudioItem_name" = "默认 音轨";
+"_LFME_MediaPicker_prompt" = "请选择需要的歌曲";
+"_LFME_AudioTackTitle_prompt" = "自定义音乐";
+
+/* -------- TFY_RatioMenu  -------*/
+/**
+ * 命名规则 _LFME_ratio_$name
+ * 例如："_LFME_ratio_1x1" = "等比"
+ */
+"_LFME_ratio_Original" = "原图";
+
+/* -------- TFY_FilterMenu  -------*/
+"_LFME_filter_Original" = "原图";
+"_LFME_filter_Curve" = "高亮";
+"_LFME_filter_Chrome" = "加深";
+"_LFME_filter_Fade" = "美白";
+"_LFME_filter_Instant" = "橘色";
+"_LFME_filter_Mono" = "黑白";
+"_LFME_filter_Noir" = "老照片";
+"_LFME_filter_Process" = "灰黄";
+"_LFME_filter_Tonal" = "灰色";
+"_LFME_filter_Transfer" = "加深橘黄";
+"_LFME_filter_Linear" = "深黑";
+"_LFME_filter_Invert" = "反色";
+"_LFME_filter_Monochrome" = "单色";
+
+/* -------- TFY_BrushMenu  -------*/
+"_LFME_brush_Paint" = "画笔";
+"_LFME_brush_Highlight" = "双色笔";
+"_LFME_brush_Chalk" = "粉笔";
+"_LFME_brush_Fluorescent" = "荧光笔";
+"_LFME_brush_Stamp" = "图章";
+"_LFME_brush_Eraser" = "橡皮擦";
+
+/* -------- UserGuide  -------*/
+"_LFME_sticker_remove_normal" = "拖动到此处删除";
+"_LFME_sticker_remove_selected" = "松手即可删除";
+
+/* -------- UserGuide  -------*/
+"_LFME_UserGuide_ToolBar_Scroll" = "向左👈滚动会发现更多功能噢。";
+"_LFME_UserGuide_StickerView_MovingView_Pinch" = "双指同样可以实现缩放和旋转。";
+"_LFME_UserGuide_StickerView_DisplayView_LongPress" = "长按可以预览图片。";
