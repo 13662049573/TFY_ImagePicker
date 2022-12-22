@@ -23,6 +23,6 @@
 #import "TFY_MutableFilter+Initialize.h"
 #import "TFY_SampleBufferHolder.h"
 #import "TFY_WeakSelectorTarget.h"
-
+#import "TFY_FilterSuiteUtils.h"
 
 #endif /* TFYFilterSuite_h */

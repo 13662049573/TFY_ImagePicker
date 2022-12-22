@@ -8,7 +8,6 @@
 #import "TFY_VideoEditingController.h"
 #import "TFYItools.h"
 #import "TFYCategory.h"
-#import "TFY_MediaEditingType.h"
 #import "TFY_MECancelBlock.h"
 #import "TFY_VideoEditingView.h"
 #import "TFY_EditToolbar.h"

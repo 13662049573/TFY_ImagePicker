@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
 @class TFY_Filter;
 
 NS_ASSUME_NONNULL_BEGIN

@@ -22,96 +22,122 @@ Pod::Spec.new do |spec|
 
   spec.source_files  =  "TFY_ImagePicker/TFY_PickerKit/TFY_PickerKit.h"
   
-  spec.subspec 'TFYDownload' do |ss|
-    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYDownload/**/*.{h,m}"
-  end
-
-  spec.subspec 'TFYDropMenu' do |ss|
-    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYDropMenu/**/*.{h,m}"
-    ss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
-  end
-
   spec.subspec 'TFYPhotoEditing' do |ss|
     ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYPhotoEditing/**/*.{h,m}"
     ss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
-    ss.dependency "TFY_PickerKit/TFYUiit"
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
     ss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
-  end
-
-  spec.subspec 'TFYUiit' do |ss|
-    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/**/*.{h,m}"
-    
-    sss.subspec 'TFYCategory' do |ss|
-      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYCategory/**/*.{h,m}"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYTipsGuideView"
-    end
-
-    sss.subspec 'TFYColor' do |ss|
-      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYColor/**/*.{h,m}"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
-    end
-
-    sss.subspec 'TFYDrawView' do |ss|
-      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYDrawView/**/*.{h,m}"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
-    end
-
-    sss.subspec 'TFYFilterBar' do |ss|
-      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYFilterBar/**/*.{h,m}"
-    end
-
-    sss.subspec 'TFYFilterSuite' do |ss|
-      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYFilterSuite/**/*.{h,m}"
-    end
-
-    sss.subspec 'TFYPhotoUit' do |ss|
-      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYPhotoUit/**/*.{h,m}"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
-      sss.dependency "TFY_PickerKit/TFYVideoUit"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYDrawView"
-      sss.dependency "TFY_PickerKit/TFYDropMenu"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYColor"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYFilterSuite"
-      sss.dependency "TFY_PickerKit/TFYDownload"
-    end
-
-    sss.subspec 'TFYPickerUit' do |ss|
-      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYPickerUit/**/*.{h,m}"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
-      sss.dependency "TFY_PickerKit/TFYVideoEditing"
-    end
-
-    sss.subspec 'TFYTipsGuideView' do |ss|
-      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYTipsGuideView/**/*.{h,m}"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
-    end
-
-    sss.subspec 'TFYVideoUit' do |ss|
-      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYVideoUit/**/*.{h,m}"
-      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
-
-    end
-
-  end
-
-  spec.subspec 'TFYVideoEditing' do |ss|
-    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYVideoEditing/**/*.{h,m}"
-    ss.dependency "TFY_PickerKit/TFYUiit"
-    ss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
-
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYFilterBar"
   end
 
   spec.subspec 'TFYPicker' do |ss|
     ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYPicker/**/*.{h,m}"
     ss.dependency "TFY_PickerKit/TFYPhotoEditing"
     ss.dependency "TFY_PickerKit/TFYVideoEditing"
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
     ss.dependency "TFY_PickerKit/TFYUiit/TFYPickerUit"
     ss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
-    ss.dependency "TFY_PickerKit/TFYUiit"
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYVideoUit"
   end
 
-  spec.resources    = 'TFY_ImagePicker/TFY_PickerKit/Resources/*.bundle'
+  spec.subspec 'TFYVideoEditing' do |ss|
+    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYVideoEditing/**/*.{h,m}"
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYVideoUit"
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYFilterBar"
+  end
+
+  spec.subspec 'TFYUiit' do |ss|
+    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/**/*.{h,m}"
+    ss.resources    = 'TFY_ImagePicker/TFY_PickerKit/TFYUiit/Resources/*.bundle'
+
+    ss.subspec 'TFYCategory' do |sss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYCategory/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYTipsGuideView"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
+    end
+
+    ss.subspec 'TFYColor' do |sss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYColor/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
+    end
+
+    ss.subspec 'TFYDownload' do |sss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYDownload/**/*.{h,m}"
+    end
+
+    ss.subspec 'TFYDrawView' do |sss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYDrawView/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
+    end
+
+    ss.subspec 'TFYDropMenu' do |sss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYDropMenu/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
+    end
+
+    ss.subspec 'TFYEditingProtocol' do |sss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYEditingProtocol/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYDrawView"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYFilterSuite"
+    end
+
+    ss.subspec 'TFYFilterBar' do |sss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYFilterBar/**/*.{h,m}"
+    end
+
+    ss.subspec 'TFYFilterSuite' do |sss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYFilterSuite/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
+    end
+
+    ss.subspec 'TFYItools' do |sss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYItools/**/*.{h,m}"
+    end
+
+    ss.subspec 'TFYPhotoUit' do |sss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYPhotoUit/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYEditingProtocol"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYColor"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYDropMenu"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYDrawView"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYDownload"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYFilterSuite"
+    end
+
+    ss.subspec 'TFYPickerUit' do |sss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYPickerUit/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYVideoUit"
+    end
+
+    ss.subspec 'TFYTipsGuideView' do |sss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYTipsGuideView/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
+    end
+
+    ss.subspec 'TFYVideoUit' do |sss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYVideoUit/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYItools"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYEditingProtocol"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYFilterSuite"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYDrawView"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
+    end
+
+  end
 
   spec.frameworks    = "Foundation","UIKit"
   

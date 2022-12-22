@@ -8,7 +8,6 @@
 #ifndef TFYPhotoUit_h
 #define TFYPhotoUit_h
 
-#import "TFY_FilterSuiteUtils.h"
 #import "TFY_BaseCollectionViewCell.h"
 #import "TFY_PickerCollectionViewCell.h"
 #import "TFY_TitleCollectionViewCell.h"

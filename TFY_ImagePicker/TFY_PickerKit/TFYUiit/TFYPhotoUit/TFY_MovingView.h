@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TFY_StickerItem.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TFY_MovingView : UIView

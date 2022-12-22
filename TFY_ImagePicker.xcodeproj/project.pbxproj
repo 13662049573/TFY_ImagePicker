@@ -845,8 +845,6 @@
 				366615242952E31E00BC333A /* TFY_MovingView.m */,
 				366615282952E31E00BC333A /* TFY_MEVideoView.h */,
 				366615462952E31E00BC333A /* TFY_MEVideoView.m */,
-				366615252952E31E00BC333A /* TFY_FilterSuiteUtils.h */,
-				366615492952E31E00BC333A /* TFY_FilterSuiteUtils.m */,
 				366615482952E31E00BC333A /* TFY_ZoomingView.h */,
 				366615262952E31E00BC333A /* TFY_ZoomingView.m */,
 				366615272952E31E00BC333A /* TFY_StickerContent+getData.h */,
@@ -945,6 +943,8 @@
 			isa = PBXGroup;
 			children = (
 				366615B52952E31E00BC333A /* TFYFilterSuite.h */,
+				366615252952E31E00BC333A /* TFY_FilterSuiteUtils.h */,
+				366615492952E31E00BC333A /* TFY_FilterSuiteUtils.m */,
 				366615B22952E31E00BC333A /* TFY_ContextImageView.h */,
 				366615A32952E31E00BC333A /* TFY_ContextImageView.m */,
 				366615BC2952E31E00BC333A /* TFY_ContextImageView+private.h */,
@@ -1056,8 +1056,6 @@
 				366614C12952E31D00BC333A /* TFY_DataFilterVideoView.m */,
 				366614CF2952E31D00BC333A /* TFY_AudioTrackBar.h */,
 				366614C22952E31D00BC333A /* TFY_AudioTrackBar.m */,
-				366614C32952E31D00BC333A /* TFY_GridMaskLayer.h */,
-				366614CE2952E31D00BC333A /* TFY_GridMaskLayer.m */,
 				366614D32952E31D00BC333A /* TFY_VideoTrimmerGridLayer.h */,
 				366614C42952E31D00BC333A /* TFY_VideoTrimmerGridLayer.m */,
 			);
@@ -1081,6 +1079,8 @@
 				366615432952E31E00BC333A /* TFY_BaseCollectionViewCell.m */,
 				366615572952E31E00BC333A /* TFY_BaseEditingController.h */,
 				366615182952E31E00BC333A /* TFY_BaseEditingController.m */,
+				366614C32952E31D00BC333A /* TFY_GridMaskLayer.h */,
+				366614CE2952E31D00BC333A /* TFY_GridMaskLayer.m */,
 				366614EA2952E31D00BC333A /* UIDevice+picker.h */,
 				366614D82952E31D00BC333A /* UIDevice+picker.m */,
 				3666153B2952E31E00BC333A /* TFY_EditCollectionView.h */,

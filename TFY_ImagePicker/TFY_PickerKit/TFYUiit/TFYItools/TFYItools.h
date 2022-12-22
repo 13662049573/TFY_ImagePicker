@@ -19,5 +19,6 @@
 #import "UIDevice+picker.h"
 #import "UIViewController+picker.h"
 #import "TFY_EditCollectionView.h"
+#import "TFY_GridMaskLayer.h"
 
 #endif /* TFYItools_h */
