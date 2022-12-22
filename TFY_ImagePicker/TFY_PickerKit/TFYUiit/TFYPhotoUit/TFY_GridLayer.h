@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) CGRect gridRect;
 - (void)setGridRect:(CGRect)gridRect animated:(BOOL)animated;
-- (void)setGridRect:(CGRect)gridRect animated:(BOOL)animated completion:(void (^)(BOOL finished))completion;
+- (void)setGridRect:(CGRect)gridRect animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion;
 
 //@property (nonatomic, assign) CGFloat lineWidth;
 @property (nonatomic, strong) UIColor *bgColor;

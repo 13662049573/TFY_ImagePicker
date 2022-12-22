@@ -7,8 +7,8 @@
 
 #import "TFY_LayoutPickerController.h"
 #import "TFY_ImagePickerPublic.h"
-#import "TFYCategory.h"
 #import "TFY_PickerBaseViewController.h"
+#import "TFYItools.h"
 
 @interface TFY_LayoutPickerController ()<UINavigationControllerDelegate>
 {
@@ -213,7 +213,7 @@
     [self showAlertWithTitle:title complete:nil];
 }
 
-- (void)showAlertWithTitle:(NSString *)title complete:(void (^)(void))complete
+- (void)showAlertWithTitle:(NSString *)title complete:(nullable void (^)(void))complete
 {
     [self showAlertWithTitle:title message:nil complete:complete];
 }
@@ -268,11 +268,11 @@
     }
 }
 
-- (void)showProgressHUDText:(NSString *)text isTop:(BOOL)isTop {
+- (void)showProgressHUDText:(nullable NSString *)text isTop:(BOOL)isTop {
     [self showProgressHUDText:text isTop:isTop needProcess:NO];
 }
 
-- (void)showProgressHUDText:(NSString *)text isTop:(BOOL)isTop needProcess:(BOOL)needProcess
+- (void)showProgressHUDText:(nullable NSString *)text isTop:(BOOL)isTop needProcess:(BOOL)needProcess
 {
     [self hideProgressHUD];
     
@@ -316,15 +316,13 @@
     [view addSubview:_progressHUD];
 }
 
-- (void)showProgressHUDText:(NSString *)text
+- (void)showProgressHUDText:(nullable NSString *)text
 {
     [self showProgressHUDText:text isTop:NO];
 }
 
 - (void)showProgressHUD {
-    
     [self showProgressHUDText:nil];
-    
 }
 
 - (void)hideProgressHUD {

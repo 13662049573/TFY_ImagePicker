@@ -9,11 +9,8 @@
 #define TFY_PickerKit_h
 
 #import "TFYVideoEditing.h"
-#import "TFYDropMenu.h"
-#import "TFYUiit.h"
-#import "TFYDownload.h"
 #import "TFYPhotoEditing.h"
-#import "TFYPicker.h"
-
+#import "TFYPickerEditing.h"
+#import "TFYUiit.h"
 
 #endif /* TFY_PickerKit_h */

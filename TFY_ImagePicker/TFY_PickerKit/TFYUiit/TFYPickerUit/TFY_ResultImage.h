@@ -7,6 +7,7 @@
 
 #import "TFY_ResultObject.h"
 #import "TFY_ImagePickerPublic.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TFY_ResultImage : TFY_ResultObject

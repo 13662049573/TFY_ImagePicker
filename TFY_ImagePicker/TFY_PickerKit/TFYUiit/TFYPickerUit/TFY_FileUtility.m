@@ -9,7 +9,7 @@
 
 @implementation TFY_FileUtility
 
-+ (BOOL)createFolder:(NSString *)path errStr:(NSString **)errStr
++ (BOOL)createFolder:(NSString *)path errStr:(nullable NSString*)errStr
 {
     if (path.length == 0) return FALSE;
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -17,7 +17,7 @@
     if (![fileManager fileExistsAtPath:path]) {
         
         if (![fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error]) {
-            if (errStr) (*errStr) = [error localizedDescription];
+            if (errStr)
             NSLog(@"createFolder error: %@ \n",[error localizedDescription]);
             return FALSE;
         }

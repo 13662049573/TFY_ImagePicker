@@ -7,6 +7,7 @@
 
 #import "TFY_PickerAlbumTitleView.h"
 #import "TFY_PickerAlbumCell.h"
+#import "TFYItools.h"
 
 #define TFYAlbumTitleViewBackgroundColor [UIColor colorWithWhite:0.2 alpha:0.2]
 
@@ -349,11 +350,10 @@
     cell.album = album;
     
     if ([self.selectedAlbum isEqual:album]) {
-        [cell setSelectedImage:bundleImageNamed(self.selectImageName)];
+        cell.selectedPickerImage = bundleImageNamed(self.selectImageName);
     } else {
-        [cell setSelectedImage:nil];
+        cell.selectedPickerImage = nil;
     }
-    
     return cell;
 }
 

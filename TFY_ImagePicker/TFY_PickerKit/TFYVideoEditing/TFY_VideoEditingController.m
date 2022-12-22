@@ -6,7 +6,7 @@
 //
 
 #import "TFY_VideoEditingController.h"
-#import "TFY_ImageCoder.h"
+#import "TFYItools.h"
 #import "TFYCategory.h"
 #import "TFY_MediaEditingType.h"
 #import "TFY_MECancelBlock.h"
@@ -419,8 +419,6 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
         };
         
         if (containOperation(TFYVideoEditOperationType_clip)) {
-//            [_EditingView setIsClipping:YES animated:NO];
-//            [self changeClipMenu:YES animated:NO];
             [_edit_toolBar selectMainMenuIndex:TFYEditToolbarType_clip];
         } else {
             if (containOperation(TFYVideoEditOperationType_draw)) {
@@ -1290,22 +1288,6 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
     }
     return 0;
 }
-
-//- (NSString *)operationStringForKey:(TFYVideoEditOperationStringKey)key
-//{
-//    id obj = [self.operationAttrs objectForKey:key];
-//    if ([obj isKindOfClass:[NSString class]]) {
-//        return (NSString *)obj;
-//    } else if (obj) {
-//        #pragma clang diagnostic push
-//        #pragma clang diagnostic ignored "-Wunused-variable"
-//
-//        BOOL isContain = [key isEqualToString:TFYVideoEditStickerContentsAttributeName];
-//        NSAssert(!isContain, @"The type corresponding to this key %@ is NSString", key);
-//        #pragma clang diagnostic pop
-//    }
-//    return nil;
-//}
 
 - (NSArray *)operationArrayForKey:(TFYVideoEditOperationStringKey)key
 {

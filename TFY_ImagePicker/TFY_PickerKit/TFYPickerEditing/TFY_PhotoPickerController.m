@@ -12,7 +12,7 @@
 #import "TFY_PhotoPreviewController.h"
 #import "TFYPickerUit.h"
 #import "TFYPhotoUit.h"
-#import "TFYCategory.h"
+#import "TFYItools.h"
 
 CGFloat const bottomToolBarHeight = 50.f;
 
@@ -673,11 +673,8 @@ CGFloat const bottomToolBarHeight = 50.f;
                     }
                 });
             }
-            
         });
     }
-    
-    
 }
 
 - (void)callDelegateMethodWithResults:(NSArray <TFY_ResultObject *>*)results {
@@ -941,8 +938,7 @@ CGFloat const bottomToolBarHeight = 50.f;
             hasUsingMedia = YES;
             [self cameraPhoto:chosenImage completionHandler:^(NSError *error) {
                 if (error) {
-                    [imagePickerVc showAlertWithTitle:[NSBundle picker_localizedStringForKey:@"_cameraTakePhotoError"] message:error.localizedDescription complete:^{
-                    }];
+                    [imagePickerVc showAlertWithTitle:[NSBundle picker_localizedStringForKey:@"_cameraTakePhotoError"] message:error.localizedDescription complete:nil];
                 }
                 [picker dismissViewControllerAnimated:YES completion:^{
                 }];
@@ -954,8 +950,7 @@ CGFloat const bottomToolBarHeight = 50.f;
             hasUsingMedia = YES;
             [self cameraVideo:videoUrl completionHandler:^(NSError *error) {
                 if (error) {
-                    [imagePickerVc showAlertWithTitle:[NSBundle picker_localizedStringForKey:@"_cameraTakeVideoError"] message:error.localizedDescription complete:^{
-                    }];
+                    [imagePickerVc showAlertWithTitle:[NSBundle picker_localizedStringForKey:@"_cameraTakeVideoError"] message:error.localizedDescription complete:nil];
                 }
                 [picker dismissViewControllerAnimated:YES completion:^{
                 }];
@@ -1681,7 +1676,7 @@ CGFloat const bottomToolBarHeight = 50.f;
                 if (imagePickerVc.selectedModels.count && collectionChanges.removedObjects.count) {
                     for (id object in collectionChanges.removedObjects) {
                         TFY_PickerAsset *asset = nil;
-                        if ([object isKindOfClass:[PHAsset class]] || [object isKindOfClass:[ALAsset class]]) {
+                        if ([object isKindOfClass:[PHAsset class]]) {
                             asset = [[TFY_PickerAsset alloc] initWithAsset:object];
                         }
                         if (asset) {
@@ -1719,13 +1714,6 @@ CGFloat const bottomToolBarHeight = 50.f;
 
 #pragma mark - UIContentContainer
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
-{
-    _collectionView.oldContentOffset = _collectionView.contentOffset;
-    _collectionView.oldContentSize = _collectionView.contentSize;
-    _collectionView.oldCollectionViewRect = _collectionView.frame;
-}
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     _collectionView.oldContentOffset = _collectionView.contentOffset;
     _collectionView.oldContentSize = _collectionView.contentSize;

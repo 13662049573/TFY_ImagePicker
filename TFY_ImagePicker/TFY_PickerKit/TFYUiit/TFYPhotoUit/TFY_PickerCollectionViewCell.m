@@ -7,14 +7,12 @@
 
 #import "TFY_PickerCollectionViewCell.h"
 #import "TFY_ImageCollectionViewCell.h"
-#import "TFY_EditCollectionView.h"
+#import "TFYItools.h"
+#import "TFYCategory.h"
 #import "TFY_StickerContent.h"
 #import "TFY_ConfigTool.h"
-#import "TFY_ImageCoder.h"
 #import "TFY_StickerContent+getData.h"
 #import "TFY_PHAssetManager.h"
-#import "NSObject+picker.h"
-#import "NSBundle+picker.h"
 
 @interface TFY_PickerCollectionViewCell ()<TFYEditCollectionViewDelegate>
 

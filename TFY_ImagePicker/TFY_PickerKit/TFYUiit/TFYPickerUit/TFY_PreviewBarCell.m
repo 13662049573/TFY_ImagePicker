@@ -12,6 +12,7 @@
 #import "TFY_PhotoEdit.h"
 #import "TFY_VideoEditManager.h"
 #import "TFY_VideoEdit.h"
+#import "TFYItools.h"
 
 @interface TFY_PreviewBarCell ()
 /** 展示图片 */

@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 代理 */
 @property (nonatomic, weak) id<TFYPickerTextBarDelegate> delegate;
 
-- (instancetype)initWithFrame:(CGRect)frame layout:(void (^)(TFY_TextBar *textBar))layoutBlock;
+- (instancetype)initWithFrame:(CGRect)frame layout:(nullable void (^)(TFY_TextBar *textBar))layoutBlock;
 
 /** 设置文本拾色器默认颜色 */
 - (void)setTextSliderColor:(UIColor *)color;

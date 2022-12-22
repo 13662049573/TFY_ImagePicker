@@ -8,7 +8,7 @@
 #import "TFY_VideoClippingView.h"
 #import "TFY_PickerVideoPlayer.h"
 #import "TFYCategory.h"
-#import "TFY_ImageCoder.h"
+#import "TFYItools.h"
 
 /** 编辑功能 */
 #import "TFY_DrawView.h"

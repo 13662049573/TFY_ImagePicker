@@ -7,8 +7,7 @@
 
 #import "TFY_BaseEditingController.h"
 #import <AVFoundation/AVFoundation.h>
-#import "TFY_StickerContent.h"
-#import "TFY_VideoEdit.h"
+#import "TFYVideoUit.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

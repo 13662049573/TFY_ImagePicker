@@ -6,7 +6,7 @@
 //
 
 #import "TFY_VideoClipToolbar.h"
-#import "TFYUiit.h"
+#import "TFYItools.h"
 
 @interface TFY_VideoClipToolbar ()
 @property (nonatomic, strong) UIColor *oKButtonTitleColorNormal;

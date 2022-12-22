@@ -217,7 +217,7 @@ typedef NS_ENUM(NSUInteger, TFYPhotoEditOperationSubType) {
 /**
  对GIF而言。editImage的每帧持续间隔是平均分配的，durations的每帧持续间隔是真实的。同时也会影响到最终生成的GIF数据。
  */
-- (void)setEditImage:(UIImage *)editImage durations:(NSArray<NSNumber *> *)durations;
+- (void)setEditImage:(UIImage *)editImage durations:(nullable NSArray<NSNumber *> *)durations;
 
 /**
  设置编辑对象->重新编辑

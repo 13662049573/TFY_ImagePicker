@@ -9,7 +9,7 @@
 #import "TFY_MovingView.h"
 #import "TFY_MovingRemoveView.h"
 #import "NSObject+picker.h"
-#import "NSBundle+picker.h"
+#import "TFYItools.h"
 
 NSString *const kTFYStickerViewData_movingView = @"TFYStickerViewData_movingView";
 
@@ -219,7 +219,6 @@ NSString *const kTFYStickerViewData_movingView_rotation = @"TFYStickerViewData_m
         CGFloat scale = MIN( (ratio * [UIScreen mainScreen].bounds.size.width) / movingView.view.frame.size.width, (ratio * [UIScreen mainScreen].bounds.size.height) / movingView.view.frame.size.height);
         [movingView setScale:scale/self.screenScale];
     }
-//    NSLog(@"minScale:%f, maxScale:%f, scale:%f", movingView.minScale, movingView.maxScale, movingView.scale);
     
     [self picker_showInView:[UIApplication sharedApplication].keyWindow maskRects:@[[NSValue valueWithCGRect:[self convertRect:movingView.frame toView:nil]]] withTips:@[[NSBundle picker_localizedStringForKey:@"_LFME_UserGuide_StickerView_MovingView_Pinch"]]];
 }

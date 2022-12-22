@@ -117,7 +117,7 @@ NSString *const kTFYClippingViewData_zoomingView = @"TFYClippingViewData_zooming
 {
     [self setImage:image durations:nil];
 }
-- (void)setImage:(UIImage *)image durations:(NSArray <NSNumber *> *)durations
+- (void)setImage:(UIImage *)image durations:(nullable NSArray <NSNumber *> *)durations
 {
     _image = image;
     [self setZoomScale:1.f];

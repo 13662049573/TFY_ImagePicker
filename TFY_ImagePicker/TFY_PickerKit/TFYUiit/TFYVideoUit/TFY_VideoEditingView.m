@@ -6,7 +6,7 @@
 //
 
 #import "TFY_VideoEditingView.h"
-#import "TFY_ImageCoder.h"
+#import "TFYItools.h"
 #import "TFYCategory.h"
 #import "TFY_VideoClippingView.h"
 #import "TFY_VideoTrimmerView.h"
@@ -224,8 +224,6 @@ NSString *const kTFYVideoEditingViewData_audioEnable = @"TFYVideoEditingViewData
     }
     self.asset = asset;
     [self.clippingView setVideoAsset:asset placeholderImage:image];
-    
-//    [self setNeedsDisplay];
 }
 
 - (void)setAudioUrls:(NSArray<TFY_AudioItem *> *)audioUrls
@@ -307,7 +305,7 @@ NSString *const kTFYVideoEditingViewData_audioEnable = @"TFYVideoEditingViewData
     [self pauseVideo];
     NSError *error = nil;
     NSFileManager *fm = [NSFileManager new];
-    NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"com.LFMediaEditing.video"];
+    NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"com.TFY_MediaEditing.video"];
     BOOL exist = [fm fileExistsAtPath:path];
     
     /** 删除原来剪辑的视频 */
@@ -462,9 +460,6 @@ NSString *const kTFYVideoEditingViewData_audioEnable = @"TFYVideoEditingViewData
 }
 - (void)picker_videoTrimmerViewDidResizing:(TFY_VideoTrimmerView *)trimmerView gridRange:(NSRange)gridRange
 {
-//    double startTime = MIN(picker_videoDuration(gridRange.location/trimmerView.width*self.clippingView.totalDuration), self.clippingView.totalDuration);
-//    double endTime = MIN(picker_videoDuration((gridRange.location+gridRange.length)/trimmerView.width*self.clippingView.totalDuration), self.clippingView.totalDuration);
-
     double startTime = gridRange.location/trimmerView.picker_width*self.clippingView.totalDuration;
     double endTime = (gridRange.location+gridRange.length)/trimmerView.picker_width*self.clippingView.totalDuration;
     

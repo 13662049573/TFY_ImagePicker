@@ -6,8 +6,11 @@
 //
 
 #import "TFY_EditToolbar.h"
-#import "TFYUiit.h"
-#import "TFY_DropMenu.h"
+#import "TFYCategory.h"
+#import "TFY_PickColorView.h"
+#import "TFYDropMenu.h"
+#import "TFYDrawView.h"
+#import "TFYItools.h"
 
 #define TFYEditToolbarButtonImageNormals @[@"EditImagePenToolBtn.png", @"EditImageEmotionToolBtn.png", @"EditImageTextToolBtn.png", @"EditImageMosaicToolBtn.png", @"EditImageCropToolBtn.png", @"EditImageAudioToolBtn.png", @"EditVideoCropToolBtn.png", @"EditImageFilterToolBtn.png", @"EditImageRateToolBtn.png"]
 #define TFYEditToolbarButtonImageHighlighted @[@"EditImagePenToolBtn_HL.png", @"EditImageEmotionToolBtn_HL.png", @"EditImageTextToolBtn_HL.png", @"EditImageMosaicToolBtn_HL.png", @"EditImageCropToolBtn_HL.png", @"EditImageAudioToolBtn_HL.png", @"EditVideoCropToolBtn_HL.png", @"EditImageFilterToolBtn_HL.png", @"EditImageRateToolBtn_HL.png"]

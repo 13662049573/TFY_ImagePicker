@@ -7,8 +7,8 @@
 
 #import "TFY_StickerBar.h"
 #import <Photos/Photos.h>
-#import "TFY_ImageCoder.h"
-#import "UIView+picker.h"
+#import "TFYItools.h"
+#import "TFYCategory.h"
 #import "TFY_StickerDisplayView.h"
 
 extern TFYStickerContentStringKey const TFYStickerContentCustomAlbum;

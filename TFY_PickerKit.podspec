@@ -1,137 +1,122 @@
-#
-#  Be sure to run `pod spec lint TFY_PickerKit.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
-#
-#  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
 
 Pod::Spec.new do |spec|
-
-  # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  These will help people to find your library, and whilst it
-  #  can feel like a chore to fill in it's definitely to your advantage. The
-  #  summary should be tweet-length, and the description more in depth.
-  #
-
   spec.name         = "TFY_PickerKit"
-  spec.version      = "0.0.1"
-  spec.summary      = "A short description of TFY_PickerKit."
 
-  # This description is used to generate tags and improve search results.
-  #   * Think: What does it do? Why did you write it? What is the focus?
-  #   * Try to keep it short, snappy and to the point.
-  #   * Write the description between the DESC delimiters below.
-  #   * Finally, don't worry about the indent, CocoaPods strips it!
+  spec.version      = "2.0.0"
+
+  spec.summary      = "相册编辑功能"
+
   spec.description  = <<-DESC
+  相册编辑功能
                    DESC
 
   spec.homepage     = "http://EXAMPLE/TFY_PickerKit"
-  # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
-
-
-  # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Licensing your code is important. See https://choosealicense.com for more info.
-  #  CocoaPods will detect a license file if there is a named LICENSE*
-  #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
-  #
-
-  spec.license      = "MIT (example)"
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-
-
-  # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the authors of the library, with email addresses. Email addresses
-  #  of the authors are extracted from the SCM log. E.g. $ git log. CocoaPods also
-  #  accepts just a name if you'd rather not provide an email address.
-  #
-  #  Specify a social_media_url where others can refer to, for example a twitter
-  #  profile URL.
-  #
-
+  
+  spec.license      = "MIT"
+ 
   spec.author             = { "田风有" => "420144542@qq.com" }
-  # Or just: spec.author    = "田风有"
-  # spec.authors            = { "田风有" => "420144542@qq.com" }
-  # spec.social_media_url   = "https://twitter.com/田风有"
+  
+  spec.source       = { :git => "http://EXAMPLE/TFY_PickerKit.git", :tag => spec.version }
 
-  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  If this Pod runs only on iOS or OS X, then specify the platform and
-  #  the deployment target. You can optionally include the target after the platform.
-  #
+  spec.platform     = :ios, "12.0"
 
-  # spec.platform     = :ios
-  # spec.platform     = :ios, "5.0"
+  spec.source_files  =  "TFY_ImagePicker/TFY_PickerKit/TFY_PickerKit.h"
+  
+  spec.subspec 'TFYDownload' do |ss|
+    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYDownload/**/*.{h,m}"
+  end
 
-  #  When using multiple platforms
-  # spec.ios.deployment_target = "5.0"
-  # spec.osx.deployment_target = "10.7"
-  # spec.watchos.deployment_target = "2.0"
-  # spec.tvos.deployment_target = "9.0"
+  spec.subspec 'TFYDropMenu' do |ss|
+    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYDropMenu/**/*.{h,m}"
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
+  end
 
+  spec.subspec 'TFYPhotoEditing' do |ss|
+    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYPhotoEditing/**/*.{h,m}"
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
+    ss.dependency "TFY_PickerKit/TFYUiit"
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+  end
 
-  # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the location from where the source should be retrieved.
-  #  Supports git, hg, bzr, svn and HTTP.
-  #
+  spec.subspec 'TFYUiit' do |ss|
+    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/**/*.{h,m}"
+    
+    sss.subspec 'TFYCategory' do |ss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYCategory/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYTipsGuideView"
+    end
 
-  spec.source       = { :git => "http://EXAMPLE/TFY_PickerKit.git", :tag => "#{spec.version}" }
+    sss.subspec 'TFYColor' do |ss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYColor/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+    end
 
+    sss.subspec 'TFYDrawView' do |ss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYDrawView/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+    end
 
-  # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  CocoaPods is smart about how it includes source code. For source files
-  #  giving a folder will include any swift, h, m, mm, c & cpp files.
-  #  For header files it will include any header in the folder.
-  #  Not including the public_header_files will make all headers public.
-  #
+    sss.subspec 'TFYFilterBar' do |ss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYFilterBar/**/*.{h,m}"
+    end
 
-  spec.source_files  = "Classes", "Classes/**/*.{h,m}"
-  spec.exclude_files = "Classes/Exclude"
+    sss.subspec 'TFYFilterSuite' do |ss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYFilterSuite/**/*.{h,m}"
+    end
 
-  # spec.public_header_files = "Classes/**/*.h"
+    sss.subspec 'TFYPhotoUit' do |ss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYPhotoUit/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+      sss.dependency "TFY_PickerKit/TFYVideoUit"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYDrawView"
+      sss.dependency "TFY_PickerKit/TFYDropMenu"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYColor"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYFilterSuite"
+      sss.dependency "TFY_PickerKit/TFYDownload"
+    end
 
+    sss.subspec 'TFYPickerUit' do |ss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYPickerUit/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
+      sss.dependency "TFY_PickerKit/TFYVideoEditing"
+    end
 
-  # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  A list of resources included with the Pod. These are copied into the
-  #  target bundle with a build phase script. Anything else will be cleaned.
-  #  You can preserve files from being cleaned, please don't preserve
-  #  non-essential files like tests, examples and documentation.
-  #
+    sss.subspec 'TFYTipsGuideView' do |ss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYTipsGuideView/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+    end
 
-  # spec.resource  = "icon.png"
-  # spec.resources = "Resources/*.png"
+    sss.subspec 'TFYVideoUit' do |ss|
+      sss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYVideoUit/**/*.{h,m}"
+      sss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
 
-  # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
+    end
 
+  end
 
-  # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Link your library with frameworks, or libraries. Libraries do not include
-  #  the lib prefix of their name.
-  #
+  spec.subspec 'TFYVideoEditing' do |ss|
+    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYVideoEditing/**/*.{h,m}"
+    ss.dependency "TFY_PickerKit/TFYUiit"
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYPhotoUit"
 
-  # spec.framework  = "SomeFramework"
-  # spec.frameworks = "SomeFramework", "AnotherFramework"
+  end
 
-  # spec.library   = "iconv"
-  # spec.libraries = "iconv", "xml2"
+  spec.subspec 'TFYPicker' do |ss|
+    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYPicker/**/*.{h,m}"
+    ss.dependency "TFY_PickerKit/TFYPhotoEditing"
+    ss.dependency "TFY_PickerKit/TFYVideoEditing"
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYPickerUit"
+    ss.dependency "TFY_PickerKit/TFYUiit/TFYCategory"
+    ss.dependency "TFY_PickerKit/TFYUiit"
+  end
 
+  spec.resources    = 'TFY_ImagePicker/TFY_PickerKit/Resources/*.bundle'
 
-  # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  If your library depends on compiler flags you can set them in the xcconfig hash
-  #  where they will only apply to your library. If you depend on other Podspecs
-  #  you can include multiple dependencies to ensure it works.
+  spec.frameworks    = "Foundation","UIKit"
+  
+  spec.xcconfig = {"ENABLE_STRICT_OBJC_MSGSEND" => "NO", 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) COCOAPODS=1 NDEBUG=1 _DEBUG_TAG_'}
 
-  # spec.requires_arc = true
-
-  # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # spec.dependency "JSONKit", "~> 1.4"
+  spec.requires_arc  = true
 
 end

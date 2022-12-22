@@ -27,13 +27,12 @@
 #import "TFY_ClipToolbar.h"
 #import "TFY_StickerView.h"
 #import "TFY_StickerItem+views.h"
-#import "TFY_EditCollectionView.h"
 #import "TFY_EditingView.h"
 #import "TFY_PickerScrollView.h"
 #import "TFY_MEGIFImageSerialization.h"
 #import "TFY_ExtraAspectRatio.h"
 #import "TFY_PhotoEdit.h"
 #import "TFY_SafeAreaMaskView.h"
-
+#import "TFY_PhotoEditDelegate.h"
 
 #endif /* TFYPhotoUit_h */

@@ -58,18 +58,6 @@ static char picker_overAlertViewKeyDidShow;
     if (([UIDevice currentDevice].systemVersion.floatValue >= 7.0f)) {
         
         NSString *message = alertView.message;
-//        CGFloat margin = 20;
-//        CGSize size = [message boundingRectWithSize:CGSizeMake(240-2*margin,400) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading|NSStringDrawingUsesDeviceMetrics|NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil].size;
-//        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(margin, 0,240, size.height)];
-//        textLabel.font = [UIFont systemFontOfSize:14];
-//        textLabel.textColor = [UIColor blackColor];
-//        textLabel.backgroundColor = [UIColor clearColor];
-//        textLabel.lineBreakMode =NSLineBreakByWordWrapping;
-//        textLabel.numberOfLines =0;
-//        textLabel.textAlignment =NSTextAlignmentLeft;
-//        textLabel.text = message;
-//        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, -20, 240, size.height+margin)];
-//        [view addSubview:textLabel];
         UIView *view = [self picker_createView:message];
         [alertView setValue:view forKey:@"accessoryView"];
         

@@ -13,6 +13,7 @@
 #import "TFY_PhotoEditManager.h"
 #import "TFY_VideoEdit.h"
 #import "TFY_VideoEditManager.h"
+#import "TFYItools.h"
 
 #pragma mark - /// 宫格图片视图
 

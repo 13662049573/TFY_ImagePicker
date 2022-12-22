@@ -7,6 +7,7 @@
 
 #import "TFY_TipsGuideView.h"
 #import "TFYCategory.h"
+#import "TFYItools.h"
 
 @interface TFY_TipsGuideView ()
 

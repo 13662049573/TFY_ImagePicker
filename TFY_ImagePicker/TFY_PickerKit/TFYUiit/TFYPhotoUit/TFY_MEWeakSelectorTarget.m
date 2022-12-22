@@ -30,10 +30,8 @@
             [strongTarget performSelector:_targetSelector withObject:param];
 #pragma clang diagnostic pop
         }
-        
         return YES;
     }
-    
     return NO;
 }
 

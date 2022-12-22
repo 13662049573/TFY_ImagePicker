@@ -10,7 +10,7 @@
 @implementation TFY_Filter (save)
 
 - (BOOL)writeToFile:(NSURL *__nonnull)fileUrl error:(NSError *__nullable*__nullable)error {
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self requiringSecureCoding:YES error:nil];
     return [data writeToURL:fileUrl options:NSDataWritingAtomic error:error];
 }
 

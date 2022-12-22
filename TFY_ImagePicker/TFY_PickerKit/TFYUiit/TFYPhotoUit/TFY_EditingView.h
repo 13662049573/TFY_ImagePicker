@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TFY_EditingView : TFY_PickerScrollView <TFY_EditingProtocol>
 
 @property (nonatomic, strong) UIImage *image;
-- (void)setImage:(UIImage *)image durations:(NSArray <NSNumber *> *)durations;
+- (void)setImage:(UIImage *)image durations:(nullable NSArray <NSNumber *> *)durations;
 
 /** 代理 */
 @property (nonatomic, weak) id<TFYEditingViewDelegate> clippingDelegate;

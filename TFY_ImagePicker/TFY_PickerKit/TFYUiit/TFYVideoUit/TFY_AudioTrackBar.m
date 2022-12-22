@@ -7,7 +7,8 @@
 
 #import "TFY_AudioTrackBar.h"
 #import <MediaPlayer/MediaPlayer.h>
-#import "TFYUiit.h"
+#import "TFYCategory.h"
+#import "TFYItools.h"
 
 @implementation TFY_AudioItem
 
@@ -77,7 +78,7 @@
     return [self initWithFrame:frame layout:nil];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame layout:(void (^)(TFY_AudioTrackBar *audioTrackBar))layoutBlock
+- (instancetype)initWithFrame:(CGRect)frame layout:(nullable void (^)(TFY_AudioTrackBar *audioTrackBar))layoutBlock
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -362,14 +363,6 @@
     
     return cell;
 }
-
-//- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-//{
-//    if (section > 0) {
-//        return [NSBundle picker_localizedStringForKey:@"_LFME_AudioTackTitle_prompt"];
-//    }
-//    return nil;
-//}
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {

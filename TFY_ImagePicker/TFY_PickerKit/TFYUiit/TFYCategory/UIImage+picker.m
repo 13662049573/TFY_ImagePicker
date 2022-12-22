@@ -7,7 +7,7 @@
 
 #import "UIImage+picker.h"
 #import <Accelerate/Accelerate.h>
-#import "TFY_MEGIFImageSerialization.h"
+#import "TFYItools.h"
 
 #define _FOUR_CC(c1,c2,c3,c4) ((uint32_t)(((c4) << 24) | ((c3) << 16) | ((c2) << 8) | (c1)))
 #define _TWO_CC(c1,c2) ((uint16_t)(((c2) << 8) | (c1)))

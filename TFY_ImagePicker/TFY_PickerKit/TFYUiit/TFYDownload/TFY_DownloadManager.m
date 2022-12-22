@@ -317,7 +317,8 @@ static const char * TFYURLSessionOperationKey = "TFYURLSessionOperationKey";
             info.downloadTimes++;
         } else {
             if (info.complete) {
-                info.complete(nil, error, info.downloadURL);
+                NSData *data = nil;
+                info.complete(data, error, info.downloadURL);
             }
             info.complete = nil;
             info.progress = nil;
@@ -345,7 +346,8 @@ static const char * TFYURLSessionOperationKey = "TFYURLSessionOperationKey";
                 info.progress(data.length, data.length, info.downloadURL);
             }
             if (info.complete) {
-                info.complete(data, nil, info.downloadURL);
+                NSError *error = nil;
+                info.complete(data, error, info.downloadURL);
             }
             info.complete = nil;
             info.progress = nil;
@@ -453,7 +455,8 @@ static const char * TFYURLSessionOperationKey = "TFYURLSessionOperationKey";
     NSMutableArray <TFY_DownloadInfo *>* downloadList = self.downloadDictionary[URL];
     for (TFY_DownloadInfo *info in downloadList) {
         if (info.complete) {
-            info.complete(data, nil, info.downloadURL);
+            NSError *error = nil;
+            info.complete(data, error, info.downloadURL);
         }
         info.complete = nil;
         info.progress = nil;
@@ -486,7 +489,8 @@ static const char * TFYURLSessionOperationKey = "TFYURLSessionOperationKey";
             NSMutableArray <TFY_DownloadInfo *>* downloadList = self.downloadDictionary[URL];
             for (TFY_DownloadInfo *info in downloadList) {
                 if (info.complete) {
-                    info.complete(nil, error, info.downloadURL);
+                    NSData *data = nil;
+                    info.complete(data, error, info.downloadURL);
                 }
                 info.complete = nil;
                 info.progress = nil;

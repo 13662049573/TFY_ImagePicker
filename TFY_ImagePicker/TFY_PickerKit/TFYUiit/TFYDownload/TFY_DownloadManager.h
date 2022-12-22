@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^picker_progressBlock)(int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite, NSURL *URL);
+typedef void(^picker_progressBlock)(int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite, NSURL * URL);
 typedef void(^picker_completeBlock)(NSData * data, NSError *error, NSURL *URL);
 
 @interface TFY_DownloadInfo : NSObject
@@ -19,8 +19,8 @@ typedef void(^picker_completeBlock)(NSData * data, NSError *error, NSURL *URL);
 
 @property (nonatomic, readonly) BOOL reDownload;
 
-@property (nonatomic, copy) picker_progressBlock progress;
-@property (nonatomic, copy) picker_completeBlock complete;
+@property (nonatomic, copy,nullable) picker_progressBlock progress;
+@property (nonatomic, copy,nullable) picker_completeBlock complete;
 
 + (instancetype)picker_downloadInfoWithURL:(NSURL *)downloadURL;
 

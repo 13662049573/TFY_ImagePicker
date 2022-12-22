@@ -6,8 +6,8 @@
 //
 
 #import "TFY_DataImageView.h"
-#import "TFY_ImageCoder.h"
-#import "NSData+picker.h"
+#import "TFYItools.h"
+#import "TFYCategory.h"
 #import "TFY_ConfigTool.h"
 
 @implementation TFY_DataImageView

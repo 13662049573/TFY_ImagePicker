@@ -17,10 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSInteger count;       ///< Count of photos the album contain
 @property (nonatomic, readonly) id result;             ///< PHFetchResult<PHAsset> or ALAssetsGroup<ALAsset>
 @property (nonatomic, readonly) id album NS_AVAILABLE_IOS(8_0) __TVOS_PROHIBITED;             /// PHAssetCollection
-@property (nonatomic, strong) TFY_PickerAsset *posterAsset;    /** 封面对象 */
+@property (nonatomic, strong,nullable) TFY_PickerAsset *posterAsset;    /** 封面对象 */
 
 /** 缓存数据 */
-@property (nonatomic, strong) NSArray <TFY_PickerAsset *>*models;
+@property (nonatomic, strong, nullable) NSArray <TFY_PickerAsset *>* models;
 
 - (instancetype)initWithAlbum:(id)album result:(id)result;
 

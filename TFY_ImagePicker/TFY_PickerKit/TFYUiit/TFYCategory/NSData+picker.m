@@ -7,7 +7,7 @@
 
 #import "NSData+picker.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "TFY_ImageCoder.h"
+#import "TFYItools.h"
 
 inline static UIImageOrientation CompressDecodedImage_UIImageOrientationFromEXIFValue(NSInteger value) {
     switch (value) {

@@ -6,7 +6,7 @@
 //
 
 #import "TFY_PhotoEditingController.h"
-#import "TFY_ImageCoder.h"
+#import "TFYItools.h"
 #import "TFYCategory.h"
 #import "TFY_MediaEditingType.h"
 #import "TFY_MECancelBlock.h"
@@ -104,7 +104,7 @@ TFYPhotoEditOperationStringKey const TFYPhotoEditCropExtraAspectRatioAttributeNa
     [self setEditImage:editImage durations:nil];
 }
 
-- (void)setEditImage:(UIImage *)editImage durations:(NSArray<NSNumber *> *)durations
+- (void)setEditImage:(UIImage *)editImage durations:(nullable NSArray<NSNumber *> *)durations
 {
     _editImage = editImage;
     _durations = durations;

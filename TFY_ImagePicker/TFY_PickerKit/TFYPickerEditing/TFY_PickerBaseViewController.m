@@ -6,7 +6,7 @@
 //
 
 #import "TFY_PickerBaseViewController.h"
-#import "TFYPickerUit.h"
+#import "TFYItools.h"
 #import <AVFoundation/AVFoundation.h>
 #import "TFY_ImagePickerController.h"
 
@@ -82,8 +82,7 @@
                                     }
                                 } else {
                                     NSString *message = [NSBundle picker_localizedStringForKey:@"_PrivacyAuthorityJumpTipText"];
-                                    [imagePickerVc showAlertWithTitle:nil message:message complete:^{
-                                    }];
+                                    [imagePickerVc showAlertWithTitle:nil message:message complete:nil];
                                 }
                             }];
                         }
@@ -101,8 +100,7 @@
                         }
                     } else {
                         NSString *message = [NSBundle picker_localizedStringForKey:@"_PrivacyAuthorityJumpTipText"];
-                        [imagePickerVc showAlertWithTitle:nil message:message complete:^{
-                        }];
+                        [imagePickerVc showAlertWithTitle:nil message:message complete:nil];
                     }
                 }];
             }

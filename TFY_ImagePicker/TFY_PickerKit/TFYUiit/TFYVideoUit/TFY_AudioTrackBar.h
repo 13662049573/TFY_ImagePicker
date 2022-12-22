@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 代理 */
 @property (nonatomic, weak) UIViewController <TFYAudioTrackBarDelegate> *delegate;
 
-- (instancetype)initWithFrame:(CGRect)frame layout:(void (^)(TFY_AudioTrackBar *audioTrackBar))layoutBlock;
+- (instancetype)initWithFrame:(CGRect)frame layout:(nullable void (^)(TFY_AudioTrackBar *audioTrackBar))layoutBlock;
 
 /** 样式 */
 @property (nonatomic, strong) UIColor *oKButtonTitleColorNormal;

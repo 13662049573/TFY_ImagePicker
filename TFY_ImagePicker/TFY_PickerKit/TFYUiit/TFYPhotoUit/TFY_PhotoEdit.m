@@ -6,7 +6,6 @@
 //
 
 #import "TFY_PhotoEdit.h"
-#import "TFY_MEGIFImageSerialization.h"
 #import "TFYCategory.h"
 #import <UIKit/UIKit.h>
 

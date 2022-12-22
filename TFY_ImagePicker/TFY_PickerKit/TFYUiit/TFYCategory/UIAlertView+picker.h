@@ -14,26 +14,26 @@ typedef void (^picker_AlertViewDidShowBlock)(void);
 
 @interface UIAlertView (picker)
 
-- (id)picker_initWithTitle:(NSString *)title
-               message:(NSString *)message
-     cancelButtonTitle:(NSString *)cancelButtonTitle
-     otherButtonTitles:(NSString*)otherButtonTitles
-                 block:(picker_AlertViewBlock)block;
+- (id)picker_initWithTitle:(nullable NSString *)title
+               message:(nullable NSString *)message
+     cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+     otherButtonTitles:(nullable NSString*)otherButtonTitles
+                 block:(nullable picker_AlertViewBlock)block;
 
 /** block回调代理 弹出后回调 */
-- (id)picker_initWithTitle:(NSString *)title
-               message:(NSString *)message
-     cancelButtonTitle:(NSString *)cancelButtonTitle
-     otherButtonTitles:(NSString*)otherButtonTitles
-                 block:(picker_AlertViewBlock)block
-          didShowBlock:(picker_AlertViewDidShowBlock)didShowBlock;
+- (id)picker_initWithTitle:(nullable NSString *)title
+               message:(nullable NSString *)message
+     cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+     otherButtonTitles:(nullable NSString*)otherButtonTitles
+                 block:(nullable picker_AlertViewBlock)block
+          didShowBlock:(nullable picker_AlertViewDidShowBlock)didShowBlock;
 
 /** block回调代理 文字左对齐 */
-- (id)picker_initWithTitle:(NSString *)title
-           leftMessage:(NSString *)message
-     cancelButtonTitle:(NSString *)cancelButtonTitle
-     otherButtonTitles:(NSString*)otherButtonTitles
-                 block:(picker_AlertViewBlock)block;
+- (id)picker_initWithTitle:(nullable NSString *)title
+           leftMessage:(nullable NSString *)message
+     cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+     otherButtonTitles:(nullable NSString*)otherButtonTitles
+                 block:(nullable picker_AlertViewBlock)block;
 
 
 @end

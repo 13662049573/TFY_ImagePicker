@@ -62,12 +62,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^videoEditLabrary)(TFY_VideoEditingController *picker_videoEditingVC);
 
 - (void)showAlertWithTitle:(NSString *)title;
-- (void)showAlertWithTitle:(NSString *)title complete:(void (^)(void))complete;
-- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message complete:(void (^)(void))complete;
-- (void)showAlertWithTitle:(NSString *)title cancelTitle:(NSString *)cancelTitle message:(NSString *)message complete:(void (^)(void))complete;
+- (void)showAlertWithTitle:(NSString *)title complete:(nullable void (^)(void))complete;
+- (void)showAlertWithTitle:(nullable NSString *)title message:(nullable NSString *)message complete:(nullable void (^)(void))complete;
+- (void)showAlertWithTitle:(nullable NSString *)title cancelTitle:(nullable NSString *)cancelTitle message:(nullable NSString *)message complete:(nullable void (^)(void))complete;
 
-- (void)showProgressHUDText:(NSString *)text isTop:(BOOL)isTop;
-- (void)showProgressHUDText:(NSString *)text;
+- (void)showProgressHUDText:(nullable NSString *)text isTop:(BOOL)isTop;
+- (void)showProgressHUDText:(nullable NSString *)text;
 - (void)showProgressHUD;
 - (void)hideProgressHUD;
 

@@ -303,31 +303,6 @@
 
 - (void)pushedDeleteBtn:(id)sender
 {
-    /* 删除后寻找下一个活动视图
-     TFY_MovingView *nextTarget = nil;
-    
-    const NSInteger index = [self.superview.subviews indexOfObject:self];
-    
-    for(NSInteger i=index+1; i<self.superview.subviews.count; ++i){
-        UIView *view = [self.superview.subviews objectAtIndex:i];
-        if([view isKindOfClass:[LFMovingView class]]){
-            nextTarget = (LFMovingView *)view;
-            break;
-        }
-    }
-    
-    if(nextTarget==nil){
-        for(NSInteger i=index-1; i>=0; --i){
-            UIView *view = [self.superview.subviews objectAtIndex:i];
-            if([view isKindOfClass:[LFMovingView class]]){
-                nextTarget = (LFMovingView *)view;
-                break;
-            }
-        }
-    }
-    
-    [[self class] setActiveEmoticonView:nextTarget];
-     */
     [self cancelDeactivated];
     [self removeFromSuperview];
 }

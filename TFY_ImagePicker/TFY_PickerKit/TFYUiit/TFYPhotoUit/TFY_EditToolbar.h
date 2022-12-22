@@ -6,7 +6,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TFY_Brush.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -61,7 +60,7 @@ typedef NS_ENUM(NSUInteger, TFYEditToolbarStampBrushType) {
     TFYEditToolbarStampBrushTypeHeart,
 };
 
-@class TFY_EditToolbar;
+@class TFY_EditToolbar,TFY_Brush;
 
 @protocol TFYEditToolbarDelegate <NSObject>
 

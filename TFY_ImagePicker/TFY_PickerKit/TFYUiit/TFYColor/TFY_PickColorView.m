@@ -6,8 +6,8 @@
 //
 
 #import "TFY_PickColorView.h"
-#import "UIColor+picker.h"
-#import "TFY_ImageCoder.h"
+#import "TFYCategory.h"
+#import "TFYItools.h"
 
 CGFloat const TFYPickColorView_Default_ColorHeight = 10.0f; //默认颜色高度
 
@@ -66,20 +66,7 @@ CGFloat const TFYPickColorView_magnifierView_Margin = 15.0f; //!放大镜距离�
 - (void)setShowHorizontal:(BOOL)showHorizontal{
     CGRect rect = self.frame;
     _showHorizontal = showHorizontal;
-//    if (showHorizontal) {
-//        if (rect.size.width < rect.size.height) {
-//            rect.size.width = rect.size.height;
-//        }
-//        rect.size.height = TFYPickColorView_Default_Height;
         _colorWidth = rect.size.width / self.colors.count;
-//    } else {
-//        if (rect.size.width > rect.size.height) {
-//            rect.size.height = rect.size.width;
-//        }
-//        rect.size.width = TFYPickColorView_Default_Height;
-//        _colorWidth = rect.size.height / _currentColors.count;
-//    }
-//    self.frame = rect;
     //第一个参数是条件,如果第一个参数不满足条件,就会记录并打印后面的字符串
     BOOL isCreate = _colorWidth <= TFYPickColorView_Default_ColorMinWidth;
     if (!isCreate) {

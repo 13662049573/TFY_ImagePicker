@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  ascending         顺序获取（IOS8之后有效）
  *  completion        回调结果
  */
-- (void)getCameraRollAlbum:(TFYPickingMediaType)allowPickingType fetchLimit:(NSInteger)fetchLimit ascending:(BOOL)ascending completion:(void (^)(TFY_PickerAlbum *model))completion;
+- (void)getCameraRollAlbum:(TFYPickingMediaType)allowPickingType fetchLimit:(NSInteger)fetchLimit ascending:(BOOL)ascending completion:(nullable void (^)(TFY_PickerAlbum *model))completion;
 
 
 /**
@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
  ascending 顺序获取（IOS8之后有效）
  completion 回调结果
  */
-- (void)getAllAlbums:(TFYPickingMediaType)allowPickingType ascending:(BOOL)ascending completion:(void (^)(NSArray<TFY_PickerAlbum *> *))completion;
+- (void)getAllAlbums:(TFYPickingMediaType)allowPickingType ascending:(BOOL)ascending completion:(nullable void (^)(NSArray<TFY_PickerAlbum *> *))completion;
 
 /**
  *  @author lincf, 16-07-28 13:07:27
@@ -70,33 +70,33 @@ NS_ASSUME_NONNULL_BEGIN
  *  ascending         顺序获取
  *  completion        回调结果
  */
-- (void)getAssetsFromFetchResult:(id)result allowPickingType:(TFYPickingMediaType)allowPickingType fetchLimit:(NSInteger)fetchLimit ascending:(BOOL)ascending completion:(void (^)(NSArray<TFY_PickerAsset *> *models))completion;
+- (void)getAssetsFromFetchResult:(id)result allowPickingType:(TFYPickingMediaType)allowPickingType fetchLimit:(NSInteger)fetchLimit ascending:(BOOL)ascending completion:(nullable void (^)(NSArray<TFY_PickerAsset *> *models))completion;
 /** 获得下标为index的单个照片 */
 - (void)getAssetFromFetchResult:(id)result
                         atIndex:(NSInteger)index
                allowPickingType:(TFYPickingMediaType)allowPickingType
                       ascending:(BOOL)ascending
-                     completion:(void (^)(TFY_PickerAsset *))completion;
+                     completion:(nullable void (^)(TFY_PickerAsset *))completion;
 
 /// Get photo 获得照片
-- (void)getPostImageWithAlbumModel:(TFY_PickerAlbum *)model ascending:(BOOL)ascending completion:(void (^)(UIImage *postImage))completion;
+- (void)getPostImageWithAlbumModel:(TFY_PickerAlbum *)model ascending:(BOOL)ascending completion:(nullable void (^)(UIImage *postImage))completion;
 
 /** 仅仅获取缩略图 */
-- (PHImageRequestID)getThumbnailWithAsset:(id)asset photoWidth:(CGFloat)photoWidth completion:(void (^)(UIImage *photo,NSDictionary *info,BOOL isDegraded))completion;
+- (PHImageRequestID)getThumbnailWithAsset:(id)asset photoWidth:(CGFloat)photoWidth completion:(nullable void (^)(UIImage *photo,NSDictionary *info,BOOL isDegraded))completion;
 
 /** 获取照片对象 回调 image */
-- (PHImageRequestID)getPhotoWithAsset:(id)asset completion:(void (^)(UIImage *photo,NSDictionary *info,BOOL isDegraded))completion;
-- (PHImageRequestID)getPhotoWithAsset:(id)asset photoWidth:(CGFloat)photoWidth completion:(void (^)(UIImage *photo,NSDictionary *info,BOOL isDegraded))completion;
-- (PHImageRequestID)getPhotoWithAsset:(id)asset photoWidth:(CGFloat)photoWidth completion:(void (^)(UIImage *photo,NSDictionary *info,BOOL isDegraded))completion progressHandler:(void (^)(double progress, NSError *error, BOOL *stop, NSDictionary *info))progressHandler networkAccessAllowed:(BOOL)networkAccessAllowed;
+- (PHImageRequestID)getPhotoWithAsset:(id)asset completion:(nullable void (^)(UIImage *photo,NSDictionary *info,BOOL isDegraded))completion;
+- (PHImageRequestID)getPhotoWithAsset:(id)asset photoWidth:(CGFloat)photoWidth completion:(nullable void (^)(UIImage *photo,NSDictionary *info,BOOL isDegraded))completion;
+- (PHImageRequestID)getPhotoWithAsset:(id)asset photoWidth:(CGFloat)photoWidth completion:(nullable void (^)(UIImage *photo,NSDictionary *info,BOOL isDegraded))completion progressHandler:(nullable void (^)(double progress, NSError *error, BOOL *stop, NSDictionary *info))progressHandler networkAccessAllowed:(BOOL)networkAccessAllowed;
 
 /** 获取照片对象 回调 data (gif) */
-- (PHImageRequestID)getPhotoDataWithAsset:(id)asset completion:(void (^)(NSData *data,NSDictionary *info,BOOL isDegraded))completion;
-- (PHImageRequestID)getPhotoDataWithAsset:(id)asset completion:(void (^)(NSData *data,NSDictionary *info,BOOL isDegraded))completion progressHandler:(void (^)(double progress, NSError *error, BOOL *stop, NSDictionary *info))progressHandler networkAccessAllowed:(BOOL)networkAccessAllowed;
+- (PHImageRequestID)getPhotoDataWithAsset:(id)asset completion:(nullable void (^)(NSData *data,NSDictionary *info,BOOL isDegraded))completion;
+- (PHImageRequestID)getPhotoDataWithAsset:(id)asset completion:(nullable void (^)(NSData *data,NSDictionary *info,BOOL isDegraded))completion progressHandler:(nullable void (^)(double progress, NSError *error, BOOL *stop, NSDictionary *info))progressHandler networkAccessAllowed:(BOOL)networkAccessAllowed;
 
 /** 获取照片对象 回调 live photo */
-- (PHImageRequestID)getLivePhotoWithAsset:(id)asset completion:(void (^)(PHLivePhoto *livePhoto,NSDictionary *info,BOOL isDegraded))completion API_AVAILABLE(ios(9.1));
-- (PHImageRequestID)getLivePhotoWithAsset:(id)asset photoWidth:(CGFloat)photoWidth completion:(void (^)(PHLivePhoto *livePhoto,NSDictionary *info,BOOL isDegraded))completion API_AVAILABLE(ios(9.1));
-- (PHImageRequestID)getLivePhotoWithAsset:(id)asset photoWidth:(CGFloat)photoWidth completion:(void (^)(PHLivePhoto *livePhoto,NSDictionary *info,BOOL isDegraded))completion progressHandler:(void (^)(double progress, NSError *error, BOOL *stop, NSDictionary *info))progressHandler networkAccessAllowed:(BOOL)networkAccessAllowed API_AVAILABLE(ios(9.1));
+- (PHImageRequestID)getLivePhotoWithAsset:(id)asset completion:(nullable void (^)(PHLivePhoto *livePhoto,NSDictionary *info,BOOL isDegraded))completion API_AVAILABLE(ios(9.1));
+- (PHImageRequestID)getLivePhotoWithAsset:(id)asset photoWidth:(CGFloat)photoWidth completion:(nullable void (^)(PHLivePhoto *livePhoto,NSDictionary *info,BOOL isDegraded))completion API_AVAILABLE(ios(9.1));
+- (PHImageRequestID)getLivePhotoWithAsset:(id)asset photoWidth:(CGFloat)photoWidth completion:(nullable void (^)(PHLivePhoto *livePhoto,NSDictionary *info,BOOL isDegraded))completion progressHandler:(nullable void (^)(double progress, NSError *error, BOOL *stop, NSDictionary *info))progressHandler networkAccessAllowed:(BOOL)networkAccessAllowed API_AVAILABLE(ios(9.1));
 
 /** 停止获取照片对象 */
 - (void)cancelImageRequest:(PHImageRequestID)requestID;
@@ -110,7 +110,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)getPhotoWithAsset:(id)asset
                isOriginal:(BOOL)isOriginal
-               completion:(void (^)(TFY_ResultImage *resultImage))completion;
+               completion:(nullable void (^)(TFY_ResultImage *resultImage))completion;
 /**
  *  通过asset解析缩略图、标清图/原图、图片数据字典
  *
@@ -122,7 +122,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getPhotoWithAsset:(id)asset
                isOriginal:(BOOL)isOriginal
                pickingGif:(BOOL)pickingGif
-               completion:(void (^)(TFY_ResultImage *resultImage))completion;
+               completion:(nullable void (^)(TFY_ResultImage *resultImage))completion;
 
 /**
  通过asset解析缩略图、标清图/原图、图片数据字典
@@ -139,7 +139,7 @@ NS_ASSUME_NONNULL_BEGIN
                pickingGif:(BOOL)pickingGif
              compressSize:(CGFloat)compressSize
     thumbnailCompressSize:(CGFloat)thumbnailCompressSize
-               completion:(void (^)(TFY_ResultImage *resultImage))completion;
+               completion:(nullable void (^)(TFY_ResultImage *resultImage))completion;
 
 
 /**
@@ -153,14 +153,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getLivePhotoWithAsset:(id)asset
                    isOriginal:(BOOL)isOriginal
                 needThumbnail:(BOOL)needThumbnail
-                   completion:(void (^)(TFY_ResultImage *resultImage))completion API_AVAILABLE(ios(9.1));
+                   completion:(nullable void (^)(TFY_ResultImage *resultImage))completion API_AVAILABLE(ios(9.1));
 
 /// Get video 获得视频
 - (void)getVideoWithAsset:(id)asset completion:(void (^)(AVPlayerItem * playerItem, NSDictionary * info))completion;
 - (void)getVideoResultWithAsset:(id)asset
                      presetName:(NSString *)presetName
                           cache:(BOOL)cache
-                     completion:(void (^)(TFY_ResultVideo *resultVideo))completion;
+                     completion:(nullable void (^)(TFY_ResultVideo *resultVideo))completion;
 
 /**
  *  lincf, 16-06-15 13:06:26
@@ -173,12 +173,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)compressAndCacheVideoWithAsset:(id)asset
                             presetName:(NSString *)presetName
-                            completion:(void (^)(NSString *path))completion;
+                            completion:(nullable void (^)(NSString *path))completion;
 
 /// 检查照片的大小是否超过最大值
-- (void)checkPhotosBytesMaxSize:(NSArray <TFY_PickerAsset *>*)photos maxBytes:(NSInteger)maxBytes completion:(void (^)(BOOL isPass))completion;
+- (void)checkPhotosBytesMaxSize:(NSArray <TFY_PickerAsset *>*)photos maxBytes:(NSInteger)maxBytes completion:(nullable void (^)(BOOL isPass))completion;
 /// Get photo bytes 获得一组照片的大小
-- (void)getPhotosBytesWithArray:(NSArray <TFY_PickerAsset *>*)photos completion:(void (^)(NSString *totalBytesStr, NSInteger totalBytes))completion;
+- (void)getPhotosBytesWithArray:(NSArray <TFY_PickerAsset *>*)photos completion:(nullable void (^)(NSString *totalBytesStr, NSInteger totalBytes))completion;
 
 /// Judge is a assets array contain the asset 判断一个assets数组是否包含这个asset
 - (NSInteger)isAssetsArray:(NSArray *)assets containAsset:(id)asset;
@@ -190,7 +190,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGSize)photoSizeWithAsset:(id)asset;
 
 /// 获取照片名称
-- (void)requestForAsset:(id)asset complete:(void (^)(NSString *name))complete;
+- (void)requestForAsset:(id)asset complete:(nullable void (^)(NSString *name))complete;
 
 /// Return Cache Path 返回压缩缓存视频路径
 + (NSString *)CacheVideoPath;

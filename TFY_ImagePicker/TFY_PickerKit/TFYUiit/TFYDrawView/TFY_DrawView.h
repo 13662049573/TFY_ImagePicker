@@ -19,8 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** 图层数量 */
 @property (nonatomic, readonly) NSUInteger count;
 
-@property (nonatomic, copy) void(^drawBegan)(void);
-@property (nonatomic, copy) void(^drawEnded)(void);
+@property (nonatomic, copy,nullable) void(^drawBegan)(void);
+@property (nonatomic, copy,nullable) void(^drawEnded)(void);
 
 /** 数据 */
 @property (nonatomic, strong) NSDictionary *data;

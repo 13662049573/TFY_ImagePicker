@@ -191,7 +191,11 @@
 + (instancetype __nullable)filterWithData:(NSData *)data error:(NSError *__autoreleasing *)error {
     id obj = nil;
     @try {
-        obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        if (@available(iOS 14.0, *)) {
+            obj = [NSKeyedUnarchiver unarchivedArrayOfObjectsOfClass:self fromData:data error:error];
+        } else {
+            obj = [NSKeyedUnarchiver unarchivedObjectOfClass:self fromData:data error:error];
+        }
     } @catch (NSException *exception) {
         if (error != nil) {
             *error = [NSError errorWithDomain:@"TFY_FilterUnarchiver" code:200 userInfo:@{
@@ -209,7 +213,6 @@
                                                                                   }];
         }
     }
-    
     return obj;
 }
 

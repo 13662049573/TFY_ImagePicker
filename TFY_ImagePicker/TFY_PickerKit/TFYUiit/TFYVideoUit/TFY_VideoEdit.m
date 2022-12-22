@@ -7,7 +7,7 @@
 
 #import "TFY_VideoEdit.h"
 #import <AVFoundation/AVFoundation.h>
-#import "TFYUiit.h"
+#import "TFYCategory.h"
 
 @implementation TFY_VideoEdit
 

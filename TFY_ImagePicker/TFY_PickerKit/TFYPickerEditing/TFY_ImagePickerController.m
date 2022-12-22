@@ -7,7 +7,7 @@
 
 #import "TFY_ImagePickerController.h"
 #import "TFYPickerUit.h"
-#import "TFYCategory.h"
+#import "TFYItools.h"
 #import "TFY_PhotoEdit.h"
 #import "TFY_VideoEdit.h"
 #import "TFY_PhotoPickerController.h"

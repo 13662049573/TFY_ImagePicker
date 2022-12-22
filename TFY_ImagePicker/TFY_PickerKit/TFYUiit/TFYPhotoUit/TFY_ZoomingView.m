@@ -105,7 +105,7 @@ NSString *const kTFYZoomingViewData_filter = @"TFYZoomingViewData_filter";
     [self setImage:image durations:nil];
 }
 
-- (void)setImage:(UIImage *)image durations:(NSArray <NSNumber *> *)durations
+- (void)setImage:(UIImage *)image durations:(nullable NSArray <NSNumber *> *)durations
 {
     _image = image;
     CGSize imageSize = image.size;

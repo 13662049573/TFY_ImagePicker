@@ -11,7 +11,7 @@
 #import "TFY_GridView+privates.h"
 #import "TFY_ClippingView.h"
 #import "TFYCategory.h"
-#import "TFY_ImageCoder.h"
+#import "TFYItools.h"
 #import "TFY_MECancelBlock.h"
 
 #define kMaxZoomScale 2.5f

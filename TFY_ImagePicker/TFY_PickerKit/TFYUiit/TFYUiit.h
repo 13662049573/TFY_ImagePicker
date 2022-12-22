@@ -8,17 +8,18 @@
 #ifndef TFYUiit_h
 #define TFYUiit_h
 
-#import "TFYFilterSuite.h"
+#import "TFYItools.h"
+#import "TFYDropMenu.h"
+#import "TFYDownload.h"
+#import "TFYVideoUit.h"
 #import "TFYCategory.h"
-#import "TFYFilterBar.h"
 #import "TFYColor.h"
-#import "TFYDrawView.h"
-#import "TFYTipsGuideView.h"
 #import "TFYPhotoUit.h"
+#import "TFYTipsGuideView.h"
 #import "TFYPickerUit.h"
-
-#import "TFY_AssetExportSession.h"
-#import "TFY_EasyNoticeBar.h"
-#import "TFY_ImageCoder.h"
+#import "TFYFilterSuite.h"
+#import "TFYDrawView.h"
+#import "TFYFilterBar.h"
+#import "TFY_EditingProtocol.h"
 
 #endif /* TFYUiit_h */

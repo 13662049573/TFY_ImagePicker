@@ -9,7 +9,7 @@
 #import "TFY_ResizeControl.h"
 #import "TFY_VideoTrimmerGridLayer.h"
 #import "TFY_GridMaskLayer.h"
-#import "TFYUiit.h"
+#import "TFYCategory.h"
 
 /** 可控范围 */
 const CGFloat kVideoTrimmerGridControlWidth = 25.f;

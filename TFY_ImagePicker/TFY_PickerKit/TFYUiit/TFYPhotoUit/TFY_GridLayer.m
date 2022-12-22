@@ -40,7 +40,7 @@ NSString *const TFYgridLayerAnimtionKey = @"tfygridLayer_contentsRectAnimate";
 {
     [self setGridRect:gridRect animated:animated completion:nil];
 }
-- (void)setGridRect:(CGRect)gridRect animated:(BOOL)animated completion:(void (^)(BOOL finished))completion
+- (void)setGridRect:(CGRect)gridRect animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion
 {
     _gridRect = gridRect;
     if (completion) {

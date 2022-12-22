@@ -9,7 +9,6 @@
 #define TFYFilterBar_h
 
 #import "TFY_FilterBar.h"
-#import "TFY_FilterBarCell.h"
 
 
 #endif /* TFYFilterBar_h */

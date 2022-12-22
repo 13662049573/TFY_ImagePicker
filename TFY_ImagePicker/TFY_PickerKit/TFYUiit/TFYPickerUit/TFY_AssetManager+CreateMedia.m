@@ -217,7 +217,7 @@ NSString *const CreateMediaFolder = @"TFY_AssetManager.CreateMedia";
     }];
 }
 
-- (void)createMP4WithImages:(NSArray <UIImage *>*)images size:(CGSize)size audioPath:(NSString *)audioPath complete:(void (^)(NSData *data, NSError *error))complete
+- (void)createMP4WithImages:(NSArray <UIImage *>*)images size:(CGSize)size audioPath:(nullable NSString *)audioPath complete:(nullable void (^)(NSData *data, NSError *error))complete
 {
     [self createMP4WithImages:images size:size fps:30 duration:images.count audioPath:audioPath complete:complete];
 }

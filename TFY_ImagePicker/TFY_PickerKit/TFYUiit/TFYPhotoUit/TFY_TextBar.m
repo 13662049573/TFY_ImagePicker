@@ -45,7 +45,7 @@ CGFloat const TFYTextBarAlignmentTag = 221;
     return [self initWithFrame:frame layout:nil];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame layout:(void (^)(TFY_TextBar *textBar))layoutBlock
+- (instancetype)initWithFrame:(CGRect)frame layout:(nullable void (^)(TFY_TextBar *textBar))layoutBlock
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -377,9 +377,6 @@ CGFloat const TFYTextBarAlignmentTag = 221;
         TFY_Text *text = nil;
         if (self.picker_textView.text.length) {
             text = [TFY_Text new];
-//            text.text = self.lf_textView.text;
-//            text.textColor = self.lf_textView.textColor;
-//            text.font = self.lf_textView.font;
             text.attributedText = self.picker_textView.attributedText;
             text.layoutData = self.layoutManager.layoutData;
             text.usedRect = [self.layoutManager usedRectForTextContainer:self.picker_textView.textContainer];
@@ -419,9 +416,6 @@ CGFloat const TFYTextBarAlignmentTag = 221;
     UITextRange *selectedRange = [textView markedTextRange];
     //获取高亮部分
     UITextPosition *pos = [textView positionFromPosition:selectedRange.start offset:0];
-    //获取高亮部分内容
-    //NSString * selectedtext = [textView textInRange:selectedRange];
-    
     //如果有高亮且当前字数开始位置小于最大限制时允许输入
     if (selectedRange && pos) {
         NSInteger startOffset = [textView offsetFromPosition:textView.beginningOfDocument toPosition:selectedRange.start];

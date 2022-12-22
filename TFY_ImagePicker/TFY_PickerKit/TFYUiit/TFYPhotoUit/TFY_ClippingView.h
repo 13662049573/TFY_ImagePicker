@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIImage *image;
 
-- (void)setImage:(UIImage *)image durations:(NSArray <NSNumber *> *)durations;
+- (void)setImage:(UIImage *)image durations:(nullable NSArray <NSNumber *> *)durations;
 
 /** 获取除图片以外的编辑图层 */
 - (UIImage *)editOtherImagesInRect:(CGRect)rect rotate:(CGFloat)rotate;

@@ -9,8 +9,6 @@
 #define TFYDropMenu_h
 
 #import "TFY_DropMenu.h"
-#import "TFY_DropMainMenu.h"
-#import "TFY_DropItem.h"
 #import "TFY_DropItemProtocol.h"
 
 #endif /* TFYDropMenu_h */

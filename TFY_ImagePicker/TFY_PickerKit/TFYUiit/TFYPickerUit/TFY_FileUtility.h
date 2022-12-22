@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TFY_FileUtility : NSObject
 
 + (BOOL)createFile:(NSString *)path;
-+ (BOOL)createFolder:(NSString *)path errStr:(NSString *)errStr;
++ (BOOL)createFolder:(NSString *)path errStr:(nullable NSString *)errStr;
 + (BOOL)fileExist:(NSString *)path;
 + (BOOL)directoryExist:(NSString *)path;
 + (BOOL)moveFileAtPath:(NSString *)atPath toPath:(NSString *)toPath;

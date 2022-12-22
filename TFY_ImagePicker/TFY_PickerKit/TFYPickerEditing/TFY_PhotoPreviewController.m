@@ -13,7 +13,7 @@
 #import "TFYCategory.h"
 #import "TFYPhotoEditing.h"
 #import "TFYVideoEditing.h"
-#import "TFY_ImageCoder.h"
+#import "TFYItools.h"
 
 CGFloat const cellMargin = 20.f;
 CGFloat const livePhotoSignMargin = 10.f;
@@ -752,7 +752,7 @@ CGFloat const naviTipsViewDefaultHeight = 30.f;
         [imagePickerVc popViewControllerAnimated:YES];
         if (self.backButtonClickBlock) {
             self.backButtonClickBlock();
-            self.backButtonClickBlock = nil;
+            _backButtonClickBlock = nil;
         }
     }
 }
@@ -798,7 +798,7 @@ CGFloat const naviTipsViewDefaultHeight = 30.f;
 
     if (self.doneButtonClickBlock) {
         self.doneButtonClickBlock();
-        self.doneButtonClickBlock = nil;
+        _doneButtonClickBlock = nil;
     }
 }
 
@@ -824,7 +824,7 @@ CGFloat const naviTipsViewDefaultHeight = 30.f;
                 /** 当前显示的图片 */
                 UIImage *image = cell.previewImage;
                 if (image == nil) {
-                    [imagePickerVc showAlertWithTitle:[NSBundle picker_localizedStringForKey:@"_LFPhotoPreviewController_EditPhotoTipText"] complete:nil];
+                    [imagePickerVc showAlertWithTitle:[NSBundle picker_localizedStringForKey:@"_LFPhotoPreviewController_EditPhotoTipText"] complete:^{}];
                     return;
                 }
                 photoEditingVC.editImage = image;
@@ -848,7 +848,7 @@ CGFloat const naviTipsViewDefaultHeight = 30.f;
                     asset = ((TFY_PhotoPreviewVideoCell *)cell).asset;
                 }
                 if (asset == nil) {
-                    [imagePickerVc showAlertWithTitle:[NSBundle picker_localizedStringForKey:@"_LFPhotoPreviewController_EditVideoTipText"] complete:nil];
+                    [imagePickerVc showAlertWithTitle:[NSBundle picker_localizedStringForKey:@"_LFPhotoPreviewController_EditVideoTipText"] complete:^{}];
                     return;
                 }
                 [videoEditingVC setVideoAsset:asset placeholderImage:cell.previewImage];
@@ -1359,7 +1359,7 @@ CGFloat const naviTipsViewDefaultHeight = 30.f;
                             [imagePickerVc popViewControllerAnimated:NO];
                             if (self.backButtonClickBlock) {
                                 self.backButtonClickBlock();
-                                self.backButtonClickBlock = nil;
+                                self->_backButtonClickBlock = nil;
                             }
                         }];
                     } else {
@@ -1368,8 +1368,6 @@ CGFloat const naviTipsViewDefaultHeight = 30.f;
                         _pullSnapshotView.transform = CGAffineTransformIdentity;
                         _pullSnapshotView.frame = rect;
                         [UIView animateWithDuration:0.25 animations:^{
-//                            self->_pullSnapshotView.contentMode = UIViewContentModeScaleAspectFill;
-//                            self->_pullSnapshotView.clipsToBounds = YES;
                             self.backgroundView.alpha = 0.0;
                             if (!self.isHideMyNaviBar) {
                                 [self changedAplhaWithItem:self.models[self.currentIndex] alpha:0];
@@ -1380,7 +1378,7 @@ CGFloat const naviTipsViewDefaultHeight = 30.f;
                             [imagePickerVc popViewControllerAnimated:NO];
                             if (self.backButtonClickBlock) {
                                 self.backButtonClickBlock();
-                                self.backButtonClickBlock = nil;
+                                self->_backButtonClickBlock = nil;
                             }
                         }];
                     }
@@ -1647,7 +1645,7 @@ CGFloat const naviTipsViewDefaultHeight = 30.f;
             [imagePickerVc.selectedModels removeAllObjects];
             for (id object in imagePickerVc.selectedAssets) {
                 TFY_PickerAsset *asset = nil;
-                if ([object isKindOfClass:[PHAsset class]] || [object isKindOfClass:[ALAsset class]]) {
+                if ([object isKindOfClass:[PHAsset class]]) {
                     asset = [[TFY_PickerAsset alloc] initWithAsset:object];
                     if (asset.subType == TFYAssetSubMediaTypeLivePhoto) {
                         asset.closeLivePhoto = !imagePickerVc.autoPlayLivePhoto;

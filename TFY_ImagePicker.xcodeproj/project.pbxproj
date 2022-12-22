@@ -215,7 +215,6 @@
 		3666149D2952E31D00BC333A /* TFY_LayoutPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_LayoutPickerController.m; sourceTree = "<group>"; };
 		3666149E2952E31D00BC333A /* TFY_PickerBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PickerBaseViewController.m; sourceTree = "<group>"; };
 		3666149F2952E31D00BC333A /* TFY_ImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_ImagePickerController.m; sourceTree = "<group>"; };
-		366614A02952E31D00BC333A /* TFYPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFYPicker.h; sourceTree = "<group>"; };
 		366614A12952E31D00BC333A /* TFY_PhotoPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PhotoPickerController.m; sourceTree = "<group>"; };
 		366614A32952E31D00BC333A /* TFY_DropMainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_DropMainMenu.m; sourceTree = "<group>"; };
 		366614A42952E31D00BC333A /* TFY_DropMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_DropMenu.m; sourceTree = "<group>"; };
@@ -532,6 +531,9 @@
 		3666167C29530CFD00BC333A /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
 		3666167D29530CFD00BC333A /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
 		3666167E29530CFD00BC333A /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
+		366616832954005A00BC333A /* TFYVideoUit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYVideoUit.h; sourceTree = "<group>"; };
+		366616842954024800BC333A /* TFYPickerEditing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYPickerEditing.h; sourceTree = "<group>"; };
+		36661686295402C900BC333A /* TFYItools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYItools.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -620,21 +622,18 @@
 			isa = PBXGroup;
 			children = (
 				366614D42952E31D00BC333A /* TFY_PickerKit.h */,
-				366614942952E31D00BC333A /* TFYPicker */,
-				366614A22952E31D00BC333A /* TFYDropMenu */,
-				366614AB2952E31D00BC333A /* Resources */,
+				366614942952E31D00BC333A /* TFYPickerEditing */,
 				366614AD2952E31D00BC333A /* TFYPhotoEditing */,
-				366614B12952E31D00BC333A /* TFYDownload */,
 				366614B72952E31D00BC333A /* TFYVideoEditing */,
 				366614D52952E31D00BC333A /* TFYUiit */,
 			);
 			path = TFY_PickerKit;
 			sourceTree = "<group>";
 		};
-		366614942952E31D00BC333A /* TFYPicker */ = {
+		366614942952E31D00BC333A /* TFYPickerEditing */ = {
 			isa = PBXGroup;
 			children = (
-				366614A02952E31D00BC333A /* TFYPicker.h */,
+				366616842954024800BC333A /* TFYPickerEditing.h */,
 				366614952952E31D00BC333A /* TFY_LayoutPickerController.h */,
 				3666149D2952E31D00BC333A /* TFY_LayoutPickerController.m */,
 				3666149B2952E31D00BC333A /* TFY_PhotoPreviewController.h */,
@@ -648,20 +647,20 @@
 				366614982952E31D00BC333A /* TFY_PickerBaseViewController.h */,
 				3666149E2952E31D00BC333A /* TFY_PickerBaseViewController.m */,
 			);
-			path = TFYPicker;
+			path = TFYPickerEditing;
 			sourceTree = "<group>";
 		};
 		366614A22952E31D00BC333A /* TFYDropMenu */ = {
 			isa = PBXGroup;
 			children = (
+				366614AA2952E31D00BC333A /* TFYDropMenu.h */,
+				366614A62952E31D00BC333A /* TFY_DropItemProtocol.h */,
+				366614A82952E31D00BC333A /* TFY_DropMainMenu.h */,
 				366614A32952E31D00BC333A /* TFY_DropMainMenu.m */,
+				366614A72952E31D00BC333A /* TFY_DropMenu.h */,
 				366614A42952E31D00BC333A /* TFY_DropMenu.m */,
 				366614A52952E31D00BC333A /* TFY_DropItem.h */,
-				366614A62952E31D00BC333A /* TFY_DropItemProtocol.h */,
-				366614A72952E31D00BC333A /* TFY_DropMenu.h */,
-				366614A82952E31D00BC333A /* TFY_DropMainMenu.h */,
 				366614A92952E31D00BC333A /* TFY_DropItem.m */,
-				366614AA2952E31D00BC333A /* TFYDropMenu.h */,
 			);
 			path = TFYDropMenu;
 			sourceTree = "<group>";
@@ -687,11 +686,11 @@
 		366614B12952E31D00BC333A /* TFYDownload */ = {
 			isa = PBXGroup;
 			children = (
+				366614B42952E31D00BC333A /* TFYDownload.h */,
+				366614B62952E31D00BC333A /* TFY_DownloadManager.h */,
 				366614B22952E31D00BC333A /* TFY_DownloadManager.m */,
 				366614B32952E31D00BC333A /* UIView+TFY_DownloadManager.h */,
-				366614B42952E31D00BC333A /* TFYDownload.h */,
 				366614B52952E31D00BC333A /* UIView+TFY_DownloadManager.m */,
-				366614B62952E31D00BC333A /* TFY_DownloadManager.h */,
 			);
 			path = TFYDownload;
 			sourceTree = "<group>";
@@ -699,34 +698,9 @@
 		366614B72952E31D00BC333A /* TFYVideoEditing */ = {
 			isa = PBXGroup;
 			children = (
-				366614B82952E31D00BC333A /* TFY_PickerVideoPlayer.h */,
-				366614B92952E31D00BC333A /* TFY_VideoClipToolbar.h */,
-				366614BA2952E31D00BC333A /* TFY_ResizeControl.h */,
-				366614BB2952E31D00BC333A /* TFY_VideoEditingView.h */,
-				366614BC2952E31D00BC333A /* TFY_VideoEdit.m */,
-				366614BD2952E31D00BC333A /* TFY_VideoClippingView.m */,
-				366614BE2952E31D00BC333A /* TFY_VideoTrimmerGridView.m */,
-				366614BF2952E31D00BC333A /* TFY_VideoTrimmerView.h */,
-				366614C02952E31D00BC333A /* TFY_VideoEditingController.m */,
-				366614C12952E31D00BC333A /* TFY_DataFilterVideoView.m */,
-				366614C22952E31D00BC333A /* TFY_AudioTrackBar.m */,
-				366614C32952E31D00BC333A /* TFY_GridMaskLayer.h */,
-				366614C42952E31D00BC333A /* TFY_VideoTrimmerGridLayer.m */,
-				366614C52952E31D00BC333A /* TFY_ResizeControl.m */,
-				366614C62952E31D00BC333A /* TFY_VideoClipToolbar.m */,
 				366614C72952E31D00BC333A /* TFYVideoEditing.h */,
-				366614C82952E31D00BC333A /* TFY_PickerVideoPlayer.m */,
-				366614C92952E31D00BC333A /* TFY_VideoTrimmerGridView.h */,
-				366614CA2952E31D00BC333A /* TFY_VideoEdit.h */,
-				366614CB2952E31D00BC333A /* TFY_VideoClippingView.h */,
-				366614CC2952E31D00BC333A /* TFY_VideoEditingView.m */,
-				366614CD2952E31D00BC333A /* TFY_MediaEditingType.h */,
-				366614CE2952E31D00BC333A /* TFY_GridMaskLayer.m */,
-				366614CF2952E31D00BC333A /* TFY_AudioTrackBar.h */,
-				366614D02952E31D00BC333A /* TFY_DataFilterVideoView.h */,
-				366614D12952E31D00BC333A /* TFY_VideoTrimmerView.m */,
 				366614D22952E31D00BC333A /* TFY_VideoEditingController.h */,
-				366614D32952E31D00BC333A /* TFY_VideoTrimmerGridLayer.h */,
+				366614C02952E31D00BC333A /* TFY_VideoEditingController.m */,
 			);
 			path = TFYVideoEditing;
 			sourceTree = "<group>";
@@ -734,20 +708,20 @@
 		366614D52952E31D00BC333A /* TFYUiit */ = {
 			isa = PBXGroup;
 			children = (
+				3666159F2952E31E00BC333A /* TFYUiit.h */,
+				366616872954052A00BC333A /* TFYEditingProtocol */,
+				36661685295402B500BC333A /* TFYItools */,
+				366614AB2952E31D00BC333A /* Resources */,
+				366614A22952E31D00BC333A /* TFYDropMenu */,
+				366614B12952E31D00BC333A /* TFYDownload */,
+				366616822953FFE600BC333A /* TFYVideoUit */,
 				366614D62952E31D00BC333A /* TFYCategory */,
 				366614F62952E31D00BC333A /* TFYColor */,
 				366614FF2952E31D00BC333A /* TFYPhotoUit */,
-				366615582952E31E00BC333A /* TFY_ImageCoder.h */,
 				366615592952E31E00BC333A /* TFYTipsGuideView */,
 				3666155F2952E31E00BC333A /* TFYPickerUit */,
-				3666159F2952E31E00BC333A /* TFYUiit.h */,
-				366615A02952E31E00BC333A /* TFY_EasyNoticeBar.h */,
-				366615A12952E31E00BC333A /* TFY_AssetExportSession.m */,
 				366615A22952E31E00BC333A /* TFYFilterSuite */,
 				366615C12952E31E00BC333A /* TFYDrawView */,
-				366615DD2952E31E00BC333A /* TFY_ImageCoder.m */,
-				366615DE2952E31E00BC333A /* TFY_AssetExportSession.h */,
-				366615DF2952E31E00BC333A /* TFY_EasyNoticeBar.m */,
 				366615E02952E31E00BC333A /* TFYFilterBar */,
 			);
 			path = TFYUiit;
@@ -756,37 +730,29 @@
 		366614D62952E31D00BC333A /* TFYCategory */ = {
 			isa = PBXGroup;
 			children = (
+				366614E42952E31D00BC333A /* TFYCategory.h */,
+				366614EB2952E31D00BC333A /* NSObject+picker.h */,
 				366614D72952E31D00BC333A /* NSObject+picker.m */,
-				366614D82952E31D00BC333A /* UIDevice+picker.m */,
 				366614D92952E31D00BC333A /* UIImage+picker.h */,
-				366614DA2952E31D00BC333A /* UIViewController+picker.m */,
-				366614DB2952E31D00BC333A /* NSBundle+picker.h */,
+				366614E82952E31D00BC333A /* UIImage+picker.m */,
 				366614DC2952E31D00BC333A /* NSAttributedString+picker.h */,
+				366614F02952E31D00BC333A /* NSAttributedString+picker.m */,
+				366614EF2952E31D00BC333A /* UIView+picker.h */,
 				366614DD2952E31D00BC333A /* UIView+picker.m */,
+				366614EE2952E31D00BC333A /* NSData+picker.h */,
 				366614DE2952E31D00BC333A /* NSData+picker.m */,
 				366614DF2952E31D00BC333A /* CALayer+picker.h */,
+				366614EC2952E31D00BC333A /* CALayer+picker.m */,
 				366614E02952E31D00BC333A /* UIScrollView+picker.h */,
-				366614E12952E31D00BC333A /* TFY_MEGIFImageSerialization.m */,
+				366614ED2952E31D00BC333A /* UIScrollView+picker.m */,
+				366614F22952E31D00BC333A /* UIColor+picker.h */,
 				366614E22952E31D00BC333A /* UIColor+picker.m */,
 				366614E32952E31D00BC333A /* UIAlertView+picker.h */,
-				366614E42952E31D00BC333A /* TFYCategory.h */,
-				366614E52952E31D00BC333A /* AVAsset+picker.h */,
-				366614E62952E31D00BC333A /* NSString+picker.h */,
-				366614E72952E31D00BC333A /* NSBundle+picker.m */,
-				366614E82952E31D00BC333A /* UIImage+picker.m */,
-				366614E92952E31D00BC333A /* UIViewController+picker.h */,
-				366614EA2952E31D00BC333A /* UIDevice+picker.h */,
-				366614EB2952E31D00BC333A /* NSObject+picker.h */,
-				366614EC2952E31D00BC333A /* CALayer+picker.m */,
-				366614ED2952E31D00BC333A /* UIScrollView+picker.m */,
-				366614EE2952E31D00BC333A /* NSData+picker.h */,
-				366614EF2952E31D00BC333A /* UIView+picker.h */,
-				366614F02952E31D00BC333A /* NSAttributedString+picker.m */,
 				366614F12952E31D00BC333A /* UIAlertView+picker.m */,
-				366614F22952E31D00BC333A /* UIColor+picker.h */,
-				366614F32952E31D00BC333A /* TFY_MEGIFImageSerialization.h */,
-				366614F42952E31D00BC333A /* NSString+picker.m */,
+				366614E52952E31D00BC333A /* AVAsset+picker.h */,
 				366614F52952E31D00BC333A /* AVAsset+picker.m */,
+				366614E62952E31D00BC333A /* NSString+picker.h */,
+				366614F42952E31D00BC333A /* NSString+picker.m */,
 			);
 			path = TFYCategory;
 			sourceTree = "<group>";
@@ -794,14 +760,14 @@
 		366614F62952E31D00BC333A /* TFYColor */ = {
 			isa = PBXGroup;
 			children = (
-				366614F72952E31D00BC333A /* TFY_PickColorView.h */,
-				366614F82952E31D00BC333A /* TFY_ImageUtil.m */,
-				366614F92952E31D00BC333A /* TFY_ColorMatrixType.m */,
 				366614FA2952E31D00BC333A /* TFYColor.h */,
-				366614FB2952E31D00BC333A /* TFY_PickColorView.m */,
-				366614FC2952E31D00BC333A /* TFY_ImageUtil.h */,
 				366614FD2952E31D00BC333A /* TFY_ColorMatrix.h */,
 				366614FE2952E31D00BC333A /* TFY_ColorMatrixType.h */,
+				366614F72952E31D00BC333A /* TFY_PickColorView.h */,
+				366614FB2952E31D00BC333A /* TFY_PickColorView.m */,
+				366614FC2952E31D00BC333A /* TFY_ImageUtil.h */,
+				366614F82952E31D00BC333A /* TFY_ImageUtil.m */,
+				366614F92952E31D00BC333A /* TFY_ColorMatrixType.m */,
 			);
 			path = TFYColor;
 			sourceTree = "<group>";
@@ -809,94 +775,86 @@
 		366614FF2952E31D00BC333A /* TFYPhotoUit */ = {
 			isa = PBXGroup;
 			children = (
+				3666152B2952E31E00BC333A /* TFYPhotoUit.h */,
+				3666152F2952E31E00BC333A /* TFY_TitleCollectionModel.h */,
 				366615002952E31E00BC333A /* TFY_TitleCollectionModel.m */,
 				366615012952E31E00BC333A /* TFY_PhotoEdit.h */,
+				3666152E2952E31E00BC333A /* TFY_PhotoEdit.m */,
+				3666152D2952E31E00BC333A /* TFY_StickerItem+views.h */,
 				366615022952E31E00BC333A /* TFY_StickerItem+views.m */,
 				366615032952E31E00BC333A /* TFY_PHAssetManager.h */,
+				3666152C2952E31E00BC333A /* TFY_PHAssetManager.m */,
 				366615042952E31E00BC333A /* TFY_ExtraAspectRatio.h */,
+				3666152A2952E31E00BC333A /* TFY_ExtraAspectRatio.m */,
+				3666153C2952E31E00BC333A /* TFY_GridLayer.h */,
 				366615052952E31E00BC333A /* TFY_GridLayer.m */,
-				366615062952E31E00BC333A /* TFY_EditCollectionView.m */,
 				366615072952E31E00BC333A /* TFY_StickerContent.h */,
+				3666153A2952E31E00BC333A /* TFY_StickerContent.m */,
 				366615082952E31E00BC333A /* TFY_SafeAreaMaskView.h */,
+				366615382952E31E00BC333A /* TFY_SafeAreaMaskView.m */,
 				366615092952E31E00BC333A /* TFY_GridView.h */,
+				366615392952E31E00BC333A /* TFY_GridView.m */,
+				366615402952E31E00BC333A /* TFY_GridView+privates.h */,
 				3666150A2952E31E00BC333A /* TFY_StickerBar.h */,
+				366615372952E31E00BC333A /* TFY_StickerBar.m */,
 				3666150B2952E31E00BC333A /* TFY_MEWeakSelectorTarget.h */,
+				366615362952E31E00BC333A /* TFY_MEWeakSelectorTarget.m */,
+				366615352952E31E00BC333A /* TFY_PickerScrollView.h */,
 				3666150C2952E31E00BC333A /* TFY_PickerScrollView.m */,
 				3666150D2952E31E00BC333A /* TFY_DataImageView.h */,
-				3666150E2952E31E00BC333A /* TFY_ImageCollectionViewCell.h */,
+				366615342952E31E00BC333A /* TFY_DataImageView.m */,
+				366615322952E31E00BC333A /* TFY_MEGifView.h */,
 				3666150F2952E31E00BC333A /* TFY_MEGifView.m */,
 				366615102952E31E00BC333A /* TFY_MovingRemoveView.h */,
+				366615442952E31E00BC333A /* TFY_MovingRemoveView.m */,
+				366615422952E31E00BC333A /* TFY_EditToolbar.h */,
 				366615112952E31E00BC333A /* TFY_EditToolbar.m */,
-				366615122952E31E00BC333A /* TFY_BaseCollectionViewCell.h */,
-				366615132952E31E00BC333A /* TFY_EditingProtocol.h */,
 				366615142952E31E00BC333A /* TFY_EditingView.h */,
+				3666153F2952E31E00BC333A /* TFY_EditingView.m */,
+				3666153E2952E31E00BC333A /* TFY_CGContextDrawTextBackground.h */,
 				366615152952E31E00BC333A /* TFY_CGContextDrawTextBackground.m */,
 				366615162952E31E00BC333A /* TFY_StickerItem.h */,
+				3666153D2952E31E00BC333A /* TFY_StickerItem.m */,
 				366615172952E31E00BC333A /* TFY_StickerView.h */,
-				366615182952E31E00BC333A /* TFY_BaseEditingController.m */,
+				366615562952E31E00BC333A /* TFY_StickerView.m */,
 				366615192952E31E00BC333A /* TFY_StickerDisplayView.h */,
+				366615552952E31E00BC333A /* TFY_StickerDisplayView.m */,
+				366615542952E31E00BC333A /* TFY_Text.h */,
 				3666151A2952E31E00BC333A /* TFY_Text.m */,
+				366615532952E31E00BC333A /* TFY_ConfigTool.h */,
 				3666151B2952E31E00BC333A /* TFY_ConfigTool.m */,
 				3666151C2952E31E00BC333A /* TFY_TextBar.h */,
-				3666151D2952E31E00BC333A /* TFY_MECancelBlock.m */,
-				3666151E2952E31E00BC333A /* TFY_TitleCollectionViewCell.h */,
-				3666151F2952E31E00BC333A /* TFY_PickerCollectionViewCell.m */,
-				366615202952E31E00BC333A /* TFY_ClipToolbar.h */,
-				366615212952E31E00BC333A /* TFY_TextViewBackgroundLayoutManager.m */,
-				366615222952E31E00BC333A /* TFY_DataFilterImageView.h */,
-				366615232952E31E00BC333A /* TFY_StickerProgressView.h */,
-				366615242952E31E00BC333A /* TFY_MovingView.m */,
-				366615252952E31E00BC333A /* TFY_FilterSuiteUtils.h */,
-				366615262952E31E00BC333A /* TFY_ZoomingView.m */,
-				366615272952E31E00BC333A /* TFY_StickerContent+getData.h */,
-				366615282952E31E00BC333A /* TFY_MEVideoView.h */,
-				366615292952E31E00BC333A /* TFY_ClippingView.m */,
-				3666152A2952E31E00BC333A /* TFY_ExtraAspectRatio.m */,
-				3666152B2952E31E00BC333A /* TFYPhotoUit.h */,
-				3666152C2952E31E00BC333A /* TFY_PHAssetManager.m */,
-				3666152D2952E31E00BC333A /* TFY_StickerItem+views.h */,
-				3666152E2952E31E00BC333A /* TFY_PhotoEdit.m */,
-				3666152F2952E31E00BC333A /* TFY_TitleCollectionModel.h */,
-				366615302952E31E00BC333A /* TFY_FilterDataProtocol.h */,
-				366615312952E31E00BC333A /* TFY_PhotoEditDelegate.h */,
-				366615322952E31E00BC333A /* TFY_MEGifView.h */,
-				366615332952E31E00BC333A /* TFY_ImageCollectionViewCell.m */,
-				366615342952E31E00BC333A /* TFY_DataImageView.m */,
-				366615352952E31E00BC333A /* TFY_PickerScrollView.h */,
-				366615362952E31E00BC333A /* TFY_MEWeakSelectorTarget.m */,
-				366615372952E31E00BC333A /* TFY_StickerBar.m */,
-				366615382952E31E00BC333A /* TFY_SafeAreaMaskView.m */,
-				366615392952E31E00BC333A /* TFY_GridView.m */,
-				3666153A2952E31E00BC333A /* TFY_StickerContent.m */,
-				3666153B2952E31E00BC333A /* TFY_EditCollectionView.h */,
-				3666153C2952E31E00BC333A /* TFY_GridLayer.h */,
-				3666153D2952E31E00BC333A /* TFY_StickerItem.m */,
-				3666153E2952E31E00BC333A /* TFY_CGContextDrawTextBackground.h */,
-				3666153F2952E31E00BC333A /* TFY_EditingView.m */,
-				366615402952E31E00BC333A /* TFY_GridView+privates.h */,
-				366615412952E31E00BC333A /* TFY_EditingProtocol.m */,
-				366615422952E31E00BC333A /* TFY_EditToolbar.h */,
-				366615432952E31E00BC333A /* TFY_BaseCollectionViewCell.m */,
-				366615442952E31E00BC333A /* TFY_MovingRemoveView.m */,
-				366615452952E31E00BC333A /* TFY_ClippingView.h */,
-				366615462952E31E00BC333A /* TFY_MEVideoView.m */,
-				366615472952E31E00BC333A /* TFY_StickerContent+getData.m */,
-				366615482952E31E00BC333A /* TFY_ZoomingView.h */,
-				366615492952E31E00BC333A /* TFY_FilterSuiteUtils.m */,
-				3666154A2952E31E00BC333A /* TFY_StickerProgressView.m */,
-				3666154B2952E31E00BC333A /* TFY_MovingView.h */,
-				3666154C2952E31E00BC333A /* TFY_DataFilterImageView.m */,
-				3666154D2952E31E00BC333A /* TFY_PickerCollectionViewCell.h */,
-				3666154E2952E31E00BC333A /* TFY_ClipToolbar.m */,
-				3666154F2952E31E00BC333A /* TFY_TextViewBackgroundLayoutManager.h */,
-				366615502952E31E00BC333A /* TFY_TitleCollectionViewCell.m */,
 				366615512952E31E00BC333A /* TFY_TextBar.m */,
 				366615522952E31E00BC333A /* TFY_MECancelBlock.h */,
-				366615532952E31E00BC333A /* TFY_ConfigTool.h */,
-				366615542952E31E00BC333A /* TFY_Text.h */,
-				366615552952E31E00BC333A /* TFY_StickerDisplayView.m */,
-				366615562952E31E00BC333A /* TFY_StickerView.m */,
-				366615572952E31E00BC333A /* TFY_BaseEditingController.h */,
+				3666151D2952E31E00BC333A /* TFY_MECancelBlock.m */,
+				3666151E2952E31E00BC333A /* TFY_TitleCollectionViewCell.h */,
+				366615502952E31E00BC333A /* TFY_TitleCollectionViewCell.m */,
+				3666154D2952E31E00BC333A /* TFY_PickerCollectionViewCell.h */,
+				3666151F2952E31E00BC333A /* TFY_PickerCollectionViewCell.m */,
+				3666150E2952E31E00BC333A /* TFY_ImageCollectionViewCell.h */,
+				366615332952E31E00BC333A /* TFY_ImageCollectionViewCell.m */,
+				366615222952E31E00BC333A /* TFY_DataFilterImageView.h */,
+				3666154C2952E31E00BC333A /* TFY_DataFilterImageView.m */,
+				366615202952E31E00BC333A /* TFY_ClipToolbar.h */,
+				3666154E2952E31E00BC333A /* TFY_ClipToolbar.m */,
+				3666154F2952E31E00BC333A /* TFY_TextViewBackgroundLayoutManager.h */,
+				366615212952E31E00BC333A /* TFY_TextViewBackgroundLayoutManager.m */,
+				366615232952E31E00BC333A /* TFY_StickerProgressView.h */,
+				3666154A2952E31E00BC333A /* TFY_StickerProgressView.m */,
+				3666154B2952E31E00BC333A /* TFY_MovingView.h */,
+				366615242952E31E00BC333A /* TFY_MovingView.m */,
+				366615282952E31E00BC333A /* TFY_MEVideoView.h */,
+				366615462952E31E00BC333A /* TFY_MEVideoView.m */,
+				366615252952E31E00BC333A /* TFY_FilterSuiteUtils.h */,
+				366615492952E31E00BC333A /* TFY_FilterSuiteUtils.m */,
+				366615482952E31E00BC333A /* TFY_ZoomingView.h */,
+				366615262952E31E00BC333A /* TFY_ZoomingView.m */,
+				366615272952E31E00BC333A /* TFY_StickerContent+getData.h */,
+				366615472952E31E00BC333A /* TFY_StickerContent+getData.m */,
+				366615452952E31E00BC333A /* TFY_ClippingView.h */,
+				366615292952E31E00BC333A /* TFY_ClippingView.m */,
+				366615302952E31E00BC333A /* TFY_FilterDataProtocol.h */,
+				366615312952E31E00BC333A /* TFY_PhotoEditDelegate.h */,
 			);
 			path = TFYPhotoUit;
 			sourceTree = "<group>";
@@ -905,10 +863,10 @@
 			isa = PBXGroup;
 			children = (
 				3666155A2952E31E00BC333A /* TFYTipsGuideView.h */,
-				3666155B2952E31E00BC333A /* TFY_TipsGuideManager.h */,
 				3666155C2952E31E00BC333A /* TFY_TipsGuideView.h */,
-				3666155D2952E31E00BC333A /* TFY_TipsGuideManager.m */,
 				3666155E2952E31E00BC333A /* TFY_TipsGuideView.m */,
+				3666155B2952E31E00BC333A /* TFY_TipsGuideManager.h */,
+				3666155D2952E31E00BC333A /* TFY_TipsGuideManager.m */,
 			);
 			path = TFYTipsGuideView;
 			sourceTree = "<group>";
@@ -916,69 +874,69 @@
 		3666155F2952E31E00BC333A /* TFYPickerUit */ = {
 			isa = PBXGroup;
 			children = (
+				366615802952E31E00BC333A /* TFYPickerUit.h */,
 				366615602952E31E00BC333A /* TFY_ResultImage.h */,
+				366615842952E31E00BC333A /* TFY_ResultImage.m */,
 				366615612952E31E00BC333A /* TFY_PhotoPreviewGifCell.h */,
-				366615622952E31E00BC333A /* TFY_PickerAssetCell.h */,
-				366615632952E31E00BC333A /* TFY_PickerAlbumCell.m */,
+				366615852952E31E00BC333A /* TFY_PhotoPreviewGifCell.m */,
+				3666158E2952E31E00BC333A /* TFY_GifPlayerManager.h */,
 				366615642952E31E00BC333A /* TFY_GifPlayerManager.m */,
 				366615652952E31E00BC333A /* TFY_VideoUtils.h */,
+				3666158D2952E31E00BC333A /* TFY_VideoUtils.m */,
+				3666158C2952E31E00BC333A /* TFY_FileUtility.h */,
 				366615662952E31E00BC333A /* TFY_FileUtility.m */,
+				3666158B2952E31E00BC333A /* TFY_AssetManager+Authorization.h */,
 				366615672952E31E00BC333A /* TFY_AssetManager+Authorization.m */,
+				3666158A2952E31E00BC333A /* TFY_ResultObject.h */,
 				366615682952E31E00BC333A /* TFY_ResultObject.m */,
+				3666157F2952E31E00BC333A /* TFY_PickerAlbumCell.h */,
+				366615632952E31E00BC333A /* TFY_PickerAlbumCell.m */,
+				366615622952E31E00BC333A /* TFY_PickerAssetCell.h */,
+				366615832952E31E00BC333A /* TFY_PickerAssetCell.m */,
 				366615692952E31E00BC333A /* TFY_VideoEditManager.h */,
+				366615892952E31E00BC333A /* TFY_VideoEditManager.m */,
+				366615882952E31E00BC333A /* TFY_AssetManager+SaveAlbum.h */,
 				3666156A2952E31E00BC333A /* TFY_AssetManager+SaveAlbum.m */,
 				3666156B2952E31E00BC333A /* TFY_PickerToGIF.h */,
+				366615872952E31E00BC333A /* TFY_PickerToGIF.m */,
+				366615862952E31E00BC333A /* TFY_PhotoEditManager.h */,
 				3666156C2952E31E00BC333A /* TFY_PhotoEditManager.m */,
 				3666156D2952E31E00BC333A /* TFY_ResultVideo.h */,
+				366615982952E31E00BC333A /* TFY_ResultVideo.m */,
+				366615972952E31E00BC333A /* TFY_PickerAsset.h */,
 				3666156E2952E31E00BC333A /* TFY_PickerAsset.m */,
-				3666156F2952E31E00BC333A /* TFY_AssetImageProtocol.h */,
 				366615702952E31E00BC333A /* TFY_PickerAsset+property.h */,
+				3666156F2952E31E00BC333A /* TFY_AssetImageProtocol.h */,
+				366615962952E31E00BC333A /* TFY_ImagePickerPublic.h */,
 				366615712952E31E00BC333A /* TFY_ImagePickerPublic.m */,
 				366615722952E31E00BC333A /* TFY_PhotoPreviewVideoCell.h */,
+				366615942952E31E00BC333A /* TFY_PhotoPreviewVideoCell.m */,
 				366615732952E31E00BC333A /* TFY_AssetManager.h */,
+				366615952952E31E00BC333A /* TFY_AssetManager.m */,
+				366615932952E31E00BC333A /* TFY_PickerPreviewBar.h */,
 				366615742952E31E00BC333A /* TFY_PickerPreviewBar.m */,
+				366615912952E31E00BC333A /* TFY_PickerAlbumTitleView.h */,
 				366615752952E31E00BC333A /* TFY_PickerAlbumTitleView.m */,
 				366615762952E31E00BC333A /* TFY_PhotoPreviewLivePhotoCell.h */,
+				366615922952E31E00BC333A /* TFY_PhotoPreviewLivePhotoCell.m */,
+				366615902952E31E00BC333A /* TFY_PickerAlbum.h */,
 				366615772952E31E00BC333A /* TFY_PickerAlbum.m */,
 				366615782952E31E00BC333A /* TFY_PreviewBarCell.h */,
-				366615792952E31E00BC333A /* TFY_AssetManager+Simple.h */,
-				3666157A2952E31E00BC333A /* TFY_PickerAlbum+SmartAlbum.m */,
-				3666157B2952E31E00BC333A /* TFY_PickerResultInfo.h */,
-				3666157C2952E31E00BC333A /* TFY_PhotoPreviewCell.h */,
-				3666157D2952E31E00BC333A /* TFY_AssetManager+CreateMedia.h */,
-				3666157E2952E31E00BC333A /* TFY_PhotoPreviewCell+property.h */,
-				3666157F2952E31E00BC333A /* TFY_PickerAlbumCell.h */,
-				366615802952E31E00BC333A /* TFYPickerUit.h */,
-				366615812952E31E00BC333A /* TFY_AssetPhotoProtocol.h */,
-				366615822952E31E00BC333A /* TFY_ResultObjectproperty.h */,
-				366615832952E31E00BC333A /* TFY_PickerAssetCell.m */,
-				366615842952E31E00BC333A /* TFY_ResultImage.m */,
-				366615852952E31E00BC333A /* TFY_PhotoPreviewGifCell.m */,
-				366615862952E31E00BC333A /* TFY_PhotoEditManager.h */,
-				366615872952E31E00BC333A /* TFY_PickerToGIF.m */,
-				366615882952E31E00BC333A /* TFY_AssetManager+SaveAlbum.h */,
-				366615892952E31E00BC333A /* TFY_VideoEditManager.m */,
-				3666158A2952E31E00BC333A /* TFY_ResultObject.h */,
-				3666158B2952E31E00BC333A /* TFY_AssetManager+Authorization.h */,
-				3666158C2952E31E00BC333A /* TFY_FileUtility.h */,
-				3666158D2952E31E00BC333A /* TFY_VideoUtils.m */,
-				3666158E2952E31E00BC333A /* TFY_GifPlayerManager.h */,
 				3666158F2952E31E00BC333A /* TFY_PreviewBarCell.m */,
-				366615902952E31E00BC333A /* TFY_PickerAlbum.h */,
-				366615912952E31E00BC333A /* TFY_PickerAlbumTitleView.h */,
-				366615922952E31E00BC333A /* TFY_PhotoPreviewLivePhotoCell.m */,
-				366615932952E31E00BC333A /* TFY_PickerPreviewBar.h */,
-				366615942952E31E00BC333A /* TFY_PhotoPreviewVideoCell.m */,
-				366615952952E31E00BC333A /* TFY_AssetManager.m */,
-				366615962952E31E00BC333A /* TFY_ImagePickerPublic.h */,
-				366615972952E31E00BC333A /* TFY_PickerAsset.h */,
-				366615982952E31E00BC333A /* TFY_ResultVideo.m */,
-				366615992952E31E00BC333A /* TFY_AssetManager+CreateMedia.m */,
-				3666159A2952E31E00BC333A /* TFY_PhotoPreviewCell.m */,
-				3666159B2952E31E00BC333A /* TFY_PickerResultInfo.m */,
-				3666159C2952E31E00BC333A /* TFY_AssetVideoProtocol.h */,
+				366615792952E31E00BC333A /* TFY_AssetManager+Simple.h */,
 				3666159D2952E31E00BC333A /* TFY_AssetManager+Simple.m */,
 				3666159E2952E31E00BC333A /* TFY_PickerAlbum+SmartAlbum.h */,
+				3666157A2952E31E00BC333A /* TFY_PickerAlbum+SmartAlbum.m */,
+				3666157B2952E31E00BC333A /* TFY_PickerResultInfo.h */,
+				3666159B2952E31E00BC333A /* TFY_PickerResultInfo.m */,
+				3666157C2952E31E00BC333A /* TFY_PhotoPreviewCell.h */,
+				3666159A2952E31E00BC333A /* TFY_PhotoPreviewCell.m */,
+				3666157D2952E31E00BC333A /* TFY_AssetManager+CreateMedia.h */,
+				366615992952E31E00BC333A /* TFY_AssetManager+CreateMedia.m */,
+				3666157E2952E31E00BC333A /* TFY_PhotoPreviewCell+property.h */,
+				366615812952E31E00BC333A /* TFY_AssetPhotoProtocol.h */,
+				366615822952E31E00BC333A /* TFY_ResultObjectproperty.h */,
+				3666159C2952E31E00BC333A /* TFY_AssetVideoProtocol.h */,
 			);
 			path = TFYPickerUit;
 			sourceTree = "<group>";
@@ -986,36 +944,36 @@
 		366615A22952E31E00BC333A /* TFYFilterSuite */ = {
 			isa = PBXGroup;
 			children = (
+				366615B52952E31E00BC333A /* TFYFilterSuite.h */,
+				366615B22952E31E00BC333A /* TFY_ContextImageView.h */,
 				366615A32952E31E00BC333A /* TFY_ContextImageView.m */,
+				366615BC2952E31E00BC333A /* TFY_ContextImageView+private.h */,
 				366615A42952E31E00BC333A /* TFY_FilterVideoExportSession.h */,
+				366615B02952E31E00BC333A /* TFY_FilterVideoExportSession.m */,
 				366615A52952E31E00BC333A /* TFY_FilterVideoView.h */,
+				366615B12952E31E00BC333A /* TFY_FilterVideoView.m */,
+				366615B82952E31E00BC333A /* TFY_Filter+Image.h */,
 				366615A62952E31E00BC333A /* TFY_Filter+Image.m */,
+				366615BF2952E31E00BC333A /* TFY_Filter+Initialize.h */,
 				366615A72952E31E00BC333A /* TFY_WeakSelectorTarget.h */,
+				366615B72952E31E00BC333A /* TFY_WeakSelectorTarget.m */,
+				366615B62952E31E00BC333A /* TFY_Filter+save.h */,
 				366615A82952E31E00BC333A /* TFY_Filter+save.m */,
+				366615B42952E31E00BC333A /* TFY_FilterImageView.h */,
 				366615A92952E31E00BC333A /* TFY_FilterImageView.m */,
+				366615B32952E31E00BC333A /* TFY_LView.h */,
 				366615AA2952E31E00BC333A /* TFY_LView.m */,
 				366615AB2952E31E00BC333A /* TFY_MutableFilter.h */,
+				366615BB2952E31E00BC333A /* TFY_MutableFilter.m */,
+				366615BA2952E31E00BC333A /* TFY_MutableFilter+Initialize.h */,
 				366615AC2952E31E00BC333A /* TFY_SampleBufferHolder.h */,
+				366615B92952E31E00BC333A /* TFY_SampleBufferHolder.m */,
 				366615AD2952E31E00BC333A /* TFY_Filter.h */,
+				366615C02952E31E00BC333A /* TFY_Filter.m */,
+				366615BE2952E31E00BC333A /* TFY_FilterGifView.h */,
 				366615AE2952E31E00BC333A /* TFY_FilterGifView.m */,
 				366615AF2952E31E00BC333A /* TFY_Context.h */,
-				366615B02952E31E00BC333A /* TFY_FilterVideoExportSession.m */,
-				366615B12952E31E00BC333A /* TFY_FilterVideoView.m */,
-				366615B22952E31E00BC333A /* TFY_ContextImageView.h */,
-				366615B32952E31E00BC333A /* TFY_LView.h */,
-				366615B42952E31E00BC333A /* TFY_FilterImageView.h */,
-				366615B52952E31E00BC333A /* TFYFilterSuite.h */,
-				366615B62952E31E00BC333A /* TFY_Filter+save.h */,
-				366615B72952E31E00BC333A /* TFY_WeakSelectorTarget.m */,
-				366615B82952E31E00BC333A /* TFY_Filter+Image.h */,
-				366615B92952E31E00BC333A /* TFY_SampleBufferHolder.m */,
-				366615BA2952E31E00BC333A /* TFY_MutableFilter+Initialize.h */,
-				366615BB2952E31E00BC333A /* TFY_MutableFilter.m */,
-				366615BC2952E31E00BC333A /* TFY_ContextImageView+private.h */,
 				366615BD2952E31E00BC333A /* TFY_Context.m */,
-				366615BE2952E31E00BC333A /* TFY_FilterGifView.h */,
-				366615BF2952E31E00BC333A /* TFY_Filter+Initialize.h */,
-				366615C02952E31E00BC333A /* TFY_Filter.m */,
 			);
 			path = TFYFilterSuite;
 			sourceTree = "<group>";
@@ -1023,33 +981,31 @@
 		366615C12952E31E00BC333A /* TFYDrawView */ = {
 			isa = PBXGroup;
 			children = (
-				366615C22952E31E00BC333A /* TFY_MosaicBrush.h */,
-				366615C32952E31E00BC333A /* TFY_Brush.h */,
-				366615C42952E31E00BC333A /* TFY_BrushCache.m */,
-				366615C52952E31E00BC333A /* TFY_DrawView.h */,
-				366615C62952E31E00BC333A /* TFY_StampBrush.h */,
-				366615C72952E31E00BC333A /* TFY_PaintBrush.h */,
-				366615C82952E31E00BC333A /* TFY_FluorescentBrush.h */,
-				366615C92952E31E00BC333A /* TFY_Brush+create.h */,
-				366615CA2952E31E00BC333A /* TFY_HighlightBrush.h */,
-				366615CB2952E31E00BC333A /* TFY_EraserBrush.h */,
 				366615CC2952E31E00BC333A /* TFYDrawView.h */,
+				366615C32952E31E00BC333A /* TFY_Brush.h */,
+				366615D42952E31E00BC333A /* TFY_Brush.m */,
+				366615C92952E31E00BC333A /* TFY_Brush+create.h */,
+				366615D62952E31E00BC333A /* TFY_Brush+create.m */,
+				366615C22952E31E00BC333A /* TFY_MosaicBrush.h */,
+				366615D02952E31E00BC333A /* TFY_MosaicBrush.m */,
+				366615C52952E31E00BC333A /* TFY_DrawView.h */,
+				366615D22952E31E00BC333A /* TFY_DrawView.m */,
+				366615C62952E31E00BC333A /* TFY_StampBrush.h */,
+				366615D12952E31E00BC333A /* TFY_StampBrush.m */,
+				366615C72952E31E00BC333A /* TFY_PaintBrush.h */,
+				366615D82952E31E00BC333A /* TFY_PaintBrush.m */,
+				366615C82952E31E00BC333A /* TFY_FluorescentBrush.h */,
+				366615D72952E31E00BC333A /* TFY_FluorescentBrush.m */,
+				366615CA2952E31E00BC333A /* TFY_HighlightBrush.h */,
+				366615D52952E31E00BC333A /* TFY_HighlightBrush.m */,
+				366615CB2952E31E00BC333A /* TFY_EraserBrush.h */,
+				366615DC2952E31E00BC333A /* TFY_EraserBrush.m */,
 				366615CD2952E31E00BC333A /* TFY_SmearBrush.h */,
+				366615DB2952E31E00BC333A /* TFY_SmearBrush.m */,
+				366615DA2952E31E00BC333A /* TFY_ChalkBrush.h */,
 				366615CE2952E31E00BC333A /* TFY_ChalkBrush.m */,
 				366615CF2952E31E00BC333A /* TFY_BlurryBrush.h */,
-				366615D02952E31E00BC333A /* TFY_MosaicBrush.m */,
-				366615D12952E31E00BC333A /* TFY_StampBrush.m */,
-				366615D22952E31E00BC333A /* TFY_DrawView.m */,
-				366615D32952E31E00BC333A /* TFY_BrushCache.h */,
-				366615D42952E31E00BC333A /* TFY_Brush.m */,
-				366615D52952E31E00BC333A /* TFY_HighlightBrush.m */,
-				366615D62952E31E00BC333A /* TFY_Brush+create.m */,
-				366615D72952E31E00BC333A /* TFY_FluorescentBrush.m */,
-				366615D82952E31E00BC333A /* TFY_PaintBrush.m */,
 				366615D92952E31E00BC333A /* TFY_BlurryBrush.m */,
-				366615DA2952E31E00BC333A /* TFY_ChalkBrush.h */,
-				366615DB2952E31E00BC333A /* TFY_SmearBrush.m */,
-				366615DC2952E31E00BC333A /* TFY_EraserBrush.m */,
 			);
 			path = TFYDrawView;
 			sourceTree = "<group>";
@@ -1057,13 +1013,13 @@
 		366615E02952E31E00BC333A /* TFYFilterBar */ = {
 			isa = PBXGroup;
 			children = (
-				366615E12952E31E00BC333A /* TFY_FilterModel.h */,
-				366615E22952E31E00BC333A /* TFY_FilterBar.m */,
 				366615E32952E31E00BC333A /* TFYFilterBar.h */,
-				366615E42952E31E00BC333A /* TFY_FilterBarCell.m */,
+				366615E12952E31E00BC333A /* TFY_FilterModel.h */,
 				366615E52952E31E00BC333A /* TFY_FilterModel.m */,
 				366615E62952E31E00BC333A /* TFY_FilterBar.h */,
+				366615E22952E31E00BC333A /* TFY_FilterBar.m */,
 				366615E72952E31E00BC333A /* TFY_FilterBarCell.h */,
+				366615E42952E31E00BC333A /* TFY_FilterBarCell.m */,
 			);
 			path = TFYFilterBar;
 			sourceTree = "<group>";
@@ -1076,6 +1032,78 @@
 				3666167E29530CFD00BC333A /* 2.jpeg */,
 			);
 			path = phone;
+			sourceTree = "<group>";
+		};
+		366616822953FFE600BC333A /* TFYVideoUit */ = {
+			isa = PBXGroup;
+			children = (
+				366616832954005A00BC333A /* TFYVideoUit.h */,
+				366614B82952E31D00BC333A /* TFY_PickerVideoPlayer.h */,
+				366614C82952E31D00BC333A /* TFY_PickerVideoPlayer.m */,
+				366614B92952E31D00BC333A /* TFY_VideoClipToolbar.h */,
+				366614C62952E31D00BC333A /* TFY_VideoClipToolbar.m */,
+				366614BB2952E31D00BC333A /* TFY_VideoEditingView.h */,
+				366614CC2952E31D00BC333A /* TFY_VideoEditingView.m */,
+				366614CA2952E31D00BC333A /* TFY_VideoEdit.h */,
+				366614BC2952E31D00BC333A /* TFY_VideoEdit.m */,
+				366614CB2952E31D00BC333A /* TFY_VideoClippingView.h */,
+				366614BD2952E31D00BC333A /* TFY_VideoClippingView.m */,
+				366614C92952E31D00BC333A /* TFY_VideoTrimmerGridView.h */,
+				366614BE2952E31D00BC333A /* TFY_VideoTrimmerGridView.m */,
+				366614BF2952E31D00BC333A /* TFY_VideoTrimmerView.h */,
+				366614D12952E31D00BC333A /* TFY_VideoTrimmerView.m */,
+				366614D02952E31D00BC333A /* TFY_DataFilterVideoView.h */,
+				366614C12952E31D00BC333A /* TFY_DataFilterVideoView.m */,
+				366614CF2952E31D00BC333A /* TFY_AudioTrackBar.h */,
+				366614C22952E31D00BC333A /* TFY_AudioTrackBar.m */,
+				366614C32952E31D00BC333A /* TFY_GridMaskLayer.h */,
+				366614CE2952E31D00BC333A /* TFY_GridMaskLayer.m */,
+				366614D32952E31D00BC333A /* TFY_VideoTrimmerGridLayer.h */,
+				366614C42952E31D00BC333A /* TFY_VideoTrimmerGridLayer.m */,
+			);
+			path = TFYVideoUit;
+			sourceTree = "<group>";
+		};
+		36661685295402B500BC333A /* TFYItools */ = {
+			isa = PBXGroup;
+			children = (
+				36661686295402C900BC333A /* TFYItools.h */,
+				366615582952E31E00BC333A /* TFY_ImageCoder.h */,
+				366615DD2952E31E00BC333A /* TFY_ImageCoder.m */,
+				366614DB2952E31D00BC333A /* NSBundle+picker.h */,
+				366614E72952E31D00BC333A /* NSBundle+picker.m */,
+				366614CD2952E31D00BC333A /* TFY_MediaEditingType.h */,
+				366615DE2952E31E00BC333A /* TFY_AssetExportSession.h */,
+				366615A12952E31E00BC333A /* TFY_AssetExportSession.m */,
+				366614F32952E31D00BC333A /* TFY_MEGIFImageSerialization.h */,
+				366614E12952E31D00BC333A /* TFY_MEGIFImageSerialization.m */,
+				366615122952E31E00BC333A /* TFY_BaseCollectionViewCell.h */,
+				366615432952E31E00BC333A /* TFY_BaseCollectionViewCell.m */,
+				366615572952E31E00BC333A /* TFY_BaseEditingController.h */,
+				366615182952E31E00BC333A /* TFY_BaseEditingController.m */,
+				366614EA2952E31D00BC333A /* UIDevice+picker.h */,
+				366614D82952E31D00BC333A /* UIDevice+picker.m */,
+				3666153B2952E31E00BC333A /* TFY_EditCollectionView.h */,
+				366615062952E31E00BC333A /* TFY_EditCollectionView.m */,
+				366614E92952E31D00BC333A /* UIViewController+picker.h */,
+				366614DA2952E31D00BC333A /* UIViewController+picker.m */,
+				366615D32952E31E00BC333A /* TFY_BrushCache.h */,
+				366615C42952E31E00BC333A /* TFY_BrushCache.m */,
+				366615A02952E31E00BC333A /* TFY_EasyNoticeBar.h */,
+				366615DF2952E31E00BC333A /* TFY_EasyNoticeBar.m */,
+			);
+			path = TFYItools;
+			sourceTree = "<group>";
+		};
+		366616872954052A00BC333A /* TFYEditingProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				366614BA2952E31D00BC333A /* TFY_ResizeControl.h */,
+				366614C52952E31D00BC333A /* TFY_ResizeControl.m */,
+				366615132952E31E00BC333A /* TFY_EditingProtocol.h */,
+				366615412952E31E00BC333A /* TFY_EditingProtocol.m */,
+			);
+			path = TFYEditingProtocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

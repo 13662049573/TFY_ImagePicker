@@ -6,8 +6,8 @@
 //
 
 #import "TFY_MovingRemoveView.h"
-#import "UIView+picker.h"
-#import "TFY_ImageCoder.h"
+#import "TFYCategory.h"
+#import "TFYItools.h"
 
 @interface TFY_MovingRemoveView ()
 /** 内容视图 */

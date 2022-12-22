@@ -87,8 +87,8 @@ NS_ASSUME_NONNULL_BEGIN
                        size:(CGSize)size
                         fps:(NSUInteger)fps
                    duration:(NSTimeInterval)duration
-                  audioPath:(NSString *)audioPath
-                   complete:(void (^)(NSData *data, NSError *error))complete;
+                  audioPath:(nullable NSString *)audioPath
+                   complete:(nullable void (^)(NSData *data, NSError *error))complete;
 
 /**
  Create MP4
@@ -100,8 +100,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)createMP4WithImages:(NSArray <UIImage *>*)images
                        size:(CGSize)size
-                  audioPath:(NSString *)audioPath
-                   complete:(void (^)(NSData *data, NSError *error))complete;
+                  audioPath:(nullable NSString *)audioPath
+                   complete:(nullable void (^)(NSData *data, NSError *error))complete;
 
 /**
  Create MP4
@@ -112,7 +112,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)createMP4WithImages:(NSArray <UIImage *>*)images
                        size:(CGSize)size
-                   complete:(void (^)(NSData *data, NSError *error))complete;
+                   complete:(nullable void (^)(NSData *data, NSError *error))complete;
 
 
 @end

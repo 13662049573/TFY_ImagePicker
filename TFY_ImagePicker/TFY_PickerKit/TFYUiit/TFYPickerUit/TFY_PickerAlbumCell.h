@@ -12,12 +12,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TFY_PickerAlbumCell : UITableViewCell
+
 @property (nonatomic, strong) TFY_PickerAlbum *album;
 /** 封面 */
-@property (nonatomic, setter=setPosterImage:) UIImage *posterImage;
+@property (nonatomic, setter=setPosterImage:,nullable) UIImage *posterImage;
 
 /** 设置选中图片 */
-- (void)setSelectedImage:(UIImage *)image;
+@property(nonatomic , strong, nullable)UIImage *selectedPickerImage;
 
 + (CGFloat)cellHeight;
 

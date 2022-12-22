@@ -11,6 +11,7 @@
 #import "TFY_AssetManager+Simple.h"
 #import "TFY_PhotoEditManager.h"
 #import "TFY_PhotoEdit.h"
+#import "TFYItools.h"
 
 @interface TFY_PickerAlbumCell ()
 @property (nonatomic, weak) UIImageView *posterImageView;
@@ -106,10 +107,10 @@
     return self.posterImageView.image;
 }
 
-- (void)setSelectedImage:(UIImage *)image
-{
-    self.selectedImageView.image = image;
-    [_selectedImageView setHidden:image == nil];
+- (void)setSelectedPickerImage:(UIImage *)selectedPickerImage {
+    _selectedPickerImage = selectedPickerImage;
+    self.selectedImageView.image = selectedPickerImage;
+    [_selectedImageView setHidden:selectedPickerImage == nil];
 }
 
 - (void)prepareForReuse

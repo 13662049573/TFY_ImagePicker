@@ -8,7 +8,7 @@
 #import "TFY_EditingProtocol.h"
 #import <objc/runtime.h>
 #import "TFYCategory.h"
-#import "TFY_DrawView.h"
+#import "TFYItools.h"
 #import "TFY_StickerView.h"
 #import "TFY_FilterGifView.h"
 #import "TFY_FilterDataProtocol.h"

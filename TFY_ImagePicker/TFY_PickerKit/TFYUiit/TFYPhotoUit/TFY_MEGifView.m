@@ -6,7 +6,7 @@
 //
 
 #import "TFY_MEGifView.h"
-#import "TFY_ImageCoder.h"
+#import "TFYItools.h"
 #import "TFY_MEWeakSelectorTarget.h"
 #import <ImageIO/ImageIO.h>
 
@@ -71,31 +71,25 @@ inline static UIImageOrientation TFYMEGifView_UIImageOrientationFromEXIFValue(NS
 
 - (id)init {
     self = [super init];
-    
     if (self) {
         [self commonInit];
     }
-    
     return self;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    
     if (self) {
         [self commonInit];
     }
-    
     return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
-    
     if (self) {
         [self commonInit];
     }
-    
     return self;
 }
 
@@ -104,7 +98,7 @@ inline static UIImageOrientation TFYMEGifView_UIImageOrientationFromEXIFValue(NS
     _duration = 0.1f;
     _imageRefs = [NSMutableDictionary dictionary];
     _orientation = UIImageOrientationUp;
-    _serialQueue = dispatch_queue_create("LFMEGifViewSerial", DISPATCH_QUEUE_SERIAL);
+    _serialQueue = dispatch_queue_create("TFYMEGifViewSerial", DISPATCH_QUEUE_SERIAL);
 }
 
 - (void)dealloc
