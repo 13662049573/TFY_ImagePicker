@@ -10,13 +10,13 @@ Pod::Spec.new do |spec|
   相册编辑功能
                    DESC
 
-  spec.homepage     = "http://EXAMPLE/TFY_PickerKit"
+  spec.homepage     = "https://github.com/13662049573/TFY_ImagePicker"
   
   spec.license      = "MIT"
  
-  spec.author             = { "田风有" => "420144542@qq.com" }
+  spec.author       = { "田风有" => "420144542@qq.com" }
   
-  spec.source       = { :git => "http://EXAMPLE/TFY_PickerKit.git", :tag => spec.version }
+  spec.source       = { :git => "https://github.com/13662049573/TFY_ImagePicker.git", :tag => spec.version }
 
   spec.platform     = :ios, "12.0"
 
