@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
   spec.name         = "TFY_PickerKit"
 
-  spec.version      = "2.0.2"
+  spec.version      = "2.0.3"
 
   spec.summary      = "相册编辑功能"
 
