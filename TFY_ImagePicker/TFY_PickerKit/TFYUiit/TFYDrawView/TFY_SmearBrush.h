@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  image 图层展示的图片
  canvasSize 画布大小
  useCache 是否使用缓存。如果image与canvasSize固定，建议使用缓存。
- complete 回调状态(成功后可以直接使用[[LFSmearBrush alloc] init]初始化画笔)
+ complete 回调状态(成功后可以直接使用[[TFY_SmearBrush alloc] init]初始化画笔)
  */
 + (void)loadBrushImage:(UIImage *)image canvasSize:(CGSize)canvasSize useCache:(BOOL)useCache complete:(void (^ _Nullable )(BOOL success))complete;
 

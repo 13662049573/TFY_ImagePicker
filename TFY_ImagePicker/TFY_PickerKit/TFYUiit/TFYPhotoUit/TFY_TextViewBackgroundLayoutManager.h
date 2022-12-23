@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat radius;
 /** 所有的绘制位置集合 CGRect */
 @property (nonatomic, readonly) NSArray <NSValue *>*allUsedRects;
-/** 绘制数据，交由LFCGContextDrawTextBackground使用 */
+/** 绘制数据，交由TFY_CGContextDrawTextBackground使用 */
 @property (nonatomic, strong) NSDictionary *layoutData;
 @end
 

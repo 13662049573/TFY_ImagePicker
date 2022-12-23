@@ -90,7 +90,7 @@ CGFloat TFYBrushAngleBetweenPoint(CGPoint p0, CGPoint p1) {
 
 - (CALayer *)createDrawLayerWithPoint:(CGPoint)point
 {
-    NSAssert(![self isMemberOfClass:[TFY_Brush class]], @"Use subclasses of LFBrush.");
+    NSAssert(![self isMemberOfClass:[TFY_Brush class]], @"Use subclasses of TFY_Brush.");
     self.allPoints = [NSMutableArray array];
     if (TFYBrushPointIsNull(point)) {
         return nil;

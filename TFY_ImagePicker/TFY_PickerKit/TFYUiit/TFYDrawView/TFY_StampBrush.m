@@ -82,7 +82,7 @@ NSString *const TFYStampBrushScale = @"TFYStampBrushScale";
 {
     CGFloat lineWidth = [trackDict[TFYBrushLineWidth] floatValue];
     NSArray <NSString *> *patterns = trackDict[TFYStampBrushPatterns];
-//    CGFloat spacing = [trackDict[LFStampBrushSpacing] floatValue];
+//    CGFloat spacing = [trackDict[TFY_StampBrushSpacing] floatValue];
     CGFloat scale = [trackDict[TFYStampBrushScale] floatValue];
     NSArray <NSString /*CGPoint*/*>*allPoints = trackDict[TFYBrushAllPoints];
     NSBundle *bundle = trackDict[TFYBrushBundle];
@@ -128,7 +128,7 @@ NSString *const TFYStampBrushScale = @"TFYStampBrushScale";
     }
     
     if (image == nil) {
-        NSAssert(name!=nil, @"LFSmearBrush name is nil.");
+        NSAssert(name!=nil, @"TFY_SmearBrush name is nil.");
         
         if (bundle) {
             /**

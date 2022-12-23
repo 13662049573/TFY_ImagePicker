@@ -13,12 +13,12 @@ NSString *const ImagePickerStrings = @"ImagePicker";
 @implementation NSBundle (picker)
 
 + (instancetype)picker_mediaEditingBundle {
-    static NSBundle *lfMediaEditingBundle = nil;
-    if (lfMediaEditingBundle == nil) {
+    static NSBundle *MediaEditingBundle = nil;
+    if (MediaEditingBundle == nil) {
         // 这里不使用mainBundle是为了适配pod 1.x和0.x
-        lfMediaEditingBundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[NSClassFromString(@"TFY_BaseEditingController") class]] pathForResource:ImagePickerStrings ofType:@"bundle"]];
+        MediaEditingBundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[NSClassFromString(@"TFY_BaseEditingController") class]] pathForResource:ImagePickerStrings ofType:@"bundle"]];
     }
-    return lfMediaEditingBundle;
+    return MediaEditingBundle;
 }
 
 + (UIImage *)picker_imageNamed:(nullable NSString *)name

@@ -47,9 +47,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// Copy TFY_ImagePickerController.strings to any location of your project and modify the corresponding value.
-/// These property have the highest priority and use LFImagePickerController.strings as much as possible. Otherwise, some properties of LFImagePickerController.strings will be invalid.
-/// 复制LFImagePickerController.strings到项目任意位置，修改对应的值。
-/// 这些属性拥有最高的优先级，尽可能使用LFImagePickerController.strings。否则会导致LFImagePickerController.strings对应的属性失效。
+/// These property have the highest priority and use TFY_ImagePickerController.strings as much as possible. Otherwise, some properties of TFY_ImagePickerController.strings will be invalid.
+/// 复制TFY_ImagePickerController.strings到项目任意位置，修改对应的值。
+/// 这些属性拥有最高的优先级，尽可能使用TFY_ImagePickerController.strings。否则会导致TFY_ImagePickerController.strings对应的属性失效。
 @property (nonatomic, copy) NSString *doneBtnTitleStr;
 @property (nonatomic, copy) NSString *cancelBtnTitleStr;
 @property (nonatomic, copy) NSString *previewBtnTitleStr;

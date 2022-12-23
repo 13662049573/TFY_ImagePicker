@@ -22,7 +22,7 @@
 #endif
 
 @property (nonatomic, weak) GLKView *GLKView;
-@property (nonatomic, weak) TFY_LView *LFLView;
+@property (nonatomic, weak) TFY_LView *pickerView;
 @property (nonatomic, weak) UIView *UIView;
 @property (nonatomic, strong) TFY_SampleBufferHolder *sampleBufferHolder;
 
@@ -115,7 +115,7 @@
         viewRect = self.contentView.bounds;
     }
     _GLKView.frame = viewRect;
-    _LFLView.frame = self.bounds;
+    _pickerView.frame = self.bounds;
     _UIView.frame = self.bounds;
 
     _MTKView.frame = self.bounds;
@@ -128,9 +128,9 @@
         _GLKView.delegate = nil;
         _GLKView = nil;
     }
-    if (_LFLView != nil) {
-        [_LFLView removeFromSuperview];
-        _LFLView = nil;
+    if (_pickerView != nil) {
+        [_pickerView removeFromSuperview];
+        _pickerView = nil;
     }
     if (_UIView != nil) {
         [_UIView removeFromSuperview];
@@ -179,7 +179,7 @@
                 //按照屏幕大小截取图片
                 view.tileSize = CGSizeMake(self.bounds.size.width, self.bounds.size.height);
                 [self insertSubview:view atIndex:0];
-                _LFLView = view;
+                _pickerView = view;
             }
                 break;
             case TFYContextTypeDefault:
@@ -222,8 +222,8 @@
     [super setNeedsDisplay];
     
     [_GLKView setNeedsDisplay];
-    if (_LFLView) {
-        _LFLView.image = [self renderedUIImage];
+    if (_pickerView) {
+        _pickerView.image = [self renderedUIImage];
     }
     if (_UIView) {
         CGImageRef imageRef = [self newRenderedCGImage];

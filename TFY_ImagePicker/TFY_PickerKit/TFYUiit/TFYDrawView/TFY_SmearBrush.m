@@ -195,7 +195,7 @@ NSString *const TFYSmearBrushColor = @"TFYSmearBrushColor";
 + (CALayer *__nullable)drawLayerWithTrackDict:(NSDictionary *)trackDict
 {
     CGFloat lineWidth = [trackDict[TFYBrushLineWidth] floatValue];
-//    NSArray <NSString /*CGPoint*/*>*allPoints = trackDict[LFBrushAllPoints];
+//    NSArray <NSString /*CGPoint*/*>*allPoints = trackDict[TFY_BrushAllPoints];
     NSArray <NSDictionary *>*points = trackDict[TFYSmearBrushPoints];
     NSString *name = trackDict[TFYSmearBrushName];
     NSBundle *bundle = trackDict[TFYBrushBundle];
@@ -235,7 +235,7 @@ NSString *const TFYSmearBrushColor = @"TFYSmearBrushColor";
     }
     
     if (image == nil) {
-        NSAssert(name!=nil, @"LFSmearBrush name is nil.");
+        NSAssert(name!=nil, @"TFY_SmearBrush name is nil.");
         
         if (bundle) {
             /**

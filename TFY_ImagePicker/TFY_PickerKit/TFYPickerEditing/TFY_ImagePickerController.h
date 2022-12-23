@@ -52,9 +52,9 @@ typedef void(^picker_takePhotoHandler)(id media, NSString *mediaType, picker_tak
 #pragma mark - preview model,self.isPreview = YES.
 /// This init method just for previewing photos,pickerDelegate = self; / 用这个初始化方法以预览图片,pickerDelegate = self;
 - (instancetype)initWithSelectedAssets:(NSArray /**<PHAsset/ALAsset *>*/*)selectedAssets index:(NSUInteger)index;
-/// This init method just for previewing photos,complete block call back  (The delegate didCancelHandle only valid)/ 用这个初始化方法以预览图片 complete => 完成后返回全新数组 （代理仅lf_imagePickerControllerDidCancel有效）
+/// This init method just for previewing photos,complete block call back  (The delegate didCancelHandle only valid)/ 用这个初始化方法以预览图片 complete => 完成后返回全新数组 （代理仅picker_imagePickerControllerDidCancel有效）
 - (instancetype)initWithSelectedImageObjects:(NSArray <id<TFY_AssetImageProtocol>>*)selectedPhotos index:(NSUInteger)index complete:(void (^)(NSArray <id<TFY_AssetImageProtocol>>* photos))complete;
-/// New custom media selector (Speed Dial) / 全新自定义图片选择器(带宫格) complete => 完成后返回全新数组 （代理仅lf_imagePickerControllerDidCancel有效）
+/// New custom media selector (Speed Dial) / 全新自定义图片选择器(带宫格) complete => 完成后返回全新数组 （代理仅picker_imagePickerControllerDidCancel有效）
 - (instancetype)initWithSelectedPhotoObjects:(NSArray <id/* <TFY_AssetPhotoProtocol/TFY_AssetVideoProtocol> */>*)selectedPhotos complete:(void (^)(NSArray <id/* <TFY_AssetPhotoProtocol/TFY_AssetVideoProtocol> */>* photos))complete;
 
 
@@ -88,7 +88,7 @@ typedef void(^picker_takePhotoHandler)(id media, NSString *mediaType, picker_tak
 /// 对照片排序,按创建时间升序,默认是YES。如果设置为NO,最新的照片会显示在最前面,内部的拍照按钮会排在第一个
 @property (nonatomic,assign) BOOL sortAscendingByCreateDate;
 
-/// 默认为TFYPickingMediaTypePhoto|LFPickingMediaTypeVideo.
+/// 默认为TFYPickingMediaTypePhoto|TFYPickingMediaTypeVideo.
 @property (nonatomic,assign) TFYPickingMediaType allowPickingType;
 
 /// 默认为YES,如果设置为NO,拍照按钮将隐藏
@@ -160,7 +160,7 @@ typedef void(^picker_takePhotoHandler)(id media, NSString *mediaType, picker_tak
 /** 代理/Delegate */
 @property (nonatomic,weak,nullable) id<TFYImagePickerControllerDelegate> pickerDelegate;
 
-/// block回调,具体使用见LFImagePickerControllerDelegate代理描述
+/// block回调,具体使用见TFYImagePickerControllerDelegate代理描述
 @property (nonatomic,copy) void (^imagePickerControllerTakePhotoHandle)(picker_takePhotoHandler handler);
 @property (nonatomic,copy) void (^imagePickerControllerDidCancelHandle)(void);
 

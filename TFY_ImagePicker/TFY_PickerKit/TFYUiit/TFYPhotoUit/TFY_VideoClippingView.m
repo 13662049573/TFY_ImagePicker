@@ -138,7 +138,7 @@ NSString *const kTFYVideoCLippingViewData_filter = @"TFYVideoCLippingViewData_fi
     self.videoPlayer.delegate = nil;
     self.videoPlayer = nil;
     self.playerView = nil;
-    // 释放LFEditingProtocol协议
+    // 释放TFY_EditingProtocol协议
     [self clearProtocolxecutor];
 }
 

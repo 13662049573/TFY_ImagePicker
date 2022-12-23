@@ -95,7 +95,6 @@
                 }
                 self.isFinalData = YES;
                 /** 这个方式加载GIF内存使用非常高 */
-                //self.previewImage = [UIImage LF_imageWithImageData:data];
                 [self resizeSubviews]; // 刷新subview的位置。
             }
             

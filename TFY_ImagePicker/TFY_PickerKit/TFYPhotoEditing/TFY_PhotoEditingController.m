@@ -736,7 +736,7 @@ TFYPhotoEditOperationStringKey const TFYPhotoEditCropExtraAspectRatioAttributeNa
 /** 取消 */
 - (void)picker_clipToolbarDidCancel:(TFY_ClipToolbar *)clipToolbar
 {
-    if (self.initSelectedOperationType == 0 && self.operationType == TFYPhotoEditOperationType_crop && self.defaultOperationType == TFYPhotoEditOperationType_crop) { /** 证明initSelectedOperationType已消耗完毕，defaultOperationType是有值的。只有LFPhotoEditOperationType_crop的情况，无需返回，直接完成整个编辑 */
+    if (self.initSelectedOperationType == 0 && self.operationType == TFYPhotoEditOperationType_crop && self.defaultOperationType == TFYPhotoEditOperationType_crop) { /** 证明initSelectedOperationType已消耗完毕，defaultOperationType是有值的。只有TFYPhotoEditOperationType_crop的情况，无需返回，直接完成整个编辑 */
         [self cancelButtonClick];
     } else {
         [_EditingView cancelClipping:YES];
@@ -749,7 +749,7 @@ TFYPhotoEditOperationStringKey const TFYPhotoEditCropExtraAspectRatioAttributeNa
 /** 完成 */
 - (void)picker_clipToolbarDidFinish:(TFY_ClipToolbar *)clipToolbar
 {
-    if (self.initSelectedOperationType == 0 && self.operationType == TFYPhotoEditOperationType_crop && self.defaultOperationType == TFYPhotoEditOperationType_crop) { /** 证明initSelectedOperationType已消耗完毕，defaultOperationType是有值的。只有LFPhotoEditOperationType_crop的情况，无需返回，直接完成整个编辑 */
+    if (self.initSelectedOperationType == 0 && self.operationType == TFYPhotoEditOperationType_crop && self.defaultOperationType == TFYPhotoEditOperationType_crop) { /** 证明initSelectedOperationType已消耗完毕，defaultOperationType是有值的。只有TFYPhotoEditOperationType_crop的情况，无需返回，直接完成整个编辑 */
         [_EditingView setClipping:NO animated:NO];
         [self finishButtonClick];
     } else {

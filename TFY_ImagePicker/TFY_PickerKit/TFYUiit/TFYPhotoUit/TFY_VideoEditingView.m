@@ -428,7 +428,7 @@ NSString *const kTFYVideoEditingViewData_audioEnable = @"TFYVideoEditingViewData
 }
 
 /** 播放视频 */
-- (void)lf_videoClippingViewPlay:(TFY_VideoClippingView *_Nonnull)clippingView
+- (void)picker_videoClippingViewPlay:(TFY_VideoClippingView *_Nonnull)clippingView
 {
     if ([self.playerDelegate respondsToSelector:@selector(picker_videoEditingViewPlay:)]) {
         [self.playerDelegate picker_videoEditingViewPlay:self];
@@ -442,7 +442,7 @@ NSString *const kTFYVideoEditingViewData_audioEnable = @"TFYVideoEditingViewData
     }
 }
 /** 播放完毕 */
-- (void)lf_videoClippingViewPlayToEndTime:(TFY_VideoClippingView *_Nonnull)clippingView
+- (void)picker_videoClippingViewPlayToEndTime:(TFY_VideoClippingView *_Nonnull)clippingView
 {
     if ([self.playerDelegate respondsToSelector:@selector(picker_videoEditingViewPlayToEndTime:)]) {
         [self.playerDelegate picker_videoEditingViewPlayToEndTime:self];

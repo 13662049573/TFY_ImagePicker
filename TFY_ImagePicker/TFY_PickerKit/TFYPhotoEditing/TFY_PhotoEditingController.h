@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, TFYPhotoEditOperationType) {
 typedef NSString * TFYPhotoEditOperationStringKey NS_EXTENSIBLE_STRING_ENUM;
 /************************ Attributes ************************/
 /**
- * 以下属性仅对未编辑过对象生效，若是已经编辑过的对象（LFPhotoEdit）忽略该属性。
+ * 以下属性仅对未编辑过对象生效，若是已经编辑过的对象（TFY_PhotoEdit）忽略该属性。
  */
 
 /**
@@ -52,7 +52,7 @@ UIKIT_EXTERN TFYPhotoEditOperationStringKey const TFYPhotoEditDrawColorAttribute
  */
 UIKIT_EXTERN TFYPhotoEditOperationStringKey const TFYPhotoEditDrawBrushAttributeName;
 /**
- 详细请看LFStickerContent.h。
+ 详细请看TFY_StickerContent.h。
  所有资源不适宜过大。开发者需要把控数据大小。防止内存崩溃。
  
  See TFY_StickerContent.h for details.
@@ -68,7 +68,7 @@ UIKIT_EXTERN TFYPhotoEditOperationStringKey const TFYPhotoEditDrawBrushAttribute
     ......
  ]}
  
- NSArray containing NSArray<LFStickerContent *>, default
+ NSArray containing NSArray<TFY_StickerContent *>, default
  @[
     [TFY_StickerContent stickerContentWithTitle:@"默认" contents:@[TFYStickerContentDefaultSticker]],
     [TFY_StickerContent stickerContentWithTitle:@"相册" contents:@[TFYStickerContentAllAlbum]]
@@ -112,7 +112,7 @@ UIKIT_EXTERN TFYPhotoEditOperationStringKey const TFYPhotoEditCropCanRotateAttri
  */
 UIKIT_EXTERN TFYPhotoEditOperationStringKey const TFYPhotoEditCropCanAspectRatioAttributeName;
 /**
- 自定义剪切比例。将会完全重写剪切比例，如需修改显示比例的名称可在LFImagePickerController.strings修改。
+ 自定义剪切比例。将会完全重写剪切比例，如需修改显示比例的名称可在TFY_ImagePickerController.strings修改。
  @[
     [TFY_ExtraAspectRatio extraAspectRatioWithWidth:9 andHeight:16],
     [TFY_ExtraAspectRatio extraAspectRatioWithWidth:2 andHeight:3],
@@ -233,9 +233,9 @@ typedef NS_ENUM(NSUInteger, TFYPhotoEditOperationSubType) {
 @property (nonatomic, assign) TFYPhotoEditOperationType operationType;
 /**
  设置默认的操作类型，可以选择最多2种操作，优先级以operationType类型为准。
- 1、LFPhotoEditOperationType_crop优于所有类型。所有类型可与LFPhotoEditOperationType_crop搭配；
- 2、LFPhotoEditOperationType_crop以外的其它类型搭配以优先级排序仅显示1种。
- ps:当operationType 与 defaultOperationType 只有LFPhotoEditOperationType_crop的情况，不会返回编辑界面，在剪切界面直接完成编辑。
+ 1、TFY_PhotoEditOperationType_crop优于所有类型。所有类型可与TFY_PhotoEditOperationType_crop搭配；
+ 2、TFY_PhotoEditOperationType_crop以外的其它类型搭配以优先级排序仅显示1种。
+ ps:当operationType 与 defaultOperationType 只有TFY_PhotoEditOperationType_crop的情况，不会返回编辑界面，在剪切界面直接完成编辑。
  */
 @property (nonatomic, assign) TFYPhotoEditOperationType defaultOperationType;
 /**

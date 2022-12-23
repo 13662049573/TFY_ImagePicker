@@ -35,22 +35,19 @@ typedef NS_ENUM(NSUInteger, TFYVideoEditOperationType) {
 typedef NSString * TFYVideoEditOperationStringKey NS_EXTENSIBLE_STRING_ENUM;
 /************************ Attributes ************************/
 /**
- * 以下属性仅对未编辑过对象生效，若是已经编辑过的对象（LFVideoEdit）忽略该属性。
- * The following properties are only valid for unedited objects. If the object has been edited (LFVideoEdit), the attribute is ignored.
+ * 以下属性仅对未编辑过对象生效，若是已经编辑过的对象（TFY_VideoEdit）忽略该属性。
+ * The following properties are only valid for unedited objects. If the object has been edited (TFY_VideoEdit), the attribute is ignored.
  */
 
 /**
  绘画的默认颜色
  The default color of the painting.
- 
- NSNumber containing LFVideoEditOperationSubType, default 0
+ NSNumber containing TFYVideoEditOperationSubType, default 0
  */
 UIKIT_EXTERN TFYVideoEditOperationStringKey const TFYVideoEditDrawColorAttributeName;
 /**
  绘画的默认笔刷
- The default brush of the painting.
- 
- NSNumber containing LFVideoEditOperationSubType, default 0
+ NSNumber containing TFYVideoEditOperationSubType, default 0
  */
 UIKIT_EXTERN TFYVideoEditOperationStringKey const TFYVideoEditDrawBrushAttributeName;
 /**
@@ -58,8 +55,6 @@ UIKIT_EXTERN TFYVideoEditOperationStringKey const TFYVideoEditDrawBrushAttribute
  所有资源不适宜过大。开发者需要把控数据大小。防止内存崩溃。
  
  See TFY_StickerContent.h for details.
- All resources should not be too large. Developers need to control the size of the data. Prevent memory crash.
- 
  @{TFYVideoEditStickerContentsAttributeName:@[
     // 第一个标签的数据。
     // Data for the first tab.
@@ -70,7 +65,7 @@ UIKIT_EXTERN TFYVideoEditOperationStringKey const TFYVideoEditDrawBrushAttribute
     ......
  ]}
  
- NSArray containing NSArray<LFStickerContent *>, default
+ NSArray containing NSArray<TFY_StickerContent *>, default
  @[
     [TFY_StickerContent stickerContentWithTitle:@"默认" contents:@[TFYStickerContentDefaultSticker]],
     [TFY_StickerContent stickerContentWithTitle:@"相册" contents:@[TFYStickerContentAllAlbum]]
@@ -81,7 +76,7 @@ UIKIT_EXTERN TFYVideoEditOperationStringKey const TFYVideoEditStickerContentsAtt
  文字的默认颜色
  The default color of the text.
  
- NSNumber containing LFVideoEditOperationSubType, default 0
+ NSNumber containing TFYVideoEditOperationSubType, default 0
  */
 UIKIT_EXTERN TFYVideoEditOperationStringKey const TFYVideoEditTextColorAttributeName;
 /**

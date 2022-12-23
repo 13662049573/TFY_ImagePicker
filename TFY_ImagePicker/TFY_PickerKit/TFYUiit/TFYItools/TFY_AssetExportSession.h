@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger, TFYAssetExportSessionPreset) {
 
 @property (nonatomic, weak) id<TFYAssetExportSessionDelegate> delegate;
 
-/* Indicates the type of the preset with which the LFAssetExportSession was initialized */
+/* Indicates the type of the preset with which the TFY_AssetExportSession was initialized */
 @property (nonatomic, assign, readonly) TFYAssetExportSessionPreset preset;
 
 /**

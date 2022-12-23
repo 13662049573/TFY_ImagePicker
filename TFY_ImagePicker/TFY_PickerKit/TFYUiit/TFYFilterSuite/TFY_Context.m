@@ -30,7 +30,6 @@ static NSDictionary *TFYContextCreateCIContextOptions() {
 
 - (instancetype)initWithCGContextRef:(CGContextRef)contextRef {
     self = [super init];
-    
     if (self) {
 #ifdef NSFoundationVersionNumber_iOS_9_0
 #pragma clang diagnostic push
@@ -151,7 +150,7 @@ static NSDictionary *TFYContextCreateCIContextOptions() {
             CGContextRef context = (__bridge CGContextRef)(options[TFYContextOptionsCGContextKey]);
             
             if (context == nil) {
-                [NSException raise:@"MissingCGContext" format:@"LFContextTypeCoreGraphics needs to have a CGContext attached to the LFContextOptionsCGContextKey in the options"];
+                [NSException raise:@"MissingCGContext" format:@"TFY_ContextTypeCoreGraphics needs to have a CGContext attached to the TFY_ContextOptionsCGContextKey in the options"];
             }
             
             return [[self alloc] initWithCGContextRef:context];
@@ -165,12 +164,12 @@ static NSDictionary *TFYContextCreateCIContextOptions() {
             EAGLContext *context = options[TFYContextOptionsEAGLContextKey];
             if (context == nil) {
                 static dispatch_once_t onceToken;
-                static EAGLSharegroup *lf_EAGLShareGroup ;
+                static EAGLSharegroup *picker_EAGLShareGroup ;
                 dispatch_once(&onceToken, ^{
-                    lf_EAGLShareGroup = [EAGLSharegroup new];
-                    lf_EAGLShareGroup.debugLabel = @"TFY_Context";
+                    picker_EAGLShareGroup = [EAGLSharegroup new];
+                    picker_EAGLShareGroup.debugLabel = @"TFY_Context";
                 });
-                context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2 sharegroup:lf_EAGLShareGroup];
+                context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2 sharegroup:picker_EAGLShareGroup];
             }
             return [[self alloc] initWithEAGLContext:context];
         }

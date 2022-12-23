@@ -70,7 +70,7 @@ NSString *const CreateMediaFolder = @"TFY_AssetManager.CreateMedia";
                          NSLocalizedDescriptionKey: NSLocalizedString(@"Could not finalize image destination", nil)
                          };
             if (error) {
-                *error = [[NSError alloc] initWithDomain:@"LFAssetManager.CreateMedia.gif.error" code:-1 userInfo:userInfo];
+                *error = [[NSError alloc] initWithDomain:@"TFY_AssetManager.CreateMedia.gif.error" code:-1 userInfo:userInfo];
             }
             return nil;
         }
@@ -112,7 +112,7 @@ NSString *const CreateMediaFolder = @"TFY_AssetManager.CreateMedia";
         [newImages addObject:newImage];
     }
     
-    NSString *videoOutputPath = [[self myMediaFolder] stringByAppendingPathComponent:@"lf_createMedia_mp4.mp4"];
+    NSString *videoOutputPath = [[self myMediaFolder] stringByAppendingPathComponent:@"picker_createMedia_mp4.mp4"];
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:videoOutputPath])
     {
@@ -297,7 +297,7 @@ NSString *const CreateMediaFolder = @"TFY_AssetManager.CreateMedia";
         AVMutableComposition* mixComposition = [AVMutableComposition composition];
         
         // 获取混合后的输出路径
-        NSString *outputFilePath = [[self myMediaFolder] stringByAppendingPathComponent:@"lf_createMedia_videoAndAudio_mp4.mp4"];
+        NSString *outputFilePath = [[self myMediaFolder] stringByAppendingPathComponent:@"picker_createMedia_videoAndAudio_mp4.mp4"];
         
         NSURL *outputFileUrl = [NSURL fileURLWithPath:outputFilePath];
         
@@ -330,7 +330,7 @@ NSString *const CreateMediaFolder = @"TFY_AssetManager.CreateMedia";
             });
         }];
     } else {
-        NSError *error = [NSError errorWithDomain:@"LFAssetManager_CreateMedia_Error" code:-1 userInfo:@{NSLocalizedDescriptionKey:@"Check that the video and audio paths are valid"}];
+        NSError *error = [NSError errorWithDomain:@"TFY_AssetManager_CreateMedia_Error" code:-1 userInfo:@{NSLocalizedDescriptionKey:@"Check that the video and audio paths are valid"}];
         if (complete) complete(nil, error);
     }
 }

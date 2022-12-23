@@ -14,7 +14,7 @@ typedef CIImage *_Nullable(^TFYFilterHandle)(CIImage *image);
 
 @interface TFY_Filter : NSObject<NSSecureCoding, NSCopying>
 /**
- The underlying CIFilter attached to this LFFilter instance.
+ The underlying CIFilter attached to this TFY_Filter instance.
  */
 @property (readonly, nonatomic) CIFilter *__nullable CIFilter;
 
@@ -30,14 +30,14 @@ typedef CIImage *_Nullable(^TFYFilterHandle)(CIImage *image);
 @property (assign, nonatomic) BOOL enabled;
 
 /**
- Whether this LFFilter and all its subfilters have no CIFilter attached.
+ Whether this TFY_Filter and all its subfilters have no CIFilter attached.
  If YES, it means that calling imageByProcessingImage: will always return the input
  image without any modification.
  */
 @property (readonly, nonatomic) BOOL isEmpty;
 
 /**
- Initialize a LFFilter with an attached CIFilter.
+ Initialize a TFY_Filter with an attached CIFilter.
  CIFilter can be nil.
  */
 - (nullable instancetype)initWithCIFilter:(CIFilter *__nullable)filter;

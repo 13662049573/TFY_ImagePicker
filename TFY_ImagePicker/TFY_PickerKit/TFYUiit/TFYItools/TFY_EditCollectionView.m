@@ -117,12 +117,12 @@ pickerEditCollection_bind_var_setter(varType, varName, setterName, ((UICollectio
     NSArray *subDataSources = self.dataSources[indexPath.section];
     id model = subDataSources[indexPath.row];
     
-    NSString *LFEditCollectionViewCellIdentifier = @"LFEditCollectionViewCell";
+    NSString *TFYEditCollectionViewCellIdentifier = @"TFY_EditCollectionViewCell";
     if (self.dequeueReusableCellBlock) {
-        LFEditCollectionViewCellIdentifier = self.dequeueReusableCellBlock(indexPath);
+        TFYEditCollectionViewCellIdentifier = self.dequeueReusableCellBlock(indexPath);
     }
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:LFEditCollectionViewCellIdentifier forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:TFYEditCollectionViewCellIdentifier forIndexPath:indexPath];
     
     if (self.cellConfigureBlock) {
         self.cellConfigureBlock(indexPath, model, cell);

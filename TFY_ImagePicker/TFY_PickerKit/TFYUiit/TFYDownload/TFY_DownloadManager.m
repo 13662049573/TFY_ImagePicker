@@ -179,7 +179,7 @@ static const char * TFYURLSessionOperationKey = "TFYURLSessionOperationKey";
 
 @end
 
-#pragma mark - //////////////   LFDownloadManager
+#pragma mark - //////////////   TFY_DownloadManager
 
 @interface TFY_DownloadManager() <NSURLSessionDownloadDelegate>
 

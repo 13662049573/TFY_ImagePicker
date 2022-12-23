@@ -378,7 +378,7 @@
     }
 }
 
-- (void)setSelectedAssets:(NSArray /**<PHAsset/ALAsset/id<LFAssetImageProtocol> *>*/*)selectedAssets {
+- (void)setSelectedAssets:(NSArray /**<PHAsset/ALAsset/id<TFY_AssetImageProtocol> *>*/*)selectedAssets {
     
     if (!self.viewControllers.count) {
         /** 已经显示UI，不接受入参 */

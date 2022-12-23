@@ -34,16 +34,9 @@
     if (asset == nil || outPath.length == 0) {
         complete(NO, nil);
     }
-    
-    if ([asset isKindOfClass:[AVURLAsset class]]) {
-//        NSLog(@"压缩前：%@",[LF_FileUtility getFileSizeString:[LF_FileUtility fileSizeForPath:[((AVURLAsset *)asset).URL path]]]);
-    }
-//    CFTimeInterval time = CACurrentMediaTime();
-    
     if ([[NSFileManager defaultManager] fileExistsAtPath:outPath]) {
         [[NSFileManager defaultManager] removeItemAtPath:outPath error:nil];
     }
-    
     TFYAssetExportSessionPreset preset = TFYAssetExportSessionPreset720P;
     
     if ([presetName isEqualToString:AVAssetExportPresetLowQuality]) {

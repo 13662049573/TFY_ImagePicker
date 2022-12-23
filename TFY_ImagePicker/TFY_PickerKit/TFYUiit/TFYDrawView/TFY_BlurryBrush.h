@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  radius 模糊范围系数，越大越模糊。建议5.0
  canvasSize 画布大小
  useCache 是否使用缓存。如果image与canvasSize固定，建议使用缓存。
- complete 回调状态(成功后可以直接使用[[LFBlurryBrush alloc] init]初始化画笔)
+ complete 回调状态(成功后可以直接使用[[TFY_BlurryBrush alloc] init]初始化画笔)
  */
 + (void)loadBrushImage:(UIImage *)image radius:(CGFloat)radius canvasSize:(CGSize)canvasSize useCache:(BOOL)useCache complete:(void (^ _Nullable )(BOOL success))complete;
 

@@ -208,7 +208,7 @@ const CGFloat kVideoTrimmerGridLayerLineWidth = 2.f;
     _slider.hidden = hidden;
 }
 
-#pragma mark - lf_resizeConrolDelegate
+#pragma mark - TFY_resizeConrolDelegate
 
 - (void)picker_resizeConrolDidBeginResizing:(TFY_ResizeControl *)resizeConrol
 {

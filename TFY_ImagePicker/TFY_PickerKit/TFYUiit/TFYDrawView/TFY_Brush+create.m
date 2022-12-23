@@ -77,7 +77,7 @@ static CIContext *TFY_Brush_CIContext = nil;
  */
 - (UIColor *)picker_patternGaussianColorWithSize:(CGSize)size filterHandler:(CIFilter *(^ _Nullable )(CIImage *ciimage))filterHandler
 {
-    //翻转图片（因为图片转换成图像颜色后在layer上使用，layer的画布是反转的，这里需要翻转方向。理应这里不应该调整方向，为了提高效率，这里的方法私有化，仅为LFBlurryBrush/LFMosaicBrush提供。）
+    //翻转图片（因为图片转换成图像颜色后在layer上使用，layer的画布是反转的，这里需要翻转方向。理应这里不应该调整方向，为了提高效率，这里的方法私有化，仅为TFY_BlurryBrush/TFY_MosaicBrush提供。）
     UIImage *image = [self picker_patternGaussianImageWithSize:size orientation:kCGImagePropertyOrientationDownMirrored filterHandler:filterHandler];
     return [UIColor colorWithPatternImage:image];
 }
@@ -87,7 +87,7 @@ static CIContext *TFY_Brush_CIContext = nil;
     CIContext *context = TFY_Brush_CIContext;
     NSAssert(context != nil, @"This method must be called using the TFY_Brush class.");
     CIImage *midImage = [CIImage imageWithCGImage:self.CGImage];
-    midImage = [midImage imageByApplyingTransform:[self LFBB_preferredTransform]];
+    midImage = [midImage imageByApplyingTransform:[self picker_preferredTransform]];
     midImage = [midImage imageByApplyingTransform:CGAffineTransformMakeScale(size.width/midImage.extent.size.width, size.height/midImage.extent.size.height)];
     
     if (orientation > 0 && orientation < 9) {
@@ -109,7 +109,7 @@ static CIContext *TFY_Brush_CIContext = nil;
     return image;
 }
 
-- (CGAffineTransform)LFBB_preferredTransform {
+- (CGAffineTransform)picker_preferredTransform {
     if (self.imageOrientation == UIImageOrientationUp) {
         return CGAffineTransformIdentity;
     }

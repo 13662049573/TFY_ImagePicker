@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) NSArray <TFY_Filter *>*__nonnull subFilters;
 
 /**
- Add a sub filter. When processing an image, this LFFilter instance will first process the
+ Add a sub filter. When processing an image, this TFY_Filter instance will first process the
  image using its attached CIFilter, then it will ask every sub filters added to process the
  given image.
  */

@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  scale 马赛克大小系数。建议15.0
  canvasSize 画布大小
  useCache 是否使用缓存。如果image与canvasSize固定，建议使用缓存。
- complete 回调状态(成功后可以直接使用[[LFMosaicBrush alloc] init]初始化画笔)
+ complete 回调状态(成功后可以直接使用[[TFY_MosaicBrush alloc] init]初始化画笔)
  */
 + (void)loadBrushImage:(UIImage *)image scale:(CGFloat)scale canvasSize:(CGSize)canvasSize useCache:(BOOL)useCache complete:(void (^ _Nullable )(BOOL success))complete;
 

@@ -64,7 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  Get Assets 获得Asset数组
  *
- *  result            LFAlbum.result 相册对象
+ *  result            TFY_PikcerAlbum.result 相册对象
  *  llowPickingType  媒体类型
  *  fetchLimit        相片最大数量
  *  ascending         顺序获取
@@ -118,7 +118,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  asset      PHAsset／ALAsset
  *  isOriginal 是否原图
  *  pickingGif 是否需要处理GIF图片
- *  completion 返回block 顺序：缩略图、原图、图片数据字典 若返回LFResultObject对象则获取error错误信息。
+ *  completion 返回block 顺序：缩略图、原图、图片数据字典 若返回TFY_ResultObject对象则获取error错误信息。
  */
 - (void)getPhotoWithAsset:(id)asset
                isOriginal:(BOOL)isOriginal
@@ -133,7 +133,7 @@ NS_ASSUME_NONNULL_BEGIN
  pickingGif 是否需要处理GIF图片
  compressSize 非原图的压缩大小
  thumbnailCompressSize 缩略图压缩大小
- completion 返回block 顺序：缩略图、标清图、图片数据字典 若返回LFResultObject对象则获取error错误信息。
+ completion 返回block 顺序：缩略图、标清图、图片数据字典 若返回TFY_ResultObject对象则获取error错误信息。
  */
 - (void)getPhotoWithAsset:(id)asset
                isOriginal:(BOOL)isOriginal

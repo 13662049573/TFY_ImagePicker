@@ -1132,7 +1132,7 @@ CGFloat const bottomToolBarHeight = 50.f;
                 } else {
                     [weakImagePickerVc hideProgressHUD];
                     if (callback) {
-                        NSError *error = [NSError errorWithDomain:@"LFImagePickerController" code:101 userInfo:@{NSLocalizedDescriptionKey:@"Incorrect parameters."}];
+                        NSError *error = [NSError errorWithDomain:@"TFY_ImagePickerController" code:101 userInfo:@{NSLocalizedDescriptionKey:@"Incorrect parameters."}];
                         callback(weakImagePickerVc, error);
                     }
                 }

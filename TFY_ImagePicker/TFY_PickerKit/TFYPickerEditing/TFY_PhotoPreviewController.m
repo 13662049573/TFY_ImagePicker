@@ -1044,7 +1044,7 @@ CGFloat const naviTipsViewDefaultHeight = 30.f;
 {
     _videoPlayButton.selected = YES;
 }
-- (void)lf_photoPreviewVideoCellDidStopHandler:(TFY_PhotoPreviewVideoCell *)cell
+- (void)picker_photoPreviewVideoCellDidStopHandler:(TFY_PhotoPreviewVideoCell *)cell
 {
     _videoPlayButton.selected = NO;
 }

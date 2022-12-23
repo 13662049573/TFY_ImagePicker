@@ -86,7 +86,7 @@ NSString *const kTFYZoomingViewData_filter = @"TFYZoomingViewData_filter";
 
 - (void)dealloc
 {
-    // 释放LFEditingProtocol协议
+    // 释放TFY_EditingProtocol协议
     [self clearProtocolxecutor];
 }
 

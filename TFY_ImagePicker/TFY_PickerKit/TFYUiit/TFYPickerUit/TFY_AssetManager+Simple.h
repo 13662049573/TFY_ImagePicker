@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TFY_AssetManager (Simple)
 /** 排序 YES */
 @property (nonatomic, assign) BOOL sortAscendingByCreateDate;
-/** 类型 LFPickingMediaTypeALL */
+/** 类型 TFY_PickingMediaTypeALL */
 @property (nonatomic, assign) TFYPickingMediaType allowPickingType;
 
 /**
@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  Get Assets 获得Asset数组
  *
- *   result            LFAlbum.result 相册对象
+ *   result            TFY_Album.result 相册对象
  *   fetchLimit        相片最大数量
  *   completion        回调结果
  */

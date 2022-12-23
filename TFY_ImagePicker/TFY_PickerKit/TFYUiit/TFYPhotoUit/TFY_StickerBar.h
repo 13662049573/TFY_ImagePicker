@@ -16,7 +16,7 @@ extern CGFloat const picker_stickerSize;
 extern CGFloat const picker_stickerMargin;
 
 @protocol TFYStickerBarDelegate <NSObject>
-- (void)picker_stickerBar:(TFY_StickerBar *)lf_stickerBar didSelectImage:(UIImage *)image;
+- (void)picker_stickerBar:(TFY_StickerBar *)picker_stickerBar didSelectImage:(UIImage *)image;
 @end
 
 @interface TFY_StickerBar : UIView

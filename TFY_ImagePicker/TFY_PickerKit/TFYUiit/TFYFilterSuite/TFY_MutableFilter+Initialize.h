@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TFY_MutableFilter ()
 /**
- Creates and returns a filter containg the given sub LFFilters.
+ Creates and returns a filter containg the given sub TFY_Filters.
  */
 + (instancetype)filterWithFilters:(NSArray <TFY_Filter *>*)filters;
 

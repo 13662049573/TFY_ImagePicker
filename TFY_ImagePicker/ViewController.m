@@ -156,7 +156,7 @@
 
 // 正常模式
 - (void)buttonActionNormal:(id)sender {
-//    [LFAssetManager cleanCacheVideoPath];
+//    [TFY_AssetManager cleanCacheVideoPath];
     TFY_ImagePickerController *imagePicker = [[TFY_ImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
 //    imagePicker.allowTakePicture = NO;
 //    imagePicker.maxVideosCount = 1; /** 解除混合选择- 要么1个视频，要么9个图片 */

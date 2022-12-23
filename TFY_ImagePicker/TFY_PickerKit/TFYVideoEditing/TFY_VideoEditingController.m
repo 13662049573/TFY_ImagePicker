@@ -19,21 +19,21 @@
 #import "TFY_FilterSuiteUtils.h"
 
 /************************ Attributes ************************/
-/** NSNumber containing LFVideoEditOperationSubType, default 0 */
+/** NSNumber containing TFYVideoEditOperationSubType, default 0 */
 TFYVideoEditOperationStringKey const TFYVideoEditDrawColorAttributeName = @"TFYVideoEditDrawColorAttributeName";
-/** NSNumber containing LFVideoEditOperationSubType, default 0 */
+/** NSNumber containing TFYVideoEditOperationSubType, default 0 */
 TFYVideoEditOperationStringKey const TFYVideoEditDrawBrushAttributeName = @"TFYVideoEditDrawBrushAttributeName";
 /** NSString containing string path, default nil. sticker resource path. */
 TFYVideoEditOperationStringKey const TFYVideoEditStickerAttributeName = @"TFYVideoEditStickerAttributeName";
-/** NSArray containing NSArray<LFStickerContent *>, default @[[TFY_StickerContent stickerContentWithTitle:@"默认" contents:@[TFY_StickerContentDefaultSticker]]]. */
+/** NSArray containing NSArray<TFY_StickerContent *>, default @[[TFY_StickerContent stickerContentWithTitle:@"默认" contents:@[TFY_StickerContentDefaultSticker]]]. */
 TFYVideoEditOperationStringKey const TFYVideoEditStickerContentsAttributeName = @"TFYVideoEditStickerContentsAttributeName";
-/** NSNumber containing LFVideoEditOperationSubType, default 0 */
+/** NSNumber containing TFYVideoEditOperationSubType, default 0 */
 TFYVideoEditOperationStringKey const TFYVideoEditTextColorAttributeName = @"TFYVideoEditTextColorAttributeName";
 /** NSNumber containing BOOL, default false: default audioTrack ,true: mute. */
 TFYVideoEditOperationStringKey const TFYVideoEditAudioMuteAttributeName = @"TFYVideoEditAudioMuteAttributeName";
 /** NSArray  containing NSURL(fileURLWithPath:), default nil. audio resource paths. */
 TFYVideoEditOperationStringKey const TFYVideoEditAudioUrlsAttributeName = @"TFYVideoEditAudioUrlsAttributeName";
-/** NSNumber containing LFVideoEditOperationSubType, default 0 */
+/** NSNumber containing TFYVideoEditOperationSubType, default 0 */
 TFYVideoEditOperationStringKey const TFYVideoEditFilterAttributeName = @"TFYVideoEditFilterAttributeName";
 /** NSNumber containing double, default 1, Range of 0.5 to 2.0. */
 TFYVideoEditOperationStringKey const TFYVideoEditRateAttributeName = @"TFYVideoEditRateAttributeName";
@@ -695,7 +695,7 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
 }
 
 #pragma mark - TFYStickerBarDelegate
-- (void)picker_stickerBar:(TFY_StickerBar *)lf_stickerBar didSelectImage:(UIImage *)image
+- (void)picker_stickerBar:(TFY_StickerBar *)picker_stickerBar didSelectImage:(UIImage *)image
 {
     if (image) {
         TFY_StickerItem *item = [TFY_StickerItem new];
@@ -778,7 +778,7 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
 /** 取消 */
 - (void)picker_videoClipToolbarDidCancel:(TFY_VideoClipToolbar *)clipToolbar
 {
-    if (self.initSelectedOperationType == 0 && self.operationType == TFYVideoEditOperationType_clip && self.defaultOperationType == TFYVideoEditOperationType_clip) { /** 证明initSelectedOperationType已消耗完毕，defaultOperationType是有值的。只有LFVideoEditOperationType_clip的情况，无需返回，直接完成整个编辑 */
+    if (self.initSelectedOperationType == 0 && self.operationType == TFYVideoEditOperationType_clip && self.defaultOperationType == TFYVideoEditOperationType_clip) { /** 证明initSelectedOperationType已消耗完毕，defaultOperationType是有值的。只有TFYVideoEditOperationType_clip的情况，无需返回，直接完成整个编辑 */
         [self cancelButtonClick];
     } else {
         [_EditingView cancelClipping:YES];
@@ -790,7 +790,7 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
 /** 完成 */
 - (void)picker_videoClipToolbarDidFinish:(TFY_VideoClipToolbar *)clipToolbar
 {
-    if (self.initSelectedOperationType == 0 && self.operationType == TFYVideoEditOperationType_clip && self.defaultOperationType == TFYVideoEditOperationType_clip) { /** 证明initSelectedOperationType已消耗完毕，defaultOperationType是有值的。只有LFVideoEditOperationType_clip的情况，无需返回，直接完成整个编辑 */
+    if (self.initSelectedOperationType == 0 && self.operationType == TFYVideoEditOperationType_clip && self.defaultOperationType == TFYVideoEditOperationType_clip) { /** 证明initSelectedOperationType已消耗完毕，defaultOperationType是有值的。只有TFYVideoEditOperationType_clip的情况，无需返回，直接完成整个编辑 */
         [self finishButtonClick];
     } else {
         [_EditingView setIsClipping:NO animated:YES];

@@ -38,7 +38,7 @@ NSString *const kTFYEditingViewData_clippingView = @"kTFYEditingViewData_clippin
 
 @property (nonatomic, weak) TFY_ClippingView *clippingView;
 @property (nonatomic, weak) TFY_GridView *gridView;
-/** 因为LFClippingView需要调整transform属性，需要额外创建一层进行缩放处理，理由：UIScrollView的缩放会自动重置transform */
+/** 因为TFY_ClippingView需要调整transform属性，需要额外创建一层进行缩放处理，理由：UIScrollView的缩放会自动重置transform */
 @property (nonatomic, weak) UIView *clipZoomView;
 
 /** 剪裁尺寸, CGRectInset(self.bounds, 20, 50) */
@@ -100,7 +100,7 @@ NSString *const kTFYEditingViewData_clippingView = @"kTFYEditingViewData_clippin
     _defaultMaximumZoomScale = kMaxZoomScale;
     _extraSafeAreaInsets = UIEdgeInsetsZero;
     
-    /** 创建缩放层，避免直接缩放LFClippingView，会改变其transform */
+    /** 创建缩放层，避免直接缩放TFY_ClippingView，会改变其transform */
     UIView *clipZoomView = [[UIView alloc] initWithFrame:self.bounds];
     clipZoomView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     clipZoomView.backgroundColor = [UIColor clearColor];
@@ -649,7 +649,7 @@ NSString *const kTFYEditingViewData_clippingView = @"kTFYEditingViewData_clippin
                     returnedImage = [returnedImage picker_imageRotatedByRadians:rotate];
                 }
                 if (otherImage) {
-                    /** 缩放至原图尺寸，因为尺寸已经被多次取整，如果通过LFME_scaleToFitSize计算大小会出现误差，直接拉伸图片即可 */
+                    /** 缩放至原图尺寸，因为尺寸已经被多次取整，如果通过TFY_ME_scaleToFitSize计算大小会出现误差，直接拉伸图片即可 */
                     UIImage *scaleOtherImage = [otherImage picker_scaleToFillSize:returnedImage.size];
                     if (scaleOtherImage) {
                         /** 合并图层 */

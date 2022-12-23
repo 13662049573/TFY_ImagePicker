@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TFY_Filter (save)
 /**
  Write this filter to a specific file.
- This filter can then be restored from this file using [LFFilter filterWithContentsOfUrl:].
+ This filter can then be restored from this file using [TFY_Filter filterWithContentsOfUrl:].
  */
 - (BOOL)writeToFile:(NSURL *__nonnull)fileUrl error:(NSError *__nullable*__nullable)error;
 @end

@@ -28,7 +28,7 @@ NSString *const TFYMosaicBrushImageColor = @"TFYMosaicBrushImageColor";
 
 - (void)setLineColor:(UIColor *)lineColor
 {
-    NSAssert(NO, @"LFMosaicBrush cann't set line color.");
+    NSAssert(NO, @"TFY_MosaicBrush cann't set line color.");
 }
 
 - (UIColor *)lineColor

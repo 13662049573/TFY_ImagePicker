@@ -56,7 +56,7 @@ NSUInteger kToolbar_MaxItems = 6;
 #define kToolbar_SelectedColor [UIColor colorWithRed:(26/255.0) green:(173/255.0) blue:(25/255.0) alpha:1.0]
 #define kToolbar_NormalsColor [UIColor whiteColor]
 
-#pragma mark - LFToolCollectionItem
+#pragma mark - TFY_ToolCollectionItem
 @interface TFY_ToolCollectionItem : NSObject
 
 @property (nonatomic, assign) NSInteger tag;
@@ -128,7 +128,7 @@ NSUInteger kToolbar_MaxItems = 6;
 - (void)customInit
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button addTarget:self action:@selector(lf_buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(picker_buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:button];
     self.picker_button = button;
 }
@@ -145,7 +145,7 @@ NSUInteger kToolbar_MaxItems = 6;
     self.picker_button.selected = item.isSelected;
 }
 
-- (void)lf_buttonClick:(UIButton *)button
+- (void)picker_buttonClick:(UIButton *)button
 {
     if ([self.delegate respondsToSelector:@selector(picker_edit_toolBar_buttonClick:)]) {
         [self.delegate picker_edit_toolBar_buttonClick:self];
@@ -710,9 +710,6 @@ NSUInteger kToolbar_MaxItems = 6;
         self.edit_drawMenu_stampBrushType = (TFYEditToolbarStampBrushType)(button.tag-1);
         /** 触发代理 */
         self.edit_drawMenu_brushType = self.edit_drawMenu_brushType;
-//        if ([self.delegate respondsToSelector:@selector(lf_editToolbar:subDidSelectAtIndex:)]) {
-//            [self.delegate lf_editToolbar:self subDidSelectAtIndex:[NSIndexPath indexPathForRow:button.tag-1 inSection:LFEditToolbarType_draw]];
-//        }
     }
 }
 
@@ -908,7 +905,7 @@ NSUInteger kToolbar_MaxItems = 6;
     [self edit_toolBar_buttonClick:cell.picker_button];
 }
 
-#pragma mark - LFEditCollectionViewDelegate
+#pragma mark - TFY_EditCollectionViewDelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     [self scrollViewDidEndDecelerating:scrollView];
