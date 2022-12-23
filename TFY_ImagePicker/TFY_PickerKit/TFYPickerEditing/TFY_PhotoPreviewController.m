@@ -184,13 +184,13 @@ CGFloat const naviTipsViewDefaultHeight = 30.f;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     // 隐藏状态栏而不改变安全区域的高度
-    [UIApplication sharedApplication].keyWindow.windowLevel = UIWindowLevelStatusBar + 1;
+    TFYAppWindow().windowLevel = UIWindowLevelStatusBar + 1;
     [self refreshNaviBarAndBottomBarState];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [UIApplication sharedApplication].keyWindow.windowLevel = UIWindowLevelNormal;
+    TFYAppWindow().windowLevel = UIWindowLevelNormal;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

@@ -12,7 +12,7 @@
 #import "TFY_VideoEditingView.h"
 #import "TFY_EditToolbar.h"
 #import "TFY_StickerBar.h"
-#import "TFY_TextBar.h"
+#import "TFY_PickerTextBar.h"
 #import "TFY_VideoClipToolbar.h"
 #import "TFY_AudioTrackBar.h"
 #import "TFY_FilterBar.h"
@@ -707,7 +707,7 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
 
 #pragma mark - TFYTextBarDelegate
 /** 完成回调 */
-- (void)picker_textBarController:(TFY_TextBar *)textBar didFinishText:(TFY_Text *)text
+- (void)picker_textBarController:(TFY_PickerTextBar *)textBar didFinishText:(TFY_PickerText *)text
 {
     if (text) {
         TFY_StickerItem *item = [TFY_StickerItem new];
@@ -726,7 +726,7 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
     [self picker_textBarControllerDidCancel:textBar];
 }
 /** 取消回调 */
-- (void)picker_textBarControllerDidCancel:(TFY_TextBar *)textBar
+- (void)picker_textBarControllerDidCancel:(TFY_PickerTextBar *)textBar
 {
     /** 显示顶部栏 */
     _isHideNaviBar = NO;
@@ -745,7 +745,7 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
 }
 
 /** 输入数量已经达到最大值 */
-- (void)picker_textBarControllerDidReachMaximumLimit:(TFY_TextBar *)textBar
+- (void)picker_textBarControllerDidReachMaximumLimit:(TFY_PickerTextBar *)textBar
 {
     [self showInfoMessage:[NSBundle picker_localizedStringForKey:@"_LFME_reachMaximumLimitTitle"]];
 }
@@ -979,14 +979,14 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
     }
 }
 
-- (void)showTextBarController:(TFY_Text *)text
+- (void)showTextBarController:(TFY_PickerText *)text
 {
     static NSInteger TFYTextBarTag = 32735;
     if ([self.view viewWithTag:TFYTextBarTag]) {
         return;
     }
     
-    TFY_TextBar *textBar = [[TFY_TextBar alloc] initWithFrame:CGRectMake(0, self.view.picker_height, self.view.picker_width, self.view.picker_height) layout:^(TFY_TextBar *textBar) {
+    TFY_PickerTextBar *textBar = [[TFY_PickerTextBar alloc] initWithFrame:CGRectMake(0, self.view.picker_height, self.view.picker_width, self.view.picker_height) layout:^(TFY_PickerTextBar *textBar) {
         textBar.oKButtonTitleColorNormal = self.oKButtonTitleColorNormal;
         textBar.cancelButtonTitleColorNormal = self.cancelButtonTitleColorNormal;
         textBar.oKButtonTitle = [NSBundle picker_localizedStringForKey:@"_LFME_oKButtonTitle"];

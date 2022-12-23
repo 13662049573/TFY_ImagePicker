@@ -49,7 +49,7 @@
     return self;
 }
 
-- (void)setText:(TFY_Text *)text
+- (void)setText:(TFY_PickerText *)text
 {
     _text = text;
     _textCacheDisplayImage = nil;

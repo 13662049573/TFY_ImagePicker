@@ -6,6 +6,7 @@
 //
 
 #import "TFY_EasyNoticeBar.h"
+#import "TFY_ImageCoder.h"
 
 CGFloat const TFYEasyNoticeBarWidenSize = 50.0;
 
@@ -142,7 +143,7 @@ CGFloat const TFYEasyNoticeBarWidenSize = 50.0;
     
     [self configureSubviews];
     
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    UIWindow *keyWindow = TFYAppWindow();
     
     self.currentStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
     [UIApplication sharedApplication].statusBarStyle = self.config.statusBarStyle;
@@ -179,7 +180,7 @@ CGFloat const TFYEasyNoticeBarWidenSize = 50.0;
 
 + (void)hideAll
 {
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    UIWindow *keyWindow = TFYAppWindow();
     NSArray *subviews = keyWindow.subviews;
     for (UIView *view in subviews) {
         if ([view isKindOfClass:[self class]]) {

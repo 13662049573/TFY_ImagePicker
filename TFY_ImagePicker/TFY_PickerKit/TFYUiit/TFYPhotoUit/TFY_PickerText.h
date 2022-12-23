@@ -1,8 +1,8 @@
 //
-//  TFY_Text.h
-//  WonderfulZhiKang
+//  TFY_PickerText.h
+//  TFY_ImagePicker
 //
-//  Created by 田风有 on 2022/12/19.
+//  Created by 田风有 on 2022/12/23.
 //
 
 #import <Foundation/Foundation.h>
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TFY_Text : NSObject<NSSecureCoding>
+@interface TFY_PickerText : NSObject<NSSecureCoding>
 
 @property (nonatomic, strong) NSAttributedString *attributedText;
 

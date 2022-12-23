@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TFY_Text.h"
+#import "TFY_PickerText.h"
 #import "TFY_StickerItem.h"
 
 NS_ASSUME_NONNULL_BEGIN

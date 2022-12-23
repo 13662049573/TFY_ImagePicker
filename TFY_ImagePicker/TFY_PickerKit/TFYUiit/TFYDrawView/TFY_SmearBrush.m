@@ -146,7 +146,6 @@ NSString *const TFYSmearBrushColor = @"TFYSmearBrushColor";
     UIColor *color = nil;
     UIView *drawView = (UIView *)self.layer.superlayer.delegate;
     if ([drawView isKindOfClass:[UIView class]]) {
-//        CGPoint screenPoint = [drawView convertPoint:point toView:[UIApplication sharedApplication].keyWindow];
         color = [self colorOfPoint:point];
     }
 

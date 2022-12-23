@@ -7,6 +7,7 @@
 
 #import "TFY_DropMainMenu.h"
 #import "TFY_BaseCollectionViewCell.h"
+#import "TFYItools.h"
 
 @interface TFY_DropMainMenu ()<UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>
 
@@ -122,7 +123,7 @@
     self.isShowInView = YES;
     
     /** 计算点 */
-    CGRect converRect = [[UIApplication sharedApplication].keyWindow convertRect:view.frame fromView:view.superview];
+    CGRect converRect = [TFYAppWindow() convertRect:view.frame fromView:view.superview];
     
     [self _showFromFrame:converRect animated:YES];
 
@@ -390,7 +391,7 @@
 
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     view.backgroundColor = [UIColor clearColor];
-    [[UIApplication sharedApplication].keyWindow addSubview:view];
+    [TFYAppWindow() addSubview:view];
     self.bigView = view;
     UITapGestureRecognizer *tapGe = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
     tapGe.delegate = self;
@@ -411,11 +412,11 @@
         if (self.direction == TFYDropMainMenuDirectionTop) {
             point = CGPointMake(CGRectGetMidX(frame), CGRectGetMinY(frame));
         }
-        point = [self convertPoint:point fromView:[UIApplication sharedApplication].keyWindow];
+        point = [self convertPoint:point fromView:TFYAppWindow()];
         
     } else {
         
-        point = [self convertPoint:frame.origin fromView:[UIApplication sharedApplication].keyWindow];
+        point = [self convertPoint:frame.origin fromView:TFYAppWindow()];
         
     }
     

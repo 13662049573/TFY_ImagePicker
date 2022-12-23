@@ -1,11 +1,11 @@
 //
-//  TFY_TextBar.m
-//  WonderfulZhiKang
+//  TFY_PickerTextBar.m
+//  TFY_ImagePicker
 //
-//  Created by 田风有 on 2022/12/20.
+//  Created by 田风有 on 2022/12/23.
 //
 
-#import "TFY_TextBar.h"
+#import "TFY_PickerTextBar.h"
 #import "UIView+picker.h"
 #import "TFY_ImageCoder.h"
 #import "TFY_StickerItem.h"
@@ -18,7 +18,7 @@
 CGFloat const TFYTextBarFontBGTag = 220;
 CGFloat const TFYTextBarAlignmentTag = 221;
 
-@interface TFY_TextBar ()<UITextViewDelegate, TFYPickColorViewDelegate>
+@interface TFY_PickerTextBar ()<UITextViewDelegate, TFYPickColorViewDelegate>
 
 @property (nonatomic, weak) UIView *topbar;
 @property (nonatomic, weak) UITextView *picker_textView;
@@ -29,8 +29,7 @@ CGFloat const TFYTextBarAlignmentTag = 221;
 
 @end
 
-@implementation TFY_TextBar
-
+@implementation TFY_PickerTextBar
 - (instancetype)init
 {
     self = [super init];
@@ -45,7 +44,7 @@ CGFloat const TFYTextBarAlignmentTag = 221;
     return [self initWithFrame:frame layout:nil];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame layout:(nullable void (^)(TFY_TextBar *textBar))layoutBlock
+- (instancetype)initWithFrame:(CGRect)frame layout:(nullable void (^)(TFY_PickerTextBar *textBar))layoutBlock
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -108,7 +107,7 @@ CGFloat const TFYTextBarAlignmentTag = 221;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
-- (void)setShowText:(TFY_Text *)showText
+- (void)setShowText:(TFY_PickerText *)showText
 {
     _showText = showText;
     if (showText.attributedText.length > 0) {
@@ -374,9 +373,9 @@ CGFloat const TFYTextBarAlignmentTag = 221;
 - (void)finishButtonClick
 {
     if ([self.delegate respondsToSelector:@selector(picker_textBarController:didFinishText:)]) {
-        TFY_Text *text = nil;
+        TFY_PickerText *text = nil;
         if (self.picker_textView.text.length) {
-            text = [TFY_Text new];
+            text = [TFY_PickerText new];
             text.attributedText = self.picker_textView.attributedText;
             text.layoutData = self.layoutManager.layoutData;
             text.usedRect = [self.layoutManager usedRectForTextContainer:self.picker_textView.textContainer];
@@ -538,5 +537,6 @@ CGFloat const TFYTextBarAlignmentTag = 221;
 {
     [self setTextColor:color];
 }
+
 
 @end

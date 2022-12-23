@@ -132,7 +132,7 @@ NSString *const kTFYStickerViewData_movingView_rotation = @"TFYStickerViewData_m
     
     TFY_MovingView *movingView = [[TFY_MovingView alloc] initWithItem:item];
     /** 屏幕中心 */
-    movingView.center = [self convertPoint:[UIApplication sharedApplication].keyWindow.center fromView:(UIView *)[UIApplication sharedApplication].keyWindow];
+    movingView.center = [self convertPoint:TFYAppWindow().center fromView:(UIView *)TFYAppWindow()];
     
     [self addSubview:movingView];
     
@@ -220,7 +220,7 @@ NSString *const kTFYStickerViewData_movingView_rotation = @"TFYStickerViewData_m
         [movingView setScale:scale/self.screenScale];
     }
     
-    [self picker_showInView:[UIApplication sharedApplication].keyWindow maskRects:@[[NSValue valueWithCGRect:[self convertRect:movingView.frame toView:nil]]] withTips:@[[NSBundle picker_localizedStringForKey:@"_LFME_UserGuide_StickerView_MovingView_Pinch"]]];
+    [self picker_showInView:TFYAppWindow() maskRects:@[[NSValue valueWithCGRect:[self convertRect:movingView.frame toView:nil]]] withTips:@[[NSBundle picker_localizedStringForKey:@"_LFME_UserGuide_StickerView_MovingView_Pinch"]]];
 }
 
 /** 贴图数量 */

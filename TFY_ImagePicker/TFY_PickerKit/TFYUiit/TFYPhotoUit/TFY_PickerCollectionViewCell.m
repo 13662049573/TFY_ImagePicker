@@ -68,7 +68,7 @@
     } completion:^(BOOL finished) {
         UICollectionViewCell *cell = [weakSelf.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         if (cell) {
-            [self picker_showInView:[UIApplication sharedApplication].keyWindow maskRects:@[[NSValue valueWithCGRect:[cell.superview convertRect:cell.frame toView:nil]]] withTips:@[[NSBundle picker_localizedStringForKey:@"_LFME_UserGuide_StickerView_DisplayView_LongPress"]]];
+            [self picker_showInView:TFYAppWindow() maskRects:@[[NSValue valueWithCGRect:[cell.superview convertRect:cell.frame toView:nil]]] withTips:@[[NSBundle picker_localizedStringForKey:@"_LFME_UserGuide_StickerView_DisplayView_LongPress"]]];
         }
     }];
 }
@@ -139,7 +139,7 @@ static TFY_StickerContent *_showStickerContent = nil;
         return;
     }
     
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    UIWindow *keyWindow = TFYAppWindow();
     
     CGRect covertRect = [cell.superview convertRect:cell.frame toView:keyWindow];
     /** 主容器和cell的间距 */

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36197BAE2955624A00584678 /* TFY_PickerText.m in Sources */ = {isa = PBXBuildFile; fileRef = 36197BAD2955624A00584678 /* TFY_PickerText.m */; };
+		36197BB12955634000584678 /* TFY_PickerTextBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 36197BB02955634000584678 /* TFY_PickerTextBar.m */; };
 		366614602952E30500BC333A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3666145F2952E30500BC333A /* AppDelegate.m */; };
 		366614632952E30500BC333A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 366614622952E30500BC333A /* SceneDelegate.m */; };
 		366614662952E30500BC333A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366614652952E30500BC333A /* ViewController.m */; };
@@ -69,7 +71,6 @@
 		366616192952E31E00BC333A /* TFY_EditToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 366615112952E31E00BC333A /* TFY_EditToolbar.m */; };
 		3666161A2952E31E00BC333A /* TFY_CGContextDrawTextBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 366615152952E31E00BC333A /* TFY_CGContextDrawTextBackground.m */; };
 		3666161B2952E31E00BC333A /* TFY_BaseEditingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366615182952E31E00BC333A /* TFY_BaseEditingController.m */; };
-		3666161C2952E31E00BC333A /* TFY_Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 3666151A2952E31E00BC333A /* TFY_Text.m */; };
 		3666161D2952E31E00BC333A /* TFY_ConfigTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3666151B2952E31E00BC333A /* TFY_ConfigTool.m */; };
 		3666161E2952E31E00BC333A /* TFY_MECancelBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3666151D2952E31E00BC333A /* TFY_MECancelBlock.m */; };
 		3666161F2952E31E00BC333A /* TFY_PickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3666151F2952E31E00BC333A /* TFY_PickerCollectionViewCell.m */; };
@@ -99,7 +100,6 @@
 		366616372952E31E00BC333A /* TFY_DataFilterImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3666154C2952E31E00BC333A /* TFY_DataFilterImageView.m */; };
 		366616382952E31E00BC333A /* TFY_ClipToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3666154E2952E31E00BC333A /* TFY_ClipToolbar.m */; };
 		366616392952E31E00BC333A /* TFY_TitleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 366615502952E31E00BC333A /* TFY_TitleCollectionViewCell.m */; };
-		3666163A2952E31E00BC333A /* TFY_TextBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 366615512952E31E00BC333A /* TFY_TextBar.m */; };
 		3666163B2952E31E00BC333A /* TFY_StickerDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 366615552952E31E00BC333A /* TFY_StickerDisplayView.m */; };
 		3666163C2952E31E00BC333A /* TFY_StickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 366615562952E31E00BC333A /* TFY_StickerView.m */; };
 		3666163D2952E31E00BC333A /* TFY_TipsGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3666155D2952E31E00BC333A /* TFY_TipsGuideManager.m */; };
@@ -187,6 +187,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36197BAC2955624A00584678 /* TFY_PickerText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PickerText.h; sourceTree = "<group>"; };
+		36197BAD2955624A00584678 /* TFY_PickerText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PickerText.m; sourceTree = "<group>"; };
+		36197BAF2955634000584678 /* TFY_PickerTextBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PickerTextBar.h; sourceTree = "<group>"; };
+		36197BB02955634000584678 /* TFY_PickerTextBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PickerTextBar.m; sourceTree = "<group>"; };
 		3666145B2952E30500BC333A /* TFY_ImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFY_ImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3666145E2952E30500BC333A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3666145F2952E30500BC333A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -327,9 +331,7 @@
 		366615172952E31E00BC333A /* TFY_StickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_StickerView.h; sourceTree = "<group>"; };
 		366615182952E31E00BC333A /* TFY_BaseEditingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_BaseEditingController.m; sourceTree = "<group>"; };
 		366615192952E31E00BC333A /* TFY_StickerDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_StickerDisplayView.h; sourceTree = "<group>"; };
-		3666151A2952E31E00BC333A /* TFY_Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_Text.m; sourceTree = "<group>"; };
 		3666151B2952E31E00BC333A /* TFY_ConfigTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_ConfigTool.m; sourceTree = "<group>"; };
-		3666151C2952E31E00BC333A /* TFY_TextBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_TextBar.h; sourceTree = "<group>"; };
 		3666151D2952E31E00BC333A /* TFY_MECancelBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_MECancelBlock.m; sourceTree = "<group>"; };
 		3666151E2952E31E00BC333A /* TFY_TitleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_TitleCollectionViewCell.h; sourceTree = "<group>"; };
 		3666151F2952E31E00BC333A /* TFY_PickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_PickerCollectionViewCell.m; sourceTree = "<group>"; };
@@ -382,10 +384,8 @@
 		3666154E2952E31E00BC333A /* TFY_ClipToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_ClipToolbar.m; sourceTree = "<group>"; };
 		3666154F2952E31E00BC333A /* TFY_TextViewBackgroundLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_TextViewBackgroundLayoutManager.h; sourceTree = "<group>"; };
 		366615502952E31E00BC333A /* TFY_TitleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_TitleCollectionViewCell.m; sourceTree = "<group>"; };
-		366615512952E31E00BC333A /* TFY_TextBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_TextBar.m; sourceTree = "<group>"; };
 		366615522952E31E00BC333A /* TFY_MECancelBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_MECancelBlock.h; sourceTree = "<group>"; };
 		366615532952E31E00BC333A /* TFY_ConfigTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_ConfigTool.h; sourceTree = "<group>"; };
-		366615542952E31E00BC333A /* TFY_Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_Text.h; sourceTree = "<group>"; };
 		366615552952E31E00BC333A /* TFY_StickerDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_StickerDisplayView.m; sourceTree = "<group>"; };
 		366615562952E31E00BC333A /* TFY_StickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_StickerView.m; sourceTree = "<group>"; };
 		366615572952E31E00BC333A /* TFY_BaseEditingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_BaseEditingController.h; sourceTree = "<group>"; };
@@ -842,12 +842,12 @@
 				366615562952E31E00BC333A /* TFY_StickerView.m */,
 				366615192952E31E00BC333A /* TFY_StickerDisplayView.h */,
 				366615552952E31E00BC333A /* TFY_StickerDisplayView.m */,
-				366615542952E31E00BC333A /* TFY_Text.h */,
-				3666151A2952E31E00BC333A /* TFY_Text.m */,
+				36197BAC2955624A00584678 /* TFY_PickerText.h */,
+				36197BAD2955624A00584678 /* TFY_PickerText.m */,
 				366615532952E31E00BC333A /* TFY_ConfigTool.h */,
 				3666151B2952E31E00BC333A /* TFY_ConfigTool.m */,
-				3666151C2952E31E00BC333A /* TFY_TextBar.h */,
-				366615512952E31E00BC333A /* TFY_TextBar.m */,
+				36197BAF2955634000584678 /* TFY_PickerTextBar.h */,
+				36197BB02955634000584678 /* TFY_PickerTextBar.m */,
 				366615522952E31E00BC333A /* TFY_MECancelBlock.h */,
 				3666151D2952E31E00BC333A /* TFY_MECancelBlock.m */,
 				3666151E2952E31E00BC333A /* TFY_TitleCollectionViewCell.h */,
@@ -1286,7 +1286,6 @@
 				3666166F2952E31F00BC333A /* TFY_HighlightBrush.m in Sources */,
 				366616772952E31F00BC333A /* TFY_EasyNoticeBar.m in Sources */,
 				366616152952E31E00BC333A /* TFY_GridLayer.m in Sources */,
-				3666161C2952E31E00BC333A /* TFY_Text.m in Sources */,
 				366616322952E31E00BC333A /* TFY_MovingRemoveView.m in Sources */,
 				366615EB2952E31E00BC333A /* TFY_ImagePickerController.m in Sources */,
 				366616462952E31E00BC333A /* TFY_PickerAsset.m in Sources */,
@@ -1297,6 +1296,7 @@
 				366615F52952E31E00BC333A /* TFY_VideoClippingView.m in Sources */,
 				366616102952E31E00BC333A /* TFY_ImageUtil.m in Sources */,
 				366616572952E31F00BC333A /* TFY_AssetManager+CreateMedia.m in Sources */,
+				36197BAE2955624A00584678 /* TFY_PickerText.m in Sources */,
 				366616242952E31E00BC333A /* TFY_ExtraAspectRatio.m in Sources */,
 				3666164D2952E31E00BC333A /* TFY_ResultImage.m in Sources */,
 				366616482952E31E00BC333A /* TFY_PickerPreviewBar.m in Sources */,
@@ -1318,7 +1318,6 @@
 				3666164C2952E31E00BC333A /* TFY_PickerAssetCell.m in Sources */,
 				366616062952E31E00BC333A /* TFY_MEGIFImageSerialization.m in Sources */,
 				366616122952E31E00BC333A /* TFY_PickColorView.m in Sources */,
-				3666163A2952E31E00BC333A /* TFY_TextBar.m in Sources */,
 				366616752952E31F00BC333A /* TFY_EraserBrush.m in Sources */,
 				366616502952E31E00BC333A /* TFY_VideoEditManager.m in Sources */,
 				366616172952E31E00BC333A /* TFY_PickerScrollView.m in Sources */,
@@ -1335,6 +1334,7 @@
 				366615FE2952E31E00BC333A /* TFY_VideoEditingView.m in Sources */,
 				366614632952E30500BC333A /* SceneDelegate.m in Sources */,
 				3666165E2952E31F00BC333A /* TFY_Filter+save.m in Sources */,
+				36197BB12955634000584678 /* TFY_PickerTextBar.m in Sources */,
 				366615F62952E31E00BC333A /* TFY_VideoTrimmerGridView.m in Sources */,
 				366615FF2952E31E00BC333A /* TFY_GridMaskLayer.m in Sources */,
 				3666167A2952E31F00BC333A /* TFY_FilterModel.m in Sources */,

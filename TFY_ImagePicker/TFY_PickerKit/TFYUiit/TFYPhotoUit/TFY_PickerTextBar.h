@@ -1,31 +1,31 @@
 //
-//  TFY_TextBar.h
-//  WonderfulZhiKang
+//  TFY_PickerTextBar.h
+//  TFY_ImagePicker
 //
-//  Created by 田风有 on 2022/12/20.
+//  Created by 田风有 on 2022/12/23.
 //
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class TFY_PickerTextBar,TFY_PickerText;
 
-@class TFY_TextBar,TFY_Text;
+NS_ASSUME_NONNULL_BEGIN
 
 @protocol TFYPickerTextBarDelegate <NSObject>
 
 /** 完成回调 */
-- (void)picker_textBarController:(TFY_TextBar *)textBar didFinishText:(TFY_Text *)text;
+- (void)picker_textBarController:(TFY_PickerTextBar *)textBar didFinishText:(TFY_PickerText *)text;
 /** 取消回调 */
-- (void)picker_textBarControllerDidCancel:(TFY_TextBar *)textBar;
+- (void)picker_textBarControllerDidCancel:(TFY_PickerTextBar *)textBar;
 /** 输入数量已经达到最大值 */
-- (void)picker_textBarControllerDidReachMaximumLimit:(TFY_TextBar *)textBar;
+- (void)picker_textBarControllerDidReachMaximumLimit:(TFY_PickerTextBar *)textBar;
 
 @end
 
-@interface TFY_TextBar : UIView
+@interface TFY_PickerTextBar : UIView
 
 /** 需要显示的文字 */
-@property (nonatomic, copy) TFY_Text *showText;
+@property (nonatomic, copy) TFY_PickerText *showText;
 
 /** 样式 */
 @property (nonatomic, strong) UIColor *oKButtonTitleColorNormal;
@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 代理 */
 @property (nonatomic, weak) id<TFYPickerTextBarDelegate> delegate;
 
-- (instancetype)initWithFrame:(CGRect)frame layout:(nullable void (^)(TFY_TextBar *textBar))layoutBlock;
+- (instancetype)initWithFrame:(CGRect)frame layout:(nullable void (^)(TFY_PickerTextBar *textBar))layoutBlock;
 
 /** 设置文本拾色器默认颜色 */
 - (void)setTextSliderColor:(UIColor *)color;

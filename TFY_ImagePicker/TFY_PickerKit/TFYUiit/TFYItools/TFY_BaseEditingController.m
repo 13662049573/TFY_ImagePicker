@@ -66,7 +66,7 @@
 {
     [super viewWillAppear:animated];
     // 隐藏状态栏而不改变安全区域的高度
-    [UIApplication sharedApplication].keyWindow.windowLevel = UIWindowLevelStatusBar + 1;
+    TFYAppWindow().windowLevel = UIWindowLevelStatusBar + 1;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -85,7 +85,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [UIApplication sharedApplication].keyWindow.windowLevel = UIWindowLevelNormal;
+    TFYAppWindow().windowLevel = UIWindowLevelNormal;
     if (@available(iOS 13.0, *)) {
         // 重新开启下拉手势
         self.picker_dropShadowPanGestureRecognizer.enabled = YES;

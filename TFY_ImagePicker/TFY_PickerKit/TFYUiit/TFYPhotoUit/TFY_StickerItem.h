@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
-#import "TFY_Text.h"
+#import "TFY_PickerText.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImage *image;
 
 /** text */
-@property (nonatomic, strong) TFY_Text *text;
+@property (nonatomic, strong) TFY_PickerText *text;
 
 /** video */
 @property (nonatomic, strong) AVAsset *asset;

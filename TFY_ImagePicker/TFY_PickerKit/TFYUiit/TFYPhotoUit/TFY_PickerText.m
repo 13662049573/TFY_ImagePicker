@@ -1,13 +1,13 @@
 //
-//  TFY_Text.m
-//  WonderfulZhiKang
+//  TFY_PickerText.m
+//  TFY_ImagePicker
 //
-//  Created by 田风有 on 2022/12/19.
+//  Created by 田风有 on 2022/12/23.
 //
 
-#import "TFY_Text.h"
+#import "TFY_PickerText.h"
 
-@implementation TFY_Text
+@implementation TFY_PickerText
 
 - (instancetype)init
 {
@@ -41,5 +41,6 @@
 {
     return YES;
 }
+
 
 @end
