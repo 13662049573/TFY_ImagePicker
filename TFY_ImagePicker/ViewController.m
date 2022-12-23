@@ -279,6 +279,51 @@
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
+//#pragma mark - TFYImagePickerControllerDelegate
+//- (void)picker_imagePickerController:(TFY_ImagePickerController *)picker takePhotoHandler:(picker_takePhotoHandler)handler
+//{
+//    self.handler = handler;
+//
+//    BOOL onlyPhoto = NO;
+//    BOOL onlyVideo = NO;
+//    if (picker.selectedObjects.count) {
+//        onlyPhoto = picker.maxImagesCount != picker.maxVideosCount && picker.selectedObjects.firstObject.type == TFYAssetMediaTypePhoto;
+//        onlyVideo = picker.maxImagesCount != picker.maxVideosCount && picker.selectedObjects.firstObject.type == TFYAssetMediaTypeVideo;
+//    }
+//
+//    UIImagePickerController *mediaPickerController = [[UIImagePickerController alloc] init];
+//    // set appearance / 改变相册选择页的导航栏外观
+//    {
+//        mediaPickerController.navigationBar.barTintColor = picker.navigationBar.barTintColor;
+//        mediaPickerController.navigationBar.tintColor = picker.navigationBar.tintColor;
+//        NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
+//        UIBarButtonItem *barItem;
+//        if (@available(iOS 9.0, *)){
+//            barItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UIImagePickerController class]]];
+//        }
+//        textAttrs[NSForegroundColorAttributeName] = picker.barItemTextColor;
+//        textAttrs[NSFontAttributeName] = picker.barItemTextFont;
+//        [barItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+//    }
+//    mediaPickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    mediaPickerController.delegate = self;
+//
+//    NSMutableArray *mediaTypes = [NSMutableArray array];
+//
+//    if (picker.allowPickingType & TFYPickingMediaTypePhoto && picker.selectedObjects.count < picker.maxImagesCount && !onlyVideo) {
+//        [mediaTypes addObject:(NSString *)kUTTypeImage];
+//    }
+//    if (picker.allowPickingType & TFYPickingMediaTypeVideo && picker.selectedObjects.count < picker.maxVideosCount && !onlyPhoto) {
+//        [mediaTypes addObject:(NSString *)kUTTypeMovie];
+//        mediaPickerController.videoMaximumDuration = picker.maxVideoDuration;
+//    }
+//
+//    mediaPickerController.mediaTypes = mediaTypes;
+//
+//    /** warning：Snapshotting a view that has not been rendered results in an empty snapshot. Ensure your view has been rendered at least once before snapshotting or snapshot after screen updates. */
+//    [picker presentViewController:mediaPickerController animated:YES completion:nil];
+//}
+
 - (void)uploadTaskWith:(NSArray <TFY_ResultObject *> *)results completion:(void (^)(NSData *data))completionBlock {
     // 通过信号量控制循环进行
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
@@ -450,6 +495,50 @@
     return self.view.frame;
 }
 
+//#pragma mark UIImagePickerControllerDelegate methods
+//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+//{
+//    BOOL hasUsingMedia = NO;
+//    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+//    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]){
+//        UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
+//        if (chosenImage) {
+//            hasUsingMedia = YES;
+//            if (self.handler) {
+//                self.handler(chosenImage, (NSString *)kUTTypeImage, ^(TFY_ImagePickerController *picker, NSError * _Nullable error) {
+//                    [picker dismissViewControllerAnimated:YES completion:^{
+//                        if (error) {
+//                            [picker showAlertWithTitle:nil message:error.localizedDescription complete:nil];
+//                        }
+//                    }];
+//                });
+//            }
+//        }
+//    } else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie]) {
+//        NSURL *videoUrl = [info objectForKey:UIImagePickerControllerMediaURL];
+//        if (videoUrl) {
+//            hasUsingMedia = YES;
+//            if (self.handler) {
+//                self.handler(videoUrl, (NSString *)kUTTypeMovie, ^(TFY_ImagePickerController *picker, NSError * _Nullable error) {
+//                    [picker dismissViewControllerAnimated:YES completion:^{
+//                        if (error) {
+//                            [picker showAlertWithTitle:nil message:error.localizedDescription complete:nil];
+//                        }
+//                    }];
+//                });
+//            }
+//        }
+//    }
+//    self.handler = nil;
+//    if (!hasUsingMedia) {
+//        [picker dismissViewControllerAnimated:YES completion:nil];
+//    }
+//}
+//
+//- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+//{
+//    [picker dismissViewControllerAnimated:YES completion:nil];
+//}
 
 
 @end
