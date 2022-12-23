@@ -163,6 +163,7 @@
 //    imagePicker.sortAscendingByCreateDate = NO;
 //    imagePicker.allowEditing = NO;
     imagePicker.supportAutorotate = YES; /** 适配横屏 */
+    imagePicker.syncAlbum = YES; /** 实时同步相册 */
 //    imagePicker.imageCompressSize = 200; /** 标清图压缩大小 */
 //    imagePicker.thumbnailCompressSize = 20; /** 缩略图压缩大小 */
     imagePicker.allowPickingType = TFYPickingMediaTypeALL;
@@ -171,9 +172,6 @@
 //    imagePicker.defaultAlbumName = @"动图"; /** 指定默认显示相册 */
 //    imagePicker.displayImageFilename = YES; /** 显示文件名称 */
 //    imagePicker.thumbnailCompressSize = 0.f; /** 不需要缩略图 */
-    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f) {
-        imagePicker.syncAlbum = YES; /** 实时同步相册 */
-    }
     imagePicker.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:imagePicker animated:YES completion:nil];
     
@@ -186,11 +184,10 @@
     imagePicker.supportAutorotate = YES; /** 适配横屏 */
     imagePicker.allowPickingType = TFYPickingMediaTypeALL;
     imagePicker.maxVideoDuration = 10; /** 10秒视频 */
-    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f) {
-        imagePicker.syncAlbum = YES; /** 实时同步相册 */
-    }
+    imagePicker.syncAlbum = YES; /** 实时同步相册 */
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
+
 // 预览模式Asset 对象
 - (void)buttonActionPreviewAsset:(id)sender {
     int limit = 10;
