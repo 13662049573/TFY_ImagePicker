@@ -166,7 +166,6 @@ static TFY_AssetManager *manager;
 }
 
 ///  Get asset at index 获得下标为index的单个照片
-///  if index beyond bounds, return nil in callback 如果索引越界, 在回调中返回 nil
 - (void)getAssetFromFetchResult:(id)result
                         atIndex:(NSInteger)index
                allowPickingType:(TFYPickingMediaType)allowPickingType

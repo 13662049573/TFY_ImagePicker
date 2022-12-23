@@ -71,6 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  completion        回调结果
  */
 - (void)getAssetsFromFetchResult:(id)result allowPickingType:(TFYPickingMediaType)allowPickingType fetchLimit:(NSInteger)fetchLimit ascending:(BOOL)ascending completion:(nullable void (^)(NSArray<TFY_PickerAsset *> *models))completion;
+
 /** 获得下标为index的单个照片 */
 - (void)getAssetFromFetchResult:(id)result
                         atIndex:(NSInteger)index
