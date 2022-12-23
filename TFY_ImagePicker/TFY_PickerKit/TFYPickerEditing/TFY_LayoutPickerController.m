@@ -52,16 +52,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
     self.view.backgroundColor = [UIColor clearColor];
 //    self.navigationBar.barStyle = UIBarStyleBlack;
-//    self.navigationBar.translucent = YES;
+    self.navigationBar.translucent = YES;
     self.delegate = self;
-    
-    //        self.automaticallyAdjustsScrollViewInsets = NO;
+    self.extendedLayoutIncludesOpaqueBars = YES;
     UIImage *backIndicatorImage = bundleImageNamed(@"navigationbar_back_arrow");
     self.navigationBar.backIndicatorImage = backIndicatorImage;
     self.navigationBar.backIndicatorTransitionMaskImage = backIndicatorImage;
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    NSArray *subViews = self.navigationBar.subviews;
+    [subViews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:NSClassFromString(@"_UIBarBackground")]||[obj isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")]) {
+            obj.hidden = YES;
+            UIView *background = obj;
+            [background.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj2, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([obj2 isKindOfClass:UIImageView.class]) {
+                    obj2.hidden = YES;
+                }
+            }];
+        }
+    }];
 }
 
 - (void)viewWillLayoutSubviews

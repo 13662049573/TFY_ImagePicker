@@ -324,6 +324,28 @@
     [picker presentViewController:mediaPickerController animated:YES completion:nil];
 }
 
+- (void)uploadTaskWith:(NSArray <TFY_ResultObject *> *)results completion:(void (^)(NSData *data))completionBlock {
+    // 通过信号量控制循环进行
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        for (NSInteger i = 0; i < results.count; i++) {
+            TFY_ResultObject *result = results[i];
+            if ([result isKindOfClass:[TFY_ResultImage class]]) {
+                TFY_ResultImage *resultImage = (TFY_ResultImage *)result;
+                completionBlock(resultImage.originalData);
+                dispatch_semaphore_signal(semaphore); //semaphore ++ 上传成功后取消阻塞 进入下一个循环上传
+                
+            } else if ([result isKindOfClass:[TFY_ResultVideo class]]) {
+                TFY_ResultVideo *resultVideo = (TFY_ResultVideo *)result;
+                completionBlock(resultVideo.data);
+                dispatch_semaphore_signal(semaphore); //semaphore ++ 上传成功后取消阻塞 进入下一个循环上传
+            }
+            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER); //semaphore -- 阻塞当前循环
+        }
+    });
+}
+
 - (void)picker_imagePickerController:(TFY_ImagePickerController *)picker didFinishPickingResult:(NSArray <TFY_ResultObject /* <TFY_ResultImage/TFY_ResultVideo> */*> *)results;
 {
     self.sharePath = nil;

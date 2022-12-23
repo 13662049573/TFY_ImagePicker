@@ -9,20 +9,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSUInteger, TFYImageType) {
-    TFYImageType_Unknow = 0,
-    TFYImageType_JPEG,
-    TFYImageType_JPEG2000,
-    TFYImageType_TIFF,
-    TFYImageType_BMP,
-    TFYImageType_ICO,
-    TFYImageType_ICNS,
-    TFYImageType_GIF,
-    TFYImageType_PNG,
-    TFYImageType_WebP,
+typedef NS_ENUM(NSUInteger, TFYPickerImageType) {
+    TFYPickerImageType_Unknow = 0,
+    TFYPickerImageType_JPEG,
+    TFYPickerImageType_JPEG2000,
+    TFYPickerImageType_TIFF,
+    TFYPickerImageType_BMP,
+    TFYPickerImageType_ICO,
+    TFYPickerImageType_ICNS,
+    TFYPickerImageType_GIF,
+    TFYPickerImageType_PNG,
+    TFYPickerImageType_WebP,
 };
 
-CG_EXTERN TFYImageType TFYImageDetectType(CFDataRef data);
+CG_EXTERN TFYPickerImageType TFYImageDetectType(CFDataRef data);
 
 @interface UIImage (picker)
 

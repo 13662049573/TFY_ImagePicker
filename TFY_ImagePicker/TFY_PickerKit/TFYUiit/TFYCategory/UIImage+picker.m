@@ -12,46 +12,46 @@
 #define _FOUR_CC(c1,c2,c3,c4) ((uint32_t)(((c4) << 24) | ((c3) << 16) | ((c2) << 8) | (c1)))
 #define _TWO_CC(c1,c2) ((uint16_t)(((c2) << 8) | (c1)))
 
-TFYImageType TFYImageDetectType(CFDataRef data) {
-    if (!data) return TFYImageType_Unknow;
+TFYPickerImageType TFYImageDetectType(CFDataRef data) {
+    if (!data) return TFYPickerImageType_Unknow;
     uint64_t length = CFDataGetLength(data);
-    if (length < 16) return TFYImageType_Unknow;
+    if (length < 16) return TFYPickerImageType_Unknow;
     
     const char *bytes = (char *)CFDataGetBytePtr(data);
     
     uint32_t magic4 = *((uint32_t *)bytes);
     switch (magic4) {
         case _FOUR_CC(0x4D, 0x4D, 0x00, 0x2A): { // big endian TIFF
-            return TFYImageType_TIFF;
+            return TFYPickerImageType_TIFF;
         } break;
             
         case _FOUR_CC(0x49, 0x49, 0x2A, 0x00): { // little endian TIFF
-            return TFYImageType_TIFF;
+            return TFYPickerImageType_TIFF;
         } break;
             
         case _FOUR_CC(0x00, 0x00, 0x01, 0x00): { // ICO
-            return TFYImageType_ICO;
+            return TFYPickerImageType_ICO;
         } break;
             
         case _FOUR_CC('i', 'c', 'n', 's'): { // ICNS
-            return TFYImageType_ICNS;
+            return TFYPickerImageType_ICNS;
         } break;
             
         case _FOUR_CC('G', 'I', 'F', '8'): { // GIF
-            return TFYImageType_GIF;
+            return TFYPickerImageType_GIF;
         } break;
             
         case _FOUR_CC(0x89, 'P', 'N', 'G'): {  // PNG
             uint32_t tmp = *((uint32_t *)(bytes + 4));
             if (tmp == _FOUR_CC('\r', '\n', 0x1A, '\n')) {
-                return TFYImageType_PNG;
+                return TFYPickerImageType_PNG;
             }
         } break;
             
         case _FOUR_CC('R', 'I', 'F', 'F'): { // WebP
             uint32_t tmp = *((uint32_t *)(bytes + 8));
             if (tmp == _FOUR_CC('W', 'E', 'B', 'P')) {
-                return TFYImageType_WebP;
+                return TFYPickerImageType_WebP;
             }
         } break;
     }
@@ -64,15 +64,15 @@ TFYImageType TFYImageDetectType(CFDataRef data) {
         case _TWO_CC('P', 'I'):
         case _TWO_CC('C', 'I'):
         case _TWO_CC('C', 'P'): { // BMP
-            return TFYImageType_BMP;
+            return TFYPickerImageType_BMP;
         }
         case _TWO_CC(0xFF, 0x4F): { // JPEG2000
-            return TFYImageType_JPEG2000;
+            return TFYPickerImageType_JPEG2000;
         }
     }
-    if (memcmp(bytes,"\377\330\377",3) == 0) return TFYImageType_JPEG;
-    if (memcmp(bytes + 4, "\152\120\040\040\015", 5) == 0) return TFYImageType_JPEG2000;
-    return TFYImageType_Unknow;
+    if (memcmp(bytes,"\377\330\377",3) == 0) return TFYPickerImageType_JPEG;
+    if (memcmp(bytes + 4, "\152\120\040\040\015", 5) == 0) return TFYPickerImageType_JPEG2000;
+    return TFYPickerImageType_Unknow;
 }
 
 @implementation UIImage (picker)
@@ -100,11 +100,11 @@ TFYImageType TFYImageDetectType(CFDataRef data) {
 
 + (instancetype)picker_imageWithImageData:(NSData *)imgData
 {
-    TFYImageType imageType = TFYImageDetectType((__bridge CFDataRef)imgData);
+    TFYPickerImageType imageType = TFYImageDetectType((__bridge CFDataRef)imgData);
     
     UIImage *image = nil;
     switch (imageType) {
-        case TFYImageType_GIF:
+        case TFYPickerImageType_GIF:
             image = [self picker_animatedGIFWithData:imgData];
             break;
         default:
