@@ -786,7 +786,7 @@ CGFloat const bottomToolBarHeight = 50.f;
             
         } else {
             // 2. select:check if over the maxImagesCount / 选择照片,检查是否超过了最大个数的限制
-            if ([weakSelf addLFAsset:cellModel refreshCell:YES]) {
+            if ([weakSelf addTFYPickerAsset:cellModel refreshCell:YES]) {
                 [weakCell selectPhoto:YES index:weakImagePickerVc.selectedModels.count animated:YES];
             }
         }
@@ -1001,7 +1001,6 @@ CGFloat const bottomToolBarHeight = 50.f;
                 contentSize.height = self.view.bounds.size.height;
             }
         }
-        
         photoPreviewVc.preferredContentSize = CGSizeMake(contentSize.width, contentSize.height);
         return photoPreviewVc;
     }
@@ -1182,7 +1181,7 @@ CGFloat const bottomToolBarHeight = 50.f;
     }
 }
 
-- (BOOL)addLFAsset:(TFY_PickerAsset *)asset refreshCell:(BOOL)refreshCell
+- (BOOL)addTFYPickerAsset:(TFY_PickerAsset *)asset refreshCell:(BOOL)refreshCell
 {
     TFY_ImagePickerController *imagePickerVc = (TFY_ImagePickerController *)self.navigationController;
     
@@ -1262,19 +1261,16 @@ CGFloat const bottomToolBarHeight = 50.f;
     if (image && [image isKindOfClass:[UIImage class]]) {
         TFY_ImagePickerController *imagePickerVc = (TFY_ImagePickerController *)self.navigationController;
         [[TFY_AssetManager manager] saveImageToCustomPhotosAlbumWithTitle:self.titleView.title images:@[image] complete:^(NSArray<id> *assets, NSError *error) {
-            
             if (assets && !error) {
                 TFY_PickerAsset *asset = [[TFY_PickerAsset alloc] initWithAsset:assets.lastObject];
-                [self addLFAsset:asset refreshCell:NO];
+                [self addTFYPickerAsset:asset refreshCell:NO];
                 if (!imagePickerVc.syncAlbum) {
-                    
                     [self manualSaveAsset:asset smartAlbum:TFYAlbumSmartAlbumUserLibrary];
                     /** refresh title view */
                     self.titleView.albumArr = self.albumArr;
                 }
             }
             [imagePickerVc hideProgressHUD];
-            
             if (handler) {
                 handler(error);
             }
@@ -1294,7 +1290,7 @@ CGFloat const bottomToolBarHeight = 50.f;
         [[TFY_AssetManager manager] saveVideoToCustomPhotosAlbumWithTitle:self.titleView.title videoURLs:@[videoUrl] complete:^(NSArray<id> *assets, NSError *error) {
             if (assets && !error) {
                 TFY_PickerAsset *asset = [[TFY_PickerAsset alloc] initWithAsset:assets.lastObject];
-                [self addLFAsset:asset refreshCell:NO];
+                [self addTFYPickerAsset:asset refreshCell:NO];
                 if (!imagePickerVc.syncAlbum) {
                     [self manualSaveAsset:asset smartAlbum:TFYAlbumSmartAlbumUserLibrary];
                     [self manualSaveAsset:asset smartAlbum:TFYAlbumSmartAlbumVideos];
@@ -1303,7 +1299,6 @@ CGFloat const bottomToolBarHeight = 50.f;
                 }
             }
             [imagePickerVc hideProgressHUD];
-            
             if (handler) {
                 handler(error);
             }

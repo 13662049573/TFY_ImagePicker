@@ -19,12 +19,10 @@ typedef NS_ENUM(NSUInteger, TFYAssetMediaType) {
 
 typedef NS_ENUM(NSUInteger, TFYAssetSubMediaType) {
     TFYAssetSubMediaTypeNone = 0,
-    
     /** 动图 */
     TFYAssetSubMediaTypeGIF = 10,
     /** live photo */
     TFYAssetSubMediaTypeLivePhoto,
-    
     /** 全景图、横图 */
     TFYAssetSubMediaTypePhotoPanorama = 50,
     /** 长图 */
@@ -33,7 +31,7 @@ typedef NS_ENUM(NSUInteger, TFYAssetSubMediaType) {
 
 @interface TFY_PickerAsset : NSObject
 
-@property (nonatomic, readonly) id asset;             ///< PHAsset or ALAsset
+@property (nonatomic, readonly) id asset;             ///< PHAsset
 @property (nonatomic, readonly) TFYAssetMediaType type;
 @property (nonatomic, readonly) TFYAssetSubMediaType subType;
 @property (nonatomic, readonly) NSTimeInterval duration;
