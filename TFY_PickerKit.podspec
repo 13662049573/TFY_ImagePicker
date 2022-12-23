@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
   spec.name         = "TFY_PickerKit"
 
-  spec.version      = "2.0.3"
+  spec.version      = "2.0.4"
 
   spec.summary      = "相册编辑功能"
 
@@ -47,7 +47,7 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'TFYUiit' do |ss|
-    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/**/*.{h,m}"
+    ss.source_files  = "TFY_ImagePicker/TFY_PickerKit/TFYUiit/TFYUiit.h"
     ss.resources    = 'TFY_ImagePicker/TFY_PickerKit/TFYUiit/Resources/*.bundle'
 
     ss.subspec 'TFYCategory' do |sss|
