@@ -258,12 +258,6 @@
         } else {
             [self presentViewController:alertController animated:YES completion:nil];
         }
-    } else {
-        [[[UIAlertView alloc] picker_initWithTitle:title message:message cancelButtonTitle:cancelTitle otherButtonTitles:nil block:^(UIAlertView *alertView, NSInteger buttonIndex) {
-            if (complete) {
-                complete();
-            }
-        }] show];
     }
 }
 

@@ -18,7 +18,6 @@
 #import "CALayer+picker.h"
 #import "UIScrollView+picker.h"
 #import "NSString+picker.h"
-#import "UIAlertView+picker.h"
 
 #import "TFY_TipsGuideManager.h"
 #import "TFY_TipsGuideView.h"

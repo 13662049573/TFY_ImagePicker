@@ -21,7 +21,6 @@
 @interface TFY_ContextImageView()<GLKViewDelegate>
 #endif
 
-@property (nonatomic, weak) GLKView *GLKView;
 @property (nonatomic, weak) TFY_LView *pickerView;
 @property (nonatomic, weak) UIView *UIView;
 @property (nonatomic, strong) TFY_SampleBufferHolder *sampleBufferHolder;
@@ -100,9 +99,6 @@
 - (void)setContentView:(UIView *)contentView
 {
     _contentView = contentView;
-    if (_GLKView) {
-        [_contentView insertSubview:_GLKView atIndex:0];
-    }
     [self setNeedsLayout];
     [self setNeedsDisplay];
 }
@@ -114,20 +110,13 @@
     if (self.contentView) {
         viewRect = self.contentView.bounds;
     }
-    _GLKView.frame = viewRect;
     _pickerView.frame = self.bounds;
     _UIView.frame = self.bounds;
-
     _MTKView.frame = self.bounds;
 
 }
 
 - (void)unloadContext {
-    if (_GLKView != nil) {
-        [_GLKView removeFromSuperview];
-        _GLKView.delegate = nil;
-        _GLKView = nil;
-    }
     if (_pickerView != nil) {
         [_pickerView removeFromSuperview];
         _pickerView = nil;
@@ -144,7 +133,6 @@
         _MTKView.delegate = nil;
         _MTKView = nil;
     }
-
     _context = nil;
 }
 
@@ -154,20 +142,6 @@
     if (context != nil) {
         switch (context.type) {
             case TFYContextTypeCoreGraphics:
-                break;
-            case TFYContextTypeEAGL:
-            {
-                GLKView *view = [[GLKView alloc] initWithFrame:self.bounds context:context.EAGLContext];
-                view.contentScaleFactor = self.contentScaleFactor;
-                view.backgroundColor = [UIColor clearColor];
-                view.delegate = self;
-                if (self.contentView) {
-                    [_contentView insertSubview:view atIndex:0];
-                } else {
-                    [self insertSubview:view atIndex:0];
-                }
-                _GLKView = view;
-            }
                 break;
             case TFYContextTypeLargeImage:
             {
@@ -220,8 +194,6 @@
 
 - (void)setNeedsDisplay {
     [super setNeedsDisplay];
-    
-    [_GLKView setNeedsDisplay];
     if (_pickerView) {
         _pickerView.image = [self renderedUIImage];
     }
@@ -232,7 +204,6 @@
             CGImageRelease(imageRef);
         }
     }
-
     [_MTKView setNeedsDisplay];
 
 }
@@ -356,14 +327,9 @@
             case UIViewContentModeScaleAspectFill:
             case UIViewContentModeScaleAspectFit:
             {
-                if (self.context.type == TFYContextTypeEAGL) {
-                    rect.origin.x = (rect.size.width - image.extent.size.width)/2;
-                    rect.origin.y = (rect.size.height - image.extent.size.height)/2;
-                    rect.size = image.extent.size;
-                }
 #if !(TARGET_IPHONE_SIMULATOR)
 #ifdef NSFoundationVersionNumber_iOS_9_0
-                else if (self.context.type == TFYContextTypeMetal) {
+                if (self.context.type == TFYContextTypeMetal) {
                     rect.origin.x = -(rect.size.width - image.extent.size.width)/2;
                     rect.origin.y = -(rect.size.height - image.extent.size.height)/2;
                 }

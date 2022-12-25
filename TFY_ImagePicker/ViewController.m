@@ -167,6 +167,7 @@
 //    imagePicker.imageCompressSize = 200; /** 标清图压缩大小 */
 //    imagePicker.thumbnailCompressSize = 20; /** 缩略图压缩大小 */
     imagePicker.allowPickingType = TFYPickingMediaTypeALL;
+    imagePicker.isSelectOriginalPhoto = YES;
 //    imagePicker.autoPlayLivePhoto = NO; /** 自动播放live photo */
 //    imagePicker.autoSelectCurrentImage = NO; /** 关闭自动选中 */
 //    imagePicker.defaultAlbumName = @"动图"; /** 指定默认显示相册 */

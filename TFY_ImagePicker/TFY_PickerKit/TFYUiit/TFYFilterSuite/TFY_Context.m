@@ -8,7 +8,6 @@
 #import "TFY_Context.h"
 
 NSString *__nonnull const TFYContextOptionsCGContextKey = @"CGContext";
-NSString *__nonnull const TFYContextOptionsEAGLContextKey = @"EAGLContext";
 NSString *__nonnull const TFYContextOptionsMTLDeviceKey = @"MTLDevice";
 
 static NSDictionary *TFYContextCreateCIContextOptions() {
@@ -40,17 +39,6 @@ static NSDictionary *TFYContextCreateCIContextOptions() {
 #pragma clang diagnostic pop
 #endif
     }
-    
-    return self;
-}
-
-- (instancetype)initWithEAGLContext:(EAGLContext *)context {
-    self = [super init];
-    if (self) {
-        _EAGLContext = context;
-        _CIContext = [CIContext contextWithEAGLContext:_EAGLContext options:TFYContextCreateCIContextOptions()];
-        _type = TFYContextTypeEAGL;
-    }
     return self;
 }
 
@@ -73,7 +61,6 @@ static NSDictionary *TFYContextCreateCIContextOptions() {
         _CIContext = [CIContext contextWithMTLDevice:device options:TFYContextCreateCIContextOptions()];
         _type = TFYContextTypeMetal;
     }
-    
     return self;
 }
 #pragma clang diagnostic pop
@@ -81,18 +68,14 @@ static NSDictionary *TFYContextCreateCIContextOptions() {
 
 - (void)dealloc
 {
-    if (_EAGLContext) {
-        [EAGLContext setCurrentContext:nil];
-        _EAGLContext = nil;
-    }
     _CGContext = nil;
     _MTLDevice = nil;
     _CIContext = nil;
 }
 
 + (TFYContextType)suggestedContextType {
-    if ([self supportsType:TFYContextTypeEAGL]) {
-        return TFYContextTypeEAGL;
+    if ([self supportsType:TFYContextTypeMetal]) {
+        return TFYContextTypeMetal;
     } else
 #ifdef NSFoundationVersionNumber_iOS_9_0
 #pragma clang diagnostic push
@@ -113,8 +96,6 @@ static NSDictionary *TFYContextCreateCIContextOptions() {
         case TFYContextTypeMetal:
             return [CIContextClass respondsToSelector:@selector(contextWithMTLDevice:options:)] && MTLCreateSystemDefaultDevice();
 #endif
-        case TFYContextTypeEAGL:
-            return [CIContextClass respondsToSelector:@selector(contextWithEAGLContext:options:)];
         case TFYContextTypeCoreGraphics:
             return [CIContextClass respondsToSelector:@selector(contextWithCGContext:options:)];
         case TFYContextTypeAuto:
@@ -140,7 +121,6 @@ static NSDictionary *TFYContextCreateCIContextOptions() {
                 if (device == nil) {
                     [NSException raise:@"Metal Error" format:@"Metal is available on iOS 8 and A7 chips. Or higher."];
                 }
-                
                 return [[self alloc] initWithMTLDevice:device];
             }
         }
@@ -148,31 +128,15 @@ static NSDictionary *TFYContextCreateCIContextOptions() {
 #endif
         case TFYContextTypeCoreGraphics: {
             CGContextRef context = (__bridge CGContextRef)(options[TFYContextOptionsCGContextKey]);
-            
             if (context == nil) {
                 [NSException raise:@"MissingCGContext" format:@"TFY_ContextTypeCoreGraphics needs to have a CGContext attached to the TFY_ContextOptionsCGContextKey in the options"];
             }
-            
             return [[self alloc] initWithCGContextRef:context];
         }
         case TFYContextTypeDefault:
             return [[self alloc] initWithSoftwareRenderer:NO];
         case TFYContextTypeLargeImage:
             return [[self alloc] initWithLargeImage];
-        case TFYContextTypeEAGL:
-        {
-            EAGLContext *context = options[TFYContextOptionsEAGLContextKey];
-            if (context == nil) {
-                static dispatch_once_t onceToken;
-                static EAGLSharegroup *picker_EAGLShareGroup ;
-                dispatch_once(&onceToken, ^{
-                    picker_EAGLShareGroup = [EAGLSharegroup new];
-                    picker_EAGLShareGroup.debugLabel = @"TFY_Context";
-                });
-                context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2 sharegroup:picker_EAGLShareGroup];
-            }
-            return [[self alloc] initWithEAGLContext:context];
-        }
         default:
             [NSException raise:@"InvalidContextType" format:@"Invalid context type %d", (int)type];
             break;

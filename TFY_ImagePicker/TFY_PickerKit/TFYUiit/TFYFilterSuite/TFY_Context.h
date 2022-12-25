@@ -13,13 +13,11 @@ typedef NS_ENUM(NSInteger, TFYContextType) {
     TFYContextTypeAuto,
     TFYContextTypeMetal NS_ENUM_AVAILABLE_IOS(9_0),
     TFYContextTypeCoreGraphics NS_ENUM_AVAILABLE_IOS(9_0),
-    TFYContextTypeEAGL,
     TFYContextTypeLargeImage,
     TFYContextTypeDefault,
 };
 
 extern NSString *__nonnull const TFYContextOptionsCGContextKey;
-extern NSString *__nonnull const TFYContextOptionsEAGLContextKey;
 extern NSString *__nonnull const TFYContextOptionsMTLDeviceKey;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -34,12 +32,6 @@ NS_ASSUME_NONNULL_BEGIN
  The type with with which this TFY_Context was created
  */
 @property (readonly, nonatomic) TFYContextType type;
-
-/**
- Will be non null if the type is TFYContextTypeEAGL
- */
-@property (readonly, nonatomic) EAGLContext *__nullable EAGLContext;
-
 /**
  Will be non null if the type is TFY_ContextTypeMetal
  */

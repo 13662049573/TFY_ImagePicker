@@ -819,7 +819,6 @@ TFYPickerImageType TFYImageDetectType(CFDataRef data) {
 - (NSData *)picker_fastestCompressImageSize:(CGFloat)size imageSize:(NSUInteger)imageSize
 {
     @autoreleasepool {
-        
         /** 临时图片 */
         UIImage *compressedImage = self;
         CGFloat targetSize = size * 1024; // 压缩目标大小
@@ -858,20 +857,13 @@ TFYPickerImageType TFYImageDetectType(CFDataRef data) {
         
         percent *= (targetSize/imageLength);
         
-        
         /** 记录上一次的压缩大小 */
         NSInteger imageDatalength = 0;
-        
-        //    int index = 0;
         
         /** 压缩核心方法 */
         do {
             
-            //        NSLog(@"compress %d", index++);
-            
             imageData = picker_UIImageJPEGRepresentation(compressedImage, percent);
-            
-            //        NSLog(@"压缩后大小:%ldk, 压缩频率:%ldk", imageData.length/1024, (imageDatalength - imageData.length)/1024);
             
             CGFloat diffSize = imageData.length - targetSize;
             

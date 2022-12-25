@@ -62,7 +62,7 @@ CGFloat const naviTipsViewDefaultHeight = 30.f;
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
-@property (nonatomic, strong) NSMutableArray <TFY_PickerAsset *>*models;                  ///< All photo models / 所有图片模型数组
+@property (nonatomic, strong) NSMutableArray <TFY_PickerAsset *>*models;  ///< All photo models / 所有图片模型数组
 @property (nonatomic, assign) NSInteger currentIndex;           ///< Index of the photo user click / 用户点击的图片的索引
 
 @property (nonatomic, assign) BOOL isHideMyNaviBar;
@@ -802,6 +802,7 @@ CGFloat const naviTipsViewDefaultHeight = 30.f;
     }
 }
 
+///  编辑
 - (void)editButtonClick {
     if (self.models.count > self.currentIndex) {
         TFY_ImagePickerController *imagePickerVc = [self navi];

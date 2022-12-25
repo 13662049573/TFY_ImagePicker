@@ -56,7 +56,6 @@
 		3666160A2952E31E00BC333A /* CALayer+picker.m in Sources */ = {isa = PBXBuildFile; fileRef = 366614EC2952E31D00BC333A /* CALayer+picker.m */; };
 		3666160B2952E31E00BC333A /* UIScrollView+picker.m in Sources */ = {isa = PBXBuildFile; fileRef = 366614ED2952E31D00BC333A /* UIScrollView+picker.m */; };
 		3666160C2952E31E00BC333A /* NSAttributedString+picker.m in Sources */ = {isa = PBXBuildFile; fileRef = 366614F02952E31D00BC333A /* NSAttributedString+picker.m */; };
-		3666160D2952E31E00BC333A /* UIAlertView+picker.m in Sources */ = {isa = PBXBuildFile; fileRef = 366614F12952E31D00BC333A /* UIAlertView+picker.m */; };
 		3666160E2952E31E00BC333A /* NSString+picker.m in Sources */ = {isa = PBXBuildFile; fileRef = 366614F42952E31D00BC333A /* NSString+picker.m */; };
 		3666160F2952E31E00BC333A /* AVAsset+picker.m in Sources */ = {isa = PBXBuildFile; fileRef = 366614F52952E31D00BC333A /* AVAsset+picker.m */; };
 		366616102952E31E00BC333A /* TFY_ImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 366614F82952E31D00BC333A /* TFY_ImageUtil.m */; };
@@ -278,7 +277,6 @@
 		366614E02952E31D00BC333A /* UIScrollView+picker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+picker.h"; sourceTree = "<group>"; };
 		366614E12952E31D00BC333A /* TFY_MEGIFImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_MEGIFImageSerialization.m; sourceTree = "<group>"; };
 		366614E22952E31D00BC333A /* UIColor+picker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+picker.m"; sourceTree = "<group>"; };
-		366614E32952E31D00BC333A /* UIAlertView+picker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+picker.h"; sourceTree = "<group>"; };
 		366614E42952E31D00BC333A /* TFYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFYCategory.h; sourceTree = "<group>"; };
 		366614E52952E31D00BC333A /* AVAsset+picker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVAsset+picker.h"; sourceTree = "<group>"; };
 		366614E62952E31D00BC333A /* NSString+picker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+picker.h"; sourceTree = "<group>"; };
@@ -292,7 +290,6 @@
 		366614EE2952E31D00BC333A /* NSData+picker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+picker.h"; sourceTree = "<group>"; };
 		366614EF2952E31D00BC333A /* UIView+picker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+picker.h"; sourceTree = "<group>"; };
 		366614F02952E31D00BC333A /* NSAttributedString+picker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+picker.m"; sourceTree = "<group>"; };
-		366614F12952E31D00BC333A /* UIAlertView+picker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+picker.m"; sourceTree = "<group>"; };
 		366614F22952E31D00BC333A /* UIColor+picker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+picker.h"; sourceTree = "<group>"; };
 		366614F32952E31D00BC333A /* TFY_MEGIFImageSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_MEGIFImageSerialization.h; sourceTree = "<group>"; };
 		366614F42952E31D00BC333A /* NSString+picker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+picker.m"; sourceTree = "<group>"; };
@@ -746,8 +743,6 @@
 				366614ED2952E31D00BC333A /* UIScrollView+picker.m */,
 				366614F22952E31D00BC333A /* UIColor+picker.h */,
 				366614E22952E31D00BC333A /* UIColor+picker.m */,
-				366614E32952E31D00BC333A /* UIAlertView+picker.h */,
-				366614F12952E31D00BC333A /* UIAlertView+picker.m */,
 				366614E52952E31D00BC333A /* AVAsset+picker.h */,
 				366614F52952E31D00BC333A /* AVAsset+picker.m */,
 				366614E62952E31D00BC333A /* NSString+picker.h */,
@@ -1218,7 +1213,6 @@
 				366616612952E31F00BC333A /* TFY_FilterGifView.m in Sources */,
 				366616312952E31E00BC333A /* TFY_BaseCollectionViewCell.m in Sources */,
 				366616192952E31E00BC333A /* TFY_EditToolbar.m in Sources */,
-				3666160D2952E31E00BC333A /* UIAlertView+picker.m in Sources */,
 				366616092952E31E00BC333A /* UIImage+picker.m in Sources */,
 				366616232952E31E00BC333A /* TFY_ClippingView.m in Sources */,
 				366616162952E31E00BC333A /* TFY_EditCollectionView.m in Sources */,
