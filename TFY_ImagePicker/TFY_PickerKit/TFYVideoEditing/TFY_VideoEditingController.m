@@ -77,6 +77,8 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
 
 @property (nonatomic, strong, nullable) id stickerBarCacheResource;
 
+@property (nonatomic) BOOL lastPageBarHidden;
+@property (nonatomic) BOOL lastPopGestureEnabled;
 @end
 
 @implementation TFY_VideoEditingController
@@ -147,6 +149,11 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
         [self configBottomToolBar];
         [self configDefaultOperation];
     }
+    self. lastPopGestureEnabled = self.navigationController.interactivePopGestureRecognizer.enabled;
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+
+    self. lastPageBarHidden = self.navigationController.navigationBarHidden;
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewWillLayoutSubviews
@@ -487,6 +494,7 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
     if ([self.delegate respondsToSelector:@selector(picker_VideoEditingControllerDidCancel:)]) {
         [self.delegate picker_VideoEditingControllerDidCancel:self];
     }
+    [self navigationBarHiddenBack];
 }
 
 - (void)finishButtonClick
@@ -513,6 +521,7 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
                         }
                     }
                     [weakSelf hideProgressHUD];
+                    [weakSelf navigationBarHiddenBack];
                 } progress:^(float progress) {
                     [weakSelf setProgress:progress];
                 }];
@@ -526,6 +535,7 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
                     [weakSelf.delegate picker_VideoEditingController:weakSelf didFinishPhotoEdit:videoEdit];
                 }
                 [weakSelf hideProgressHUD];
+                [weakSelf navigationBarHiddenBack];
             });
         }
     });
@@ -1328,6 +1338,11 @@ TFYVideoEditOperationStringKey const TFYVideoEditClipMaxDurationAttributeName = 
         #pragma clang diagnostic pop
     }
     return nil;
+}
+
+- (void)navigationBarHiddenBack {
+    self.navigationController.interactivePopGestureRecognizer.enabled = self.lastPopGestureEnabled;
+    self.navigationController.navigationBarHidden = self.lastPageBarHidden;
 }
 
 @end

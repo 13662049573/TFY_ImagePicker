@@ -84,7 +84,8 @@ TFYPhotoEditOperationStringKey const TFYPhotoEditCropExtraAspectRatioAttributeNa
 
 @property (nonatomic, strong, nullable) id stickerBarCacheResource;
 
-
+@property (nonatomic) BOOL lastPageBarHidden;
+@property (nonatomic) BOOL lastPopGestureEnabled;
 @end
 
 @implementation TFY_PhotoEditingController
@@ -130,7 +131,7 @@ TFYPhotoEditOperationStringKey const TFYPhotoEditCropExtraAspectRatioAttributeNa
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     /** 为了适配iOS13的UIModalPresentationPageSheet模态，它会在viewDidLoad之后对self.view的大小调整，迫不得已暂时只能在viewWillAppear加载视图 */
     if (@available(iOS 13.0, *)) {
         if (isiPhone && self.presentingViewController && self.navigationController.modalPresentationStyle == UIModalPresentationPageSheet) {
@@ -152,6 +153,11 @@ TFYPhotoEditOperationStringKey const TFYPhotoEditCropExtraAspectRatioAttributeNa
         [self configBottomToolBar];
         [self configDefaultOperation];
     }
+    self. lastPopGestureEnabled = self.navigationController.interactivePopGestureRecognizer.enabled;
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+
+    self. lastPageBarHidden = self.navigationController.navigationBarHidden;
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewWillLayoutSubviews
@@ -169,6 +175,7 @@ TFYPhotoEditOperationStringKey const TFYPhotoEditCropExtraAspectRatioAttributeNa
     [super viewDidLayoutSubviews];
     [self configUserGuide];
 }
+
 #pragma mark - 创建视图
 - (void)configScrollView
 {
@@ -325,17 +332,6 @@ TFYPhotoEditOperationStringKey const TFYPhotoEditCropExtraAspectRatioAttributeNa
     _edit_toolBar = [[TFY_EditToolbar alloc] initWithType:toolbarType];
     _edit_toolBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     _edit_toolBar.delegate = self;
-    
-//    if (self.operationType&TFYPhotoEditOperationType_draw) {
-//        __weak typeof(_edit_toolBar) weakToolBar = _edit_toolBar;
-//        if (![TFYEraserBrush eraserBrushCache]) {
-//            [_edit_toolBar setDrawBrushWait:YES];
-//            CGSize canvasSize = AVMakeRectWithAspectRatioInsideRect(self.editImage.size, _EditingView.bounds).size;
-//            [TFYEraserBrush loadEraserImage:self.editImage canvasSize:canvasSize useCache:YES complete:^(BOOL success) {
-//                [weakToolBar setDrawBrushWait:NO];
-//            }];
-//        }
-//    }
     
     if (self.operationType&TFYPhotoEditOperationType_splash) {
         __weak typeof(_edit_toolBar) weakToolBar = _edit_toolBar;
@@ -512,6 +508,7 @@ TFYPhotoEditOperationStringKey const TFYPhotoEditCropExtraAspectRatioAttributeNa
     if ([self.delegate respondsToSelector:@selector(picker_PhotoEditingControllerDidCancel:)]) {
         [self.delegate picker_PhotoEditingControllerDidCancel:self];
     }
+    [self navigationBarHiddenBack];
 }
 
 - (void)finishButtonClick
@@ -535,6 +532,7 @@ TFYPhotoEditOperationStringKey const TFYPhotoEditCropExtraAspectRatioAttributeNa
                     [weakSelf.delegate picker_PhotoEditingController:self didFinishPhotoEdit:photoEdit];
                 }
                 [weakSelf hideProgressHUD];
+                [weakSelf navigationBarHiddenBack];
             });
         });
     };
@@ -810,44 +808,7 @@ TFYPhotoEditOperationStringKey const TFYPhotoEditCropExtraAspectRatioAttributeNa
         }
         [self presentViewController:alertController animated:YES completion:nil];
     }
-    else {
-        //TODO: Completely overhaul this once iOS 7 support is dropped
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        
-        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                                 delegate:self
-                                                        cancelButtonTitle:[NSBundle picker_localizedStringForKey:@"_LFME_cancelButtonTitle"]
-                                                   destructiveButtonTitle:nil
-                                                        otherButtonTitles:nil];
-        
-        for (NSString *item in items) {
-            [actionSheet addButtonWithTitle:item];
-        }
-        
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-            [actionSheet showFromRect:clipToolbar.frame inView:clipToolbar animated:YES];
-        else
-            [actionSheet showInView:self.view];
-#pragma clang diagnostic pop
-    }
 }
-
-#pragma mark - UIActionSheetDelegate
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-implementations"
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == [actionSheet cancelButtonIndex]) {
-        _edit_clipping_toolBar.selectAspectRatio = NO;
-        [_EditingView setAspectRatioIndex:0];
-    } else {
-        _edit_clipping_toolBar.selectAspectRatio = YES;
-        [_EditingView setAspectRatioIndex:buttonIndex];
-    }
-}
-#pragma clang diagnostic pop
 
 #pragma mark - 滤镜菜单（懒加载）
 - (TFY_FilterBar *)edit_filter_toolBar
@@ -1354,4 +1315,8 @@ TFYPhotoEditOperationStringKey const TFYPhotoEditCropExtraAspectRatioAttributeNa
     return NO;
 }
 
+- (void)navigationBarHiddenBack {
+    self.navigationController.interactivePopGestureRecognizer.enabled = self.lastPopGestureEnabled;
+    self.navigationController.navigationBarHidden = self.lastPageBarHidden;
+}
 @end
